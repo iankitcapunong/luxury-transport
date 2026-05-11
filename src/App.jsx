@@ -302,9 +302,9 @@ function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative overflow-hidden pt-36 pb-28 lg:pt-44 lg:pb-36"
+      className="group/hero relative overflow-hidden pt-36 pb-28 lg:pt-44 lg:pb-36"
     >
-      {/* Background video — clear, no overlay */}
+      {/* Background video — clear, with hover dim */}
       <div className="pointer-events-none absolute inset-0 z-0 bg-ink-900">
         <video
           src="/merc.mp4"
@@ -316,6 +316,8 @@ function Hero() {
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
         />
+        {/* Black hover veil */}
+        <div className="pointer-events-none absolute inset-0 bg-black opacity-0 transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/hero:opacity-50" />
       </div>
 
       {/* atmospheric light wash */}
