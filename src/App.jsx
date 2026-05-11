@@ -210,8 +210,8 @@ function Nav() {
   const links = [
     ["How it works", "#how"],
     ["Services", "#services"],
-    ["The Fleet", "#features"],
     ["Clients", "#testimonials"],
+    ["Send Inquiry", "#contact"],
   ];
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -359,17 +359,6 @@ function Hero() {
             </p>
           </div>
 
-          <div
-            className="reveal mt-8 ml-12 inline-block animate-gentle-bounce"
-            style={{ transitionDelay: "650ms" }}
-          >
-            <a
-              href="#contact"
-              className="btn-primary font-sans !rounded-[15px] !bg-gold-400 !text-ink-900 hover:!bg-cream-50 shadow-[0_15px_35px_-10px_rgba(158,126,54,0.65)]"
-            >
-              Send Inquiry <Icon.ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
 
         </div>
       </div>
