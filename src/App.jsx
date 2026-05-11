@@ -514,7 +514,7 @@ function HowItWorks() {
           <div className="reveal eyebrow flex items-center gap-3">
             <span className="hairline" /> The Process
           </div>
-          <h2 className="reveal h-display mt-7 text-5xl sm:text-6xl">
+          <h2 className="reveal h-display mt-7 text-5xl sm:text-6xl text-mask-gold">
             Three steps.
           </h2>
           <p className="reveal mt-7 text-ink-700 leading-relaxed italic font-light max-w-xl">
@@ -536,7 +536,7 @@ function HowItWorks() {
                   {s.n}
                 </div>
                 <div className="flex-1 border-l border-gold-500/30 pl-6 group-hover:border-gold-500 transition-colors duration-700">
-                  <h3 className="font-display font-normal text-2xl text-ink-900">
+                  <h3 className="font-display font-normal text-2xl text-mask-gold">
                     {s.title}
                   </h3>
                   <p className="mt-3 text-sm leading-[1.85] text-ink-700">
@@ -815,7 +815,7 @@ function SocialProof() {
           <div className="editorial-rule justify-center mx-auto max-w-md !text-gold-300">
             In the company of
           </div>
-          <h3 className="font-display italic font-light text-3xl sm:text-4xl mt-7 text-cream-100/90 max-w-2xl mx-auto leading-snug">
+          <h3 className="font-display italic font-light text-3xl sm:text-4xl mt-7 max-w-2xl mx-auto leading-snug text-mask-gold-bright">
             Hotels, concierges, labels and quietly discerning private clients
           </h3>
         </div>
@@ -888,12 +888,10 @@ function Services() {
             <div className="eyebrow flex items-center gap-3">
               <span className="hairline" /> The Offering
             </div>
-            <h2 className="h-display mt-7 text-5xl sm:text-6xl">
+            <h2 className="h-display mt-7 text-5xl sm:text-6xl text-mask-gold">
               A fleet for
               <br />
-              <span className="italic font-light text-gold-500">
-                every occasion.
-              </span>
+              <span className="italic font-light">every occasion.</span>
             </h2>
           </div>
           <p className="max-w-sm text-ink-700 leading-relaxed italic font-light">
@@ -938,7 +936,7 @@ function Services() {
                             </span>
                           </div>
                           <div className="mt-7 h-px w-12 bg-ink-900/40 transition-all duration-700 group-hover:w-20" />
-                          <h3 className="font-display font-normal text-2xl mt-5 text-ink-900 leading-tight">
+                          <h3 className="font-display font-normal text-2xl mt-5 leading-tight text-mask-ink">
                             {t}
                           </h3>
                           <p className="mt-4 text-[13px] text-ink-800 leading-[1.8] flex-1">
@@ -982,7 +980,7 @@ function Services() {
             <div className="p-8 lg:p-12 flex flex-col">
               <div className="eyebrow !text-gold-300">Inside the Sprinter</div>
               <h3 className="font-display italic font-light text-4xl lg:text-5xl mt-4">
-                Quietly equipped.
+                <span className="text-mask-gold-bright">Quietly equipped.</span>
               </h3>
               <div className="mt-5 h-px w-12 bg-gold-500/60" />
               <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-cream-100/85">
@@ -1065,12 +1063,10 @@ function Testimonials() {
           <div className="eyebrow flex items-center gap-3">
             <span className="hairline" /> In Their Words
           </div>
-          <h2 className="h-display mt-7 text-5xl sm:text-6xl">
+          <h2 className="h-display mt-7 text-5xl sm:text-6xl text-mask-gold">
             Quietly
             <br />
-            <span className="italic font-light text-gold-500">
-              recommended.
-            </span>
+            <span className="italic font-light">recommended.</span>
           </h2>
           <p className="mt-7 text-ink-700 leading-relaxed italic font-light max-w-xl">
             Ninety-seven percent of our private clients return within twelve
@@ -1113,7 +1109,7 @@ function Testimonials() {
           <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-ink-900/10">
             {stats.map((s) => (
               <div key={s.k} className="px-6 py-9 text-center">
-                <div className="font-display italic font-light text-5xl text-gold-500">
+                <div className="font-display italic font-light text-5xl text-mask-gold">
                   {s.k}
                 </div>
                 <div className="mt-3 text-[10px] uppercase tracking-[0.28em] text-ink-700">
@@ -1149,12 +1145,10 @@ function CTA() {
         <div className="reveal editorial-rule justify-center mx-auto max-w-md !text-gold-300">
           Begin Inquiry
         </div>
-        <h2 className="reveal h-display mt-8 text-5xl sm:text-6xl lg:text-7xl">
+        <h2 className="reveal h-display mt-8 text-5xl sm:text-6xl lg:text-7xl text-mask-gold-bright">
           A single message.
           <br />
-          <span className="italic font-light text-gold-300">
-            The rest is on us.
-          </span>
+          <span className="italic font-light">The rest is on us.</span>
         </h2>
         <p className="reveal mt-8 text-cream-100/75 leading-relaxed italic font-light max-w-xl mx-auto">
           Tell us when, where from, and where to. We return inside the hour,

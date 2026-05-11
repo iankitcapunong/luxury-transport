@@ -67,6 +67,28 @@
   .editorial-rule {
     @apply relative flex items-center text-[10px] uppercase tracking-[0.34em] text-gold-500;
   }
+
+  .text-mask-gold {
+    background-image: linear-gradient(135deg, #E2C189 0%, #BF9C53 40%, #8B6420 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+  .text-mask-gold-bright {
+    background-image: linear-gradient(135deg, #F5ECD6 0%, #E2C189 35%, #BF9C53 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+  .text-mask-ink {
+    background-image: linear-gradient(135deg, #231811 0%, #4A382A 60%, #735F4B 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
   .editorial-rule::before,
   .editorial-rule::after {
     content: '';
