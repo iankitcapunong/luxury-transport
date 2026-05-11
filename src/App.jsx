@@ -772,11 +772,8 @@ function HowItWorks({ selectedService, onSelectService }) {
               </div>
             ) : (
               <div key="default" className="animate-fade-up">
-                <div className="eyebrow flex items-center gap-3">
-                  <span className="hairline" /> Our Service
-                </div>
                 <h3
-                  className="font-display text-3xl mt-4 text-mask-gold"
+                  className="font-display text-3xl text-mask-gold"
                   style={{
                     animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both",
                     animationDelay: "120ms",
