@@ -298,8 +298,6 @@ function Nav() {
 // --- Hero -------------------------------------------------------------------
 function Hero() {
   const ref = useReveal();
-  const [pickup, setPickup] = useState("");
-  const [destination, setDestination] = useState("");
   return (
     <section
       id="top"
@@ -366,224 +364,6 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right column — Quick inquiry */}
-        <div id="contact" className="lg:col-span-6 lg:col-start-7 reveal">
-          <div className="relative max-w-md ml-auto">
-            <div className="absolute -inset-8 rounded-2xl bg-gradient-to-tr from-gold-300/20 via-transparent to-gold-300/10 blur-3xl" />
-            <div className="absolute -top-2 -left-2 h-5 w-5 border-l border-t border-gold-500/60" />
-            <div className="absolute -top-2 -right-2 h-5 w-5 border-r border-t border-gold-500/60" />
-            <div className="absolute -bottom-2 -left-2 h-5 w-5 border-l border-b border-gold-500/60" />
-            <div className="absolute -bottom-2 -right-2 h-5 w-5 border-r border-b border-gold-500/60" />
-
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert("Thank you. The team will be in touch shortly.");
-              }}
-              className="relative bg-cream-50/30 backdrop-blur-md text-ink-900 p-7 border border-ink-900/15 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.4)]"
-            >
-              <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.3em] text-gold-600">
-                <span>Quick Inquiry</span>
-                <span>Vol. I · 2026</span>
-              </div>
-              <h3 className="mt-3 font-display text-2xl text-ink-900">
-                Begin your{" "}
-                <span className="italic font-light text-gold-600">
-                  journey.
-                </span>
-              </h3>
-              <div className="mt-3 h-px w-12 bg-gold-500/60" />
-
-              <div className="mt-5 space-y-3">
-                <input
-                  required
-                  placeholder="Full name"
-                  className="w-full rounded-lg border border-ink-900/15 bg-cream-50/60 px-4 py-2.5 text-sm focus:outline-none focus:border-gold-500 focus:bg-cream-50/90 transition"
-                />
-                <input
-                  required
-                  type="email"
-                  placeholder="Email address"
-                  className="w-full rounded-lg border border-ink-900/15 bg-cream-50/60 px-4 py-2.5 text-sm focus:outline-none focus:border-gold-500 focus:bg-cream-50/90 transition"
-                />
-                <div className="grid grid-cols-2 gap-3">
-                  <select
-                    value={pickup}
-                    onChange={(e) => setPickup(e.target.value)}
-                    className="rounded-lg border border-ink-900/15 bg-cream-50/60 px-4 py-2.5 text-sm text-ink-900 focus:outline-none focus:border-gold-500 focus:bg-cream-50/90 transition appearance-none bg-no-repeat bg-right pr-9"
-                    style={{
-                      backgroundImage:
-                        "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239E7E36'><path d='M5.5 7.5l4.5 5 4.5-5z'/></svg>\")",
-                      backgroundPosition: "right 0.75rem center",
-                      backgroundSize: "1rem",
-                    }}
-                  >
-                    <option value="" disabled>
-                      Pickup
-                    </option>
-                    <optgroup label="Airports">
-                      <option>Heathrow (LHR)</option>
-                      <option>Gatwick (LGW)</option>
-                      <option>Stansted (STN)</option>
-                      <option>Luton (LTN)</option>
-                      <option>London City (LCY)</option>
-                      <option>Manchester (MAN)</option>
-                      <option>Birmingham (BHX)</option>
-                      <option>Edinburgh (EDI)</option>
-                    </optgroup>
-                    <optgroup label="London">
-                      <option>Mayfair</option>
-                      <option>Knightsbridge</option>
-                      <option>Belgravia</option>
-                      <option>Chelsea</option>
-                      <option>Kensington</option>
-                      <option>The City</option>
-                      <option>Canary Wharf</option>
-                      <option>Soho</option>
-                    </optgroup>
-                    <optgroup label="Cities">
-                      <option>Manchester</option>
-                      <option>Birmingham</option>
-                      <option>Liverpool</option>
-                      <option>Leeds</option>
-                      <option>Edinburgh</option>
-                      <option>Glasgow</option>
-                      <option>Bristol</option>
-                    </optgroup>
-                    <optgroup label="Other">
-                      <option>Hotel / Venue</option>
-                      <option>Wedding venue</option>
-                      <option>Festival / Event</option>
-                      <option>Home address</option>
-                      <option>Custom address</option>
-                    </optgroup>
-                  </select>
-                  <select
-                    value={destination}
-                    onChange={(e) => setDestination(e.target.value)}
-                    className="rounded-lg border border-ink-900/15 bg-cream-50/60 px-4 py-2.5 text-sm text-ink-900 focus:outline-none focus:border-gold-500 focus:bg-cream-50/90 transition appearance-none bg-no-repeat bg-right pr-9"
-                    style={{
-                      backgroundImage:
-                        "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239E7E36'><path d='M5.5 7.5l4.5 5 4.5-5z'/></svg>\")",
-                      backgroundPosition: "right 0.75rem center",
-                      backgroundSize: "1rem",
-                    }}
-                  >
-                    <option value="" disabled>
-                      Destination
-                    </option>
-                    <optgroup label="Airports">
-                      <option>Heathrow (LHR)</option>
-                      <option>Gatwick (LGW)</option>
-                      <option>Stansted (STN)</option>
-                      <option>Luton (LTN)</option>
-                      <option>London City (LCY)</option>
-                      <option>Manchester (MAN)</option>
-                      <option>Birmingham (BHX)</option>
-                      <option>Edinburgh (EDI)</option>
-                    </optgroup>
-                    <optgroup label="London">
-                      <option>Mayfair</option>
-                      <option>Knightsbridge</option>
-                      <option>Belgravia</option>
-                      <option>Chelsea</option>
-                      <option>Kensington</option>
-                      <option>The City</option>
-                      <option>Canary Wharf</option>
-                      <option>Soho</option>
-                    </optgroup>
-                    <optgroup label="Cities">
-                      <option>Manchester</option>
-                      <option>Birmingham</option>
-                      <option>Liverpool</option>
-                      <option>Leeds</option>
-                      <option>Edinburgh</option>
-                      <option>Glasgow</option>
-                      <option>Bristol</option>
-                    </optgroup>
-                    <optgroup label="Other">
-                      <option>Hotel / Venue</option>
-                      <option>Wedding venue</option>
-                      <option>Festival / Event</option>
-                      <option>Custom address</option>
-                    </optgroup>
-                  </select>
-                </div>
-
-                {pickup === "Custom address" && (
-                  <div className="animate-fade-up rounded-lg border border-gold-500/40 bg-cream-100/60 p-4 space-y-3">
-                    <div className="text-[11px] uppercase tracking-[0.28em] text-gold-600">
-                      Pickup address
-                    </div>
-                    <input
-                      required
-                      placeholder="Street address"
-                      className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
-                    />
-                    <div className="grid grid-cols-2 gap-3">
-                      <input
-                        placeholder="City / Town"
-                        className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
-                      />
-                      <input
-                        placeholder="Postcode"
-                        className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
-                      />
-                    </div>
-                    <input
-                      placeholder="Notes for the driver (gate code, floor…)"
-                      className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
-                    />
-                  </div>
-                )}
-
-                {destination === "Custom address" && (
-                  <div className="animate-fade-up rounded-lg border border-gold-500/40 bg-cream-100/60 p-4 space-y-3">
-                    <div className="text-[11px] uppercase tracking-[0.28em] text-gold-600">
-                      Destination address
-                    </div>
-                    <input
-                      required
-                      placeholder="Street address"
-                      className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
-                    />
-                    <div className="grid grid-cols-2 gap-3">
-                      <input
-                        placeholder="City / Town"
-                        className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
-                      />
-                      <input
-                        placeholder="Postcode"
-                        className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
-                      />
-                    </div>
-                    <input
-                      placeholder="Arrival notes (entrance, contact name…)"
-                      className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
-                    />
-                  </div>
-                )}
-
-                <textarea
-                  rows="3"
-                  placeholder="A line about your journey"
-                  className="w-full rounded-lg border border-ink-900/15 bg-cream-50/60 px-4 py-3 text-sm focus:outline-none focus:border-gold-500 focus:bg-cream-50/90 transition resize-none"
-                />
-
-                <button
-                  type="submit"
-                  className="btn-primary w-full !rounded-[15px] !px-7 !py-3 !text-xs !tracking-[0.28em]"
-                >
-                  Send inquiry <Icon.ArrowRight className="h-3.5 w-3.5" />
-                </button>
-              </div>
-
-              <p className="mt-4 text-[10px] uppercase tracking-[0.28em] text-ink-500 text-center">
-                Discretion · Punctuality · Composure
-              </p>
-            </form>
-          </div>
-        </div>
       </div>
     </section>
   );
@@ -675,6 +455,8 @@ function VClassSVG() {
 // --- How it works -----------------------------------------------------------
 function HowItWorks() {
   const ref = useReveal();
+  const [pickup, setPickup] = useState("");
+  const [destination, setDestination] = useState("");
   const steps = [
     {
       n: "01",
@@ -713,26 +495,248 @@ function HowItWorks() {
           </p>
         </div>
 
-        <div className="reveal mt-20 grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12 items-stretch relative">
-          <div className="hidden md:block absolute top-[3.5rem] left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent" />
-          {steps.map((s, i) => (
-            <div
-              key={s.n}
-              className="reveal relative group flex flex-col h-full transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5"
-              style={{ transitionDelay: `${i * 100}ms` }}
-            >
-              <div className="font-display italic font-light text-7xl leading-none text-gold-500/80 group-hover:text-gold-500 transition-colors duration-700">
-                {s.n}
+        <div className="mt-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left — numbered steps stacked */}
+          <div className="lg:col-span-6 space-y-10">
+            {steps.map((s, i) => (
+              <div
+                key={s.n}
+                className="reveal group flex gap-6 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                style={{ transitionDelay: `${i * 100}ms` }}
+              >
+                <div className="font-display italic font-light text-6xl leading-none text-gold-500/80 group-hover:text-gold-500 transition-colors duration-700 w-20 shrink-0">
+                  {s.n}
+                </div>
+                <div className="flex-1 border-l border-gold-500/30 pl-6 group-hover:border-gold-500 transition-colors duration-700">
+                  <h3 className="font-display font-normal text-2xl text-ink-900">
+                    {s.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-[1.85] text-ink-700">
+                    {s.body}
+                  </p>
+                </div>
               </div>
-              <div className="mt-4 h-px w-12 bg-gold-500/60 transition-all duration-700 group-hover:w-20" />
-              <h3 className="font-display font-normal text-3xl mt-7 text-ink-900 min-h-[2.5rem]">
-                {s.title}
-              </h3>
-              <p className="mt-4 text-sm leading-[1.85] text-ink-700 flex-1">
-                {s.body}
-              </p>
+            ))}
+          </div>
+
+          {/* Right — Quick inquiry form */}
+          <div id="contact" className="lg:col-span-6 reveal">
+            <div className="relative">
+              <div className="absolute -inset-6 rounded-2xl bg-gradient-to-tr from-gold-300/20 via-transparent to-gold-300/10 blur-3xl" />
+              <div className="absolute -top-2 -left-2 h-5 w-5 border-l border-t border-gold-500/60" />
+              <div className="absolute -top-2 -right-2 h-5 w-5 border-r border-t border-gold-500/60" />
+              <div className="absolute -bottom-2 -left-2 h-5 w-5 border-l border-b border-gold-500/60" />
+              <div className="absolute -bottom-2 -right-2 h-5 w-5 border-r border-b border-gold-500/60" />
+
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  alert("Thank you. The team will be in touch shortly.");
+                }}
+                className="relative bg-cream-50 text-ink-900 p-7 lg:p-9 border border-ink-900/15 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.25)]"
+              >
+                <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.3em] text-gold-600">
+                  <span>Quick Inquiry</span>
+                  <span>Vol. I · 2026</span>
+                </div>
+                <h3 className="mt-3 font-display text-2xl text-ink-900">
+                  Begin your{" "}
+                  <span className="italic font-light text-gold-600">
+                    journey.
+                  </span>
+                </h3>
+                <div className="mt-3 h-px w-12 bg-gold-500/60" />
+
+                <div className="mt-5 space-y-3">
+                  <input
+                    required
+                    placeholder="Full name"
+                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2.5 text-sm focus:outline-none focus:border-gold-500 transition"
+                  />
+                  <input
+                    required
+                    type="email"
+                    placeholder="Email address"
+                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2.5 text-sm focus:outline-none focus:border-gold-500 transition"
+                  />
+                  <div className="grid grid-cols-2 gap-3">
+                    <select
+                      value={pickup}
+                      onChange={(e) => setPickup(e.target.value)}
+                      className="rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2.5 text-sm text-ink-900 focus:outline-none focus:border-gold-500 transition appearance-none bg-no-repeat bg-right pr-9"
+                      style={{
+                        backgroundImage:
+                          "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239E7E36'><path d='M5.5 7.5l4.5 5 4.5-5z'/></svg>\")",
+                        backgroundPosition: "right 0.75rem center",
+                        backgroundSize: "1rem",
+                      }}
+                    >
+                      <option value="" disabled>
+                        Pickup
+                      </option>
+                      <optgroup label="Airports">
+                        <option>Heathrow (LHR)</option>
+                        <option>Gatwick (LGW)</option>
+                        <option>Stansted (STN)</option>
+                        <option>Luton (LTN)</option>
+                        <option>London City (LCY)</option>
+                        <option>Manchester (MAN)</option>
+                        <option>Birmingham (BHX)</option>
+                        <option>Edinburgh (EDI)</option>
+                      </optgroup>
+                      <optgroup label="London">
+                        <option>Mayfair</option>
+                        <option>Knightsbridge</option>
+                        <option>Belgravia</option>
+                        <option>Chelsea</option>
+                        <option>Kensington</option>
+                        <option>The City</option>
+                        <option>Canary Wharf</option>
+                        <option>Soho</option>
+                      </optgroup>
+                      <optgroup label="Cities">
+                        <option>Manchester</option>
+                        <option>Birmingham</option>
+                        <option>Liverpool</option>
+                        <option>Leeds</option>
+                        <option>Edinburgh</option>
+                        <option>Glasgow</option>
+                        <option>Bristol</option>
+                      </optgroup>
+                      <optgroup label="Other">
+                        <option>Hotel / Venue</option>
+                        <option>Wedding venue</option>
+                        <option>Festival / Event</option>
+                        <option>Home address</option>
+                        <option>Custom address</option>
+                      </optgroup>
+                    </select>
+                    <select
+                      value={destination}
+                      onChange={(e) => setDestination(e.target.value)}
+                      className="rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2.5 text-sm text-ink-900 focus:outline-none focus:border-gold-500 transition appearance-none bg-no-repeat bg-right pr-9"
+                      style={{
+                        backgroundImage:
+                          "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239E7E36'><path d='M5.5 7.5l4.5 5 4.5-5z'/></svg>\")",
+                        backgroundPosition: "right 0.75rem center",
+                        backgroundSize: "1rem",
+                      }}
+                    >
+                      <option value="" disabled>
+                        Destination
+                      </option>
+                      <optgroup label="Airports">
+                        <option>Heathrow (LHR)</option>
+                        <option>Gatwick (LGW)</option>
+                        <option>Stansted (STN)</option>
+                        <option>Luton (LTN)</option>
+                        <option>London City (LCY)</option>
+                        <option>Manchester (MAN)</option>
+                        <option>Birmingham (BHX)</option>
+                        <option>Edinburgh (EDI)</option>
+                      </optgroup>
+                      <optgroup label="London">
+                        <option>Mayfair</option>
+                        <option>Knightsbridge</option>
+                        <option>Belgravia</option>
+                        <option>Chelsea</option>
+                        <option>Kensington</option>
+                        <option>The City</option>
+                        <option>Canary Wharf</option>
+                        <option>Soho</option>
+                      </optgroup>
+                      <optgroup label="Cities">
+                        <option>Manchester</option>
+                        <option>Birmingham</option>
+                        <option>Liverpool</option>
+                        <option>Leeds</option>
+                        <option>Edinburgh</option>
+                        <option>Glasgow</option>
+                        <option>Bristol</option>
+                      </optgroup>
+                      <optgroup label="Other">
+                        <option>Hotel / Venue</option>
+                        <option>Wedding venue</option>
+                        <option>Festival / Event</option>
+                        <option>Custom address</option>
+                      </optgroup>
+                    </select>
+                  </div>
+
+                  {pickup === "Custom address" && (
+                    <div className="animate-fade-up rounded-lg border border-gold-500/40 bg-cream-100/60 p-4 space-y-3">
+                      <div className="text-[11px] uppercase tracking-[0.28em] text-gold-600">
+                        Pickup address
+                      </div>
+                      <input
+                        required
+                        placeholder="Street address"
+                        className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                      />
+                      <div className="grid grid-cols-2 gap-3">
+                        <input
+                          placeholder="City / Town"
+                          className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                        />
+                        <input
+                          placeholder="Postcode"
+                          className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                        />
+                      </div>
+                      <input
+                        placeholder="Notes for the driver (gate code, floor…)"
+                        className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                      />
+                    </div>
+                  )}
+
+                  {destination === "Custom address" && (
+                    <div className="animate-fade-up rounded-lg border border-gold-500/40 bg-cream-100/60 p-4 space-y-3">
+                      <div className="text-[11px] uppercase tracking-[0.28em] text-gold-600">
+                        Destination address
+                      </div>
+                      <input
+                        required
+                        placeholder="Street address"
+                        className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                      />
+                      <div className="grid grid-cols-2 gap-3">
+                        <input
+                          placeholder="City / Town"
+                          className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                        />
+                        <input
+                          placeholder="Postcode"
+                          className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                        />
+                      </div>
+                      <input
+                        placeholder="Arrival notes (entrance, contact name…)"
+                        className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                      />
+                    </div>
+                  )}
+
+                  <textarea
+                    rows="3"
+                    placeholder="A line about your journey"
+                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-3 text-sm focus:outline-none focus:border-gold-500 transition resize-none"
+                  />
+
+                  <button
+                    type="submit"
+                    className="btn-primary w-full !rounded-[15px] !px-7 !py-3 !text-xs !tracking-[0.28em]"
+                  >
+                    Send inquiry <Icon.ArrowRight className="h-3.5 w-3.5" />
+                  </button>
+                </div>
+
+                <p className="mt-4 text-[10px] uppercase tracking-[0.28em] text-ink-500 text-center">
+                  Discretion · Punctuality · Composure
+                </p>
+              </form>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
