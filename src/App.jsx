@@ -363,7 +363,7 @@ function Hero() {
           >
             <a
               href="#contact"
-              className="btn-primary !rounded-[15px] !bg-gold-400 !text-ink-900 hover:!bg-cream-50 shadow-[0_15px_35px_-10px_rgba(158,126,54,0.65)]"
+              className="btn-primary font-sans !rounded-[15px] !bg-gold-400 !text-ink-900 hover:!bg-cream-50 shadow-[0_15px_35px_-10px_rgba(158,126,54,0.65)]"
             >
               Send Inquiry <Icon.ArrowRight className="h-4 w-4" />
             </a>
