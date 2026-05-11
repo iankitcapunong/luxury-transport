@@ -246,16 +246,30 @@ function Nav() {
           </div>
         </a>
         <nav className="hidden md:flex items-center gap-10 text-[15px] uppercase tracking-[0.28em] text-white font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
-          {links.map(([label, href]) => (
-            <a
-              key={href}
-              href={href}
-              className="relative transition-colors hover:text-gold-300"
-            >
-              {label}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-400 transition-all duration-300 group-hover:w-full" />
-            </a>
-          ))}
+          {links.map(([label, href]) => {
+            const isCta = href === "#contact";
+            if (isCta) {
+              return (
+                <a
+                  key={href}
+                  href={href}
+                  className="animate-gentle-bounce inline-flex items-center rounded-[15px] bg-gold-400 px-5 py-2.5 text-[12px] tracking-[0.28em] text-ink-900 shadow-[0_12px_30px_-10px_rgba(158,126,54,0.7)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-cream-50 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-10px_rgba(158,126,54,0.85)]"
+                >
+                  {label}
+                </a>
+              );
+            }
+            return (
+              <a
+                key={href}
+                href={href}
+                className="relative transition-colors hover:text-gold-300"
+              >
+                {label}
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-400 transition-all duration-300 group-hover:w-full" />
+              </a>
+            );
+          })}
         </nav>
         <button
           onClick={() => setOpen(!open)}
