@@ -482,7 +482,7 @@ function VClassSVG() {
 }
 
 // --- How it works -----------------------------------------------------------
-function HowItWorks({ selectedService }) {
+function HowItWorks({ selectedService, onClearService }) {
   const ref = useReveal();
   const [pickup, setPickup] = useState("");
   const [destination, setDestination] = useState("");
@@ -554,19 +554,49 @@ function HowItWorks({ selectedService }) {
                 <div className="mt-3 h-px w-12 bg-gold-500/60" />
 
                 {selectedService && (
-                  <div className="animate-fade-up mt-5 flex items-center justify-between rounded-lg border border-gold-500/40 bg-gold-300/30 px-4 py-3">
-                    <div>
-                      <div className="text-[9px] uppercase tracking-[0.3em] text-gold-700">
-                        Selected service
-                      </div>
-                      <div className="mt-1 font-display text-sm text-ink-900">
-                        {selectedService}
-                      </div>
-                    </div>
-                    <span className="text-[10px] uppercase tracking-[0.28em] text-gold-700">
-                      ✓
-                    </span>
-                  </div>
+                  <nav
+                    aria-label="Breadcrumb"
+                    className="animate-fade-up mt-5 flex items-center flex-wrap gap-2 text-[11px] uppercase tracking-[0.28em]"
+                  >
+                    <a
+                      href="#services"
+                      onClick={() => onClearService && onClearService()}
+                      className="text-ink-500 hover:text-gold-600 transition-colors"
+                    >
+                      Services
+                    </a>
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="h-3 w-3 text-gold-500"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="m9 18 6-6-6-6" />
+                    </svg>
+                    <a
+                      href="#services"
+                      className="inline-flex items-center gap-2 rounded-full border border-gold-500/50 bg-gold-300/40 px-3 py-1 text-ink-900 font-medium hover:bg-gold-300/60 hover:border-gold-500 transition-all"
+                    >
+                      {selectedService}
+                      <button
+                        type="button"
+                        aria-label="Clear selected service"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          onClearService && onClearService();
+                        }}
+                        className="grid h-4 w-4 place-items-center rounded-full bg-ink-900/10 hover:bg-ink-900/30 text-ink-900 transition"
+                      >
+                        <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                          <path d="M5 5l14 14M19 5L5 19" />
+                        </svg>
+                      </button>
+                    </a>
+                  </nav>
                 )}
 
                 <div className="mt-5 space-y-3">
@@ -1278,7 +1308,10 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <HowItWorks selectedService={selectedService} />
+        <HowItWorks
+          selectedService={selectedService}
+          onClearService={() => setSelectedService(null)}
+        />
         <SocialProof />
         <Services onSelect={setSelectedService} />
         <Testimonials />
