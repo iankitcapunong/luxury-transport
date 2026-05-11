@@ -915,27 +915,29 @@ function Services() {
                         <a
                           href="#contact"
                           className="group relative flex flex-col h-full min-h-[440px] cursor-pointer
-                                     rounded-[20px] border border-ink-900/15 bg-transparent p-7
+                                     rounded-[20px] border border-gold-500/40 bg-gold-300 p-7
+                                     shadow-[0_20px_45px_-15px_rgba(122,94,32,0.55)]
                                      transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
-                                     hover:-translate-y-2 hover:scale-[1.02] hover:z-10
-                                     hover:border-gold-500
+                                     hover:-translate-y-3 hover:scale-[1.02] hover:z-10
+                                     hover:bg-gold-400 hover:border-gold-600
+                                     hover:shadow-[0_40px_80px_-18px_rgba(122,94,32,0.75)]
                                      focus:outline-none focus:ring-1 focus:ring-gold-400/50"
                         >
                           <div className="flex items-start justify-between">
-                            <I className="h-7 w-7 text-gold-500 transition-all duration-700 group-hover:-translate-y-1" />
-                            <span className="font-display italic font-light text-xl text-gold-500/70">
+                            <I className="h-7 w-7 text-ink-900 transition-all duration-700 group-hover:-translate-y-1" />
+                            <span className="font-display italic font-light text-xl text-ink-900/60">
                               {String(i + 1).padStart(2, "0")}
                             </span>
                           </div>
-                          <div className="mt-7 h-px w-12 bg-gold-500/60 transition-all duration-700 group-hover:w-20" />
+                          <div className="mt-7 h-px w-12 bg-ink-900/40 transition-all duration-700 group-hover:w-20" />
                           <h3 className="font-display font-normal text-2xl mt-5 text-ink-900 leading-tight">
                             {t}
                           </h3>
-                          <p className="mt-4 text-[13px] text-ink-700 leading-[1.8] flex-1">
+                          <p className="mt-4 text-[13px] text-ink-800 leading-[1.8] flex-1">
                             {d}
                           </p>
-                          <div className="mt-7 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-gold-600">
-                            <span className="border-b border-transparent group-hover:border-gold-500 transition-colors duration-700">
+                          <div className="mt-7 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-ink-900">
+                            <span className="border-b border-transparent group-hover:border-ink-900 transition-colors duration-700">
                               Book Now
                             </span>
                             <Icon.ArrowRight className="h-3.5 w-3.5 transition-transform duration-700 group-hover:translate-x-1.5" />
@@ -1022,6 +1024,12 @@ function Services() {
 // --- Testimonials -----------------------------------------------------------
 function Testimonials() {
   const ref = useReveal();
+  const stats = [
+    { k: "97%", t: "Repeat clients" },
+    { k: "20+", t: "Years on the road" },
+    { k: "12hr", t: "Quote turnaround" },
+    { k: "24/7", t: "Dispatch" },
+  ];
   const quotes = [
     {
       q: "“They moved an artist from a sold-out show to a private dinner in twenty minutes, and you wouldn't have known either was happening. Exactly what we needed.”",
@@ -1092,6 +1100,21 @@ function Testimonials() {
           ))}
         </div>
 
+        {/* Stat banner — static, non-clickable */}
+        <div className="reveal mt-24 rounded-[20px] border border-ink-900/10 bg-cream-50 overflow-hidden shadow-[0_18px_40px_-14px_rgba(0,0,0,0.25)]">
+          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-ink-900/10">
+            {stats.map((s) => (
+              <div key={s.k} className="px-6 py-9 text-center">
+                <div className="font-display italic font-light text-5xl text-gold-500">
+                  {s.k}
+                </div>
+                <div className="mt-3 text-[10px] uppercase tracking-[0.28em] text-ink-700">
+                  {s.t}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
