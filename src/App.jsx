@@ -579,13 +579,13 @@ function HowItWorks() {
                   <input
                     required
                     placeholder="Full name"
-                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2.5 text-sm focus:outline-none focus:border-gold-500 transition"
+                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2.5 text-sm placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition"
                   />
                   <input
                     required
                     type="email"
                     placeholder="Email address"
-                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2.5 text-sm focus:outline-none focus:border-gold-500 transition"
+                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2.5 text-sm placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition"
                   />
                   <div className="grid grid-cols-2 gap-3">
                     <input
@@ -593,7 +593,7 @@ function HowItWorks() {
                       type="tel"
                       placeholder="Phone number"
                       pattern="[0-9+\s()-]{7,}"
-                      className="rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2.5 text-sm focus:outline-none focus:border-gold-500 transition"
+                      className="rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2.5 text-sm placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition"
                     />
                     <input
                       required
@@ -714,21 +714,21 @@ function HowItWorks() {
                       <input
                         required
                         placeholder="Street address"
-                        className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                        className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition"
                       />
                       <div className="grid grid-cols-2 gap-3">
                         <input
                           placeholder="City / Town"
-                          className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                          className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition"
                         />
                         <input
                           placeholder="Postcode"
-                          className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                          className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition"
                         />
                       </div>
                       <input
                         placeholder="Notes for the driver (gate code, floor…)"
-                        className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                        className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition"
                       />
                     </div>
                   )}
@@ -741,21 +741,21 @@ function HowItWorks() {
                       <input
                         required
                         placeholder="Street address"
-                        className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                        className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition"
                       />
                       <div className="grid grid-cols-2 gap-3">
                         <input
                           placeholder="City / Town"
-                          className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                          className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition"
                         />
                         <input
                           placeholder="Postcode"
-                          className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                          className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition"
                         />
                       </div>
                       <input
                         placeholder="Arrival notes (entrance, contact name…)"
-                        className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                        className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition"
                       />
                     </div>
                   )}
@@ -763,7 +763,7 @@ function HowItWorks() {
                   <textarea
                     rows="3"
                     placeholder="A line about your journey"
-                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-3 text-sm focus:outline-none focus:border-gold-500 transition resize-none"
+                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-3 text-sm placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition resize-none"
                   />
 
                   <button
