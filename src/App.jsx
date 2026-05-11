@@ -488,19 +488,19 @@ function HowItWorks() {
   const [destination, setDestination] = useState("");
   const steps = [
     {
-      n: "01",
+      n: "1.",
       title: "Inquiry",
       body: "Submit your details through the booking form, by phone, or by email. We hold your preferred time the moment we hear from you.",
     },
     {
-      n: "02",
+      n: "2.",
       title: "Speak to Desk",
-      body: "Our concierge contacts you within the hour to confirm the journey, your chauffeur, and the proposed route. Adjustments welcomed up to two hours before pickup.",
+      body: "Our concierge confirms your journey, chauffeur, and route within the hour. Adjustments welcomed up to two hours before pickup.",
     },
     {
-      n: "03",
+      n: "3.",
       title: "Wait for Vehicle",
-      body: "Your chauffeur arrives thirty minutes early and waits quietly at the kerb. You step in, we depart, and you arrive composed.",
+      body: "Your chauffeur arrives thirty minutes early and waits at the kerb. Step in, depart, and arrive composed.",
     },
   ];
 
