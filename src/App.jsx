@@ -323,7 +323,7 @@ function Hero() {
       <div className="pointer-events-none absolute -bottom-48 -left-48 h-[36rem] w-[36rem] rounded-full bg-ink-900/10 blur-[120px] z-0" />
 
       {/* vertical edition stamp */}
-      <div className="hidden xl:block pointer-events-none absolute left-6 top-1/2 -translate-y-1/2 v-text text-[10px] uppercase tracking-[0.4em] text-ink-700/80 z-10">
+      <div className="hidden xl:block pointer-events-none absolute left-6 top-1/2 -translate-y-1/2 v-text text-[10px] uppercase tracking-[0.4em] text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)] z-10">
         Edition MMXXVI · Vol. I
       </div>
 
