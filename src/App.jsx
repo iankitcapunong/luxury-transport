@@ -890,8 +890,8 @@ function Services() {
               key={t}
               href="#contact"
               className="group relative flex flex-col h-full min-h-[500px] overflow-hidden
-                         rounded-[20px] border border-ink-900/15 bg-white p-9
-                         shadow-[0_24px_50px_-18px_rgba(0,0,0,0.25)]
+                         rounded-[20px] border border-gold-500/30 bg-[#3c2f1c] text-cream-50 p-9
+                         shadow-[0_24px_50px_-18px_rgba(0,0,0,0.45)]
                          transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
                          hover:-translate-y-3 hover:scale-[1.02]
                          hover:border-gold-500
@@ -902,36 +902,36 @@ function Services() {
 
               <div className="relative flex items-start justify-between">
                 <div className="flex items-center gap-3">
-                  <I className="h-7 w-7 text-gold-500 transition-transform duration-700 group-hover:-translate-y-1" />
-                  <span className="h-px w-3 bg-gold-500/60 transition-all duration-700 group-hover:w-6" />
-                  <I2 className="h-7 w-7 text-gold-500 transition-transform duration-700 group-hover:-translate-y-1" />
+                  <I className="h-7 w-7 text-gold-400 transition-transform duration-700 group-hover:-translate-y-1" />
+                  <span className="h-px w-3 bg-gold-400/70 transition-all duration-700 group-hover:w-6" />
+                  <I2 className="h-7 w-7 text-gold-400 transition-transform duration-700 group-hover:-translate-y-1" />
                 </div>
-                <span className="font-display italic font-light text-xl text-mask-gold">
+                <span className="font-display italic font-light text-xl text-mask-gold-bright">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
-              <div className="relative mt-8 h-px w-12 bg-gold-500/60 transition-all duration-700 group-hover:w-24" />
-              <h3 className="relative font-display font-normal text-2xl mt-6 leading-tight text-mask-ink">
+              <div className="relative mt-8 h-px w-12 bg-gold-400/70 transition-all duration-700 group-hover:w-24" />
+              <h3 className="relative font-display font-normal text-2xl mt-6 leading-tight text-mask-gold-bright">
                 {t}
               </h3>
-              <p className="relative mt-4 text-[15px] text-ink-700 leading-[1.8] flex-1">
+              <p className="relative mt-4 text-[15px] text-cream-100/85 leading-[1.8] flex-1">
                 {d}
               </p>
               <div className="relative mt-7 flex flex-wrap gap-2">
                 {tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-[10px] uppercase tracking-[0.28em] text-mask-gold border border-gold-500/40 rounded-full px-3 py-1 transition-colors duration-700 group-hover:border-gold-500"
+                    className="text-[10px] uppercase tracking-[0.28em] text-mask-gold-bright border border-gold-400/40 rounded-full px-3 py-1 transition-colors duration-700 group-hover:border-gold-400"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-              <div className="relative mt-8 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-ink-900">
-                <span className="border-b border-gold-500 group-hover:text-mask-gold transition-colors duration-700">
+              <div className="relative mt-8 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-cream-50">
+                <span className="border-b border-gold-400 group-hover:text-mask-gold-bright transition-colors duration-700">
                   Book Now
                 </span>
-                <Icon.ArrowRight className="h-3.5 w-3.5 text-gold-600 transition-transform duration-700 group-hover:translate-x-1.5" />
+                <Icon.ArrowRight className="h-3.5 w-3.5 text-gold-400 transition-transform duration-700 group-hover:translate-x-1.5" />
               </div>
             </a>
           ))}
