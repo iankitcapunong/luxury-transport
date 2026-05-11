@@ -340,7 +340,7 @@ function Hero() {
           </h1>
           <div className="reveal mt-8 flex items-start gap-4 max-w-xl">
             <span className="mt-3 h-px w-8 bg-gold-400 shrink-0" />
-            <p className="text-base sm:text-lg text-white leading-relaxed font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
+            <p className="text-base sm:text-lg text-white leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
               A private chauffeur house, fluent in the small things: the
               chilled water, the unspoken route, the door already open.
             </p>
@@ -351,7 +351,7 @@ function Hero() {
               href="#contact"
               className="btn-primary !rounded-[15px] !bg-gold-400 !text-ink-900 hover:!bg-cream-50"
             >
-              Book Now <Icon.ArrowRight className="h-4 w-4" />
+              Send Inquiry <Icon.ArrowRight className="h-4 w-4" />
             </a>
           </div>
 
