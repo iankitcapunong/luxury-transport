@@ -905,42 +905,42 @@ function Services() {
                   </div>
                 </div>
 
-                <div className="overflow-hidden -mx-4">
+                <div className="overflow-hidden -mx-[12.5px]">
                   <div
                     className="flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
                     style={{ transform: `translateX(-${slide * (100 / 3)}%)` }}
                   >
                     {items.map(({ icon: I, t, d }, i) => (
-                      <div key={t} className="flex-none w-full sm:w-1/2 lg:w-1/3 px-4">
+                      <div key={t} className="flex-none w-full sm:w-1/2 lg:w-1/3 px-[12.5px]">
                         <a
                           href="#contact"
-                          className="group relative flex flex-col h-full min-h-[560px] cursor-pointer
-                                     rounded-[20px] border-[5px] border-solid border-black bg-cream-50 p-10
-                                     shadow-[0_18px_40px_-14px_rgba(0,0,0,0.5)]
+                          className="group relative flex flex-col h-full min-h-[440px] cursor-pointer
+                                     rounded-[20px] border border-ink-900/15 bg-cream-50 p-7
+                                     shadow-[0_15px_35px_-12px_rgba(0,0,0,0.4)]
                                      transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
-                                     hover:-translate-y-3 hover:scale-[1.02] hover:z-10
-                                     hover:bg-cream-100
-                                     hover:shadow-[0_40px_80px_-18px_rgba(0,0,0,0.7)]
+                                     hover:-translate-y-2 hover:scale-[1.02] hover:z-10
+                                     hover:bg-cream-100 hover:border-gold-500
+                                     hover:shadow-[0_30px_60px_-18px_rgba(0,0,0,0.55)]
                                      focus:outline-none focus:ring-1 focus:ring-gold-400/50"
                         >
                           <div className="flex items-start justify-between">
-                            <I className="h-9 w-9 text-gold-500 transition-all duration-700 group-hover:-translate-y-1" />
-                            <span className="font-display italic font-light text-2xl text-gold-500/70">
+                            <I className="h-7 w-7 text-gold-500 transition-all duration-700 group-hover:-translate-y-1" />
+                            <span className="font-display italic font-light text-xl text-gold-500/70">
                               {String(i + 1).padStart(2, "0")}
                             </span>
                           </div>
-                          <div className="mt-10 h-px w-14 bg-gold-500/60 transition-all duration-700 group-hover:w-24" />
-                          <h3 className="font-display font-normal text-3xl mt-7 text-ink-900 leading-tight">
+                          <div className="mt-7 h-px w-12 bg-gold-500/60 transition-all duration-700 group-hover:w-20" />
+                          <h3 className="font-display font-normal text-2xl mt-5 text-ink-900 leading-tight">
                             {t}
                           </h3>
-                          <p className="mt-5 text-sm text-ink-700 leading-[1.85] flex-1">
+                          <p className="mt-4 text-[13px] text-ink-700 leading-[1.8] flex-1">
                             {d}
                           </p>
-                          <div className="mt-10 flex items-center gap-2 text-[11px] uppercase tracking-[0.34em] text-gold-600">
+                          <div className="mt-7 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-gold-600">
                             <span className="border-b border-transparent group-hover:border-gold-500 transition-colors duration-700">
                               Book Now
                             </span>
-                            <Icon.ArrowRight className="h-4 w-4 transition-transform duration-700 group-hover:translate-x-1.5" />
+                            <Icon.ArrowRight className="h-3.5 w-3.5 transition-transform duration-700 group-hover:translate-x-1.5" />
                           </div>
                         </a>
                       </div>
