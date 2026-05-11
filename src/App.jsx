@@ -223,7 +223,7 @@ function Nav() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-cream-50/85 backdrop-blur-md border-b border-ink-900/10 shadow-[0_8px_30px_-15px_rgba(0,0,0,0.15)]"
+          ? "bg-ink-900/80 backdrop-blur-md border-b border-white/10 shadow-[0_8px_30px_-15px_rgba(0,0,0,0.45)]"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -233,43 +233,43 @@ function Nav() {
         }`}
       >
         <a href="#top" className="flex items-center gap-4">
-          <span className="grid h-10 w-10 place-items-center rounded-full border border-gold-400/70 text-gold-500 font-display italic text-[18px]">
+          <span className="grid h-10 w-10 place-items-center rounded-full border border-gold-400/70 text-gold-400 font-display italic text-[18px] font-bold">
             L
           </span>
           <div className="leading-tight">
-            <div className="font-display tracking-wide text-ink-900 text-[18px]">
+            <div className="font-display tracking-wide text-white text-[18px] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
               Luxury Transport
             </div>
-            <div className="uppercase tracking-[0.34em] text-ink-500 mt-1 text-[18px]">
+            <div className="uppercase tracking-[0.34em] text-white mt-1 text-[18px] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
               Private Chauffeur · UK
             </div>
           </div>
         </a>
-        <nav className="hidden md:flex items-center gap-10 text-[11px] uppercase tracking-[0.28em] text-ink-700">
+        <nav className="hidden md:flex items-center gap-10 text-[11px] uppercase tracking-[0.28em] text-white font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
           {links.map(([label, href]) => (
             <a
               key={href}
               href={href}
-              className="relative transition-colors hover:text-gold-600"
+              className="relative transition-colors hover:text-gold-300"
             >
               {label}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-500 transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-400 transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </nav>
         <button
           onClick={() => setOpen(!open)}
           aria-label="Menu"
-          className="md:hidden grid h-10 w-10 place-items-center rounded-full border border-ink-900/15"
+          className="md:hidden grid h-10 w-10 place-items-center rounded-full border border-white/30"
         >
           <div className="space-y-1.5">
-            <span className="block h-px w-5 bg-ink-900" />
-            <span className="block h-px w-5 bg-ink-900" />
+            <span className="block h-px w-5 bg-white" />
+            <span className="block h-px w-5 bg-white" />
           </div>
         </button>
       </div>
       {open && (
-        <div className="md:hidden border-t border-ink-900/10 bg-cream-50/95 backdrop-blur">
+        <div className="md:hidden border-t border-white/10 bg-ink-900/95 backdrop-blur text-white">
           <div className="container-x py-4 flex flex-col gap-3">
             {links.map(([l, h]) => (
               <a
