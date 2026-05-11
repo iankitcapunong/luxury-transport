@@ -492,6 +492,10 @@ function HowItWorks({ selectedService, onSelectService }) {
     "Weddings & Group Travel",
   ];
 
+  const defaultServiceTitle = "A Private Chauffeur House";
+  const defaultServiceCopy =
+    "Every journey begins with a luxury chauffeur — uniformed, DBS-checked, NDA-bound, and trained for the quiet things: the chilled water, the door already open, the unspoken route. Choose a service above and the inquiry adjusts itself to suit the journey.";
+
   const serviceDescriptions = {
     "Airport & Long-Distance":
       "A private chauffeur greets you airside, tracks your flight and waits with bottled water, hot towels and a calm boot. For the miles ahead, our luxury Mercedes hires arrive with champagne, refrigerator and reclining leather — a hotel suite that happens to be moving.",
@@ -697,56 +701,107 @@ function HowItWorks({ selectedService, onSelectService }) {
         {/* Quick inquiry form — fixed in the right column, description animates in/out on the left */}
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start max-w-5xl mx-auto">
           <div className="lg:pt-6 min-h-[1px]">
-          {displayService && (
-            <div
-              key={isExiting ? "exit" : displayService}
-              className={`${isExiting ? "animate-fade-down pointer-events-none" : "animate-fade-up"}`}
-            >
-              <div className="eyebrow flex items-center gap-3">
-                <span className="hairline" /> Selected Service
-              </div>
-              <h3
-                className="font-display text-3xl mt-4 text-mask-gold"
-                style={
-                  isExiting
-                    ? undefined
-                    : { animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "120ms" }
-                }
-              >
-                {displayService}
-              </h3>
+            {displayService ? (
               <div
-                className="mt-4 h-px w-12 bg-gold-500/60"
-                style={
+                key={isExiting ? "exit" : displayService}
+                className={`${
                   isExiting
-                    ? undefined
-                    : { animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "200ms" }
-                }
-              />
-              <p
-                className="mt-5 text-ink-700 leading-relaxed italic font-light"
-                style={
-                  isExiting
-                    ? undefined
-                    : { animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "280ms" }
-                }
+                    ? "animate-fade-down pointer-events-none"
+                    : "animate-fade-up"
+                }`}
               >
-                {serviceDescriptions[displayService]}
-              </p>
-              <button
-                type="button"
-                onClick={() => onSelectService && onSelectService(null)}
-                className="mt-6 text-[10px] uppercase tracking-[0.28em] text-gold-600 hover:text-gold-700 underline underline-offset-4 decoration-gold-500/60 transition-colors"
-                style={
-                  isExiting
-                    ? undefined
-                    : { animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "400ms" }
-                }
-              >
-                Clear selection
-              </button>
-            </div>
-          )}
+                <div className="eyebrow flex items-center gap-3">
+                  <span className="hairline" /> Selected Service
+                </div>
+                <h3
+                  className="font-display text-3xl mt-4 text-mask-gold"
+                  style={
+                    isExiting
+                      ? undefined
+                      : {
+                          animation:
+                            "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both",
+                          animationDelay: "120ms",
+                        }
+                  }
+                >
+                  {displayService}
+                </h3>
+                <div
+                  className="mt-4 h-px w-12 bg-gold-500/60"
+                  style={
+                    isExiting
+                      ? undefined
+                      : {
+                          animation:
+                            "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both",
+                          animationDelay: "200ms",
+                        }
+                  }
+                />
+                <p
+                  className="mt-5 text-ink-700 leading-relaxed italic font-light"
+                  style={
+                    isExiting
+                      ? undefined
+                      : {
+                          animation:
+                            "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both",
+                          animationDelay: "280ms",
+                        }
+                  }
+                >
+                  {serviceDescriptions[displayService]}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => onSelectService && onSelectService(null)}
+                  className="mt-6 text-[10px] uppercase tracking-[0.28em] text-gold-600 hover:text-gold-700 underline underline-offset-4 decoration-gold-500/60 transition-colors"
+                  style={
+                    isExiting
+                      ? undefined
+                      : {
+                          animation:
+                            "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both",
+                          animationDelay: "400ms",
+                        }
+                  }
+                >
+                  Clear selection
+                </button>
+              </div>
+            ) : (
+              <div key="default" className="animate-fade-up">
+                <div className="eyebrow flex items-center gap-3">
+                  <span className="hairline" /> Our Service
+                </div>
+                <h3
+                  className="font-display text-3xl mt-4 text-mask-gold"
+                  style={{
+                    animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both",
+                    animationDelay: "120ms",
+                  }}
+                >
+                  {defaultServiceTitle}
+                </h3>
+                <div
+                  className="mt-4 h-px w-12 bg-gold-500/60"
+                  style={{
+                    animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both",
+                    animationDelay: "200ms",
+                  }}
+                />
+                <p
+                  className="mt-5 text-ink-700 leading-relaxed italic font-light"
+                  style={{
+                    animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both",
+                    animationDelay: "280ms",
+                  }}
+                >
+                  {defaultServiceCopy}
+                </p>
+              </div>
+            )}
           </div>
           <div id="contact" className="reveal w-full lg:max-w-md lg:ml-auto">
             <div className="relative">
