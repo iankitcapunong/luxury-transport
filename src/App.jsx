@@ -494,7 +494,7 @@ function HowItWorks({ selectedService, onSelectService }) {
 
   const defaultServiceTitle = "A Private Chauffeur House";
   const defaultServiceCopy =
-    "Every journey begins with a luxury chauffeur — uniformed, DBS-checked, NDA-bound, and trained for the quiet things: the chilled water, the door already open, the unspoken route. Choose a service above and the inquiry adjusts itself to suit the journey.";
+    "Every journey begins with a luxury chauffeur, uniformed, DBS-checked, NDA-bound, and trained for the quiet things: the chilled water, the door already open, the unspoken route. Choose a service above and the inquiry adjusts itself to suit the journey.";
 
   const serviceDescriptions = {
     "Airport & Long-Distance":
