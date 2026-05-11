@@ -636,12 +636,20 @@ function HowItWorks({ selectedService, onClearService }) {
                       <option value="" disabled>
                         Pickup
                       </option>
-                      <optgroup label="London Airports">
-                        <option>Heathrow (LHR)</option>
-                        <option>Gatwick (LGW)</option>
-                        <option>Stansted (STN)</option>
-                        <option>Luton (LTN)</option>
-                        <option>London City (LCY)</option>
+                      <optgroup label="Mayfair Airports">
+                        <option>Heathrow (LHR) · Mayfair</option>
+                        <option>London City (LCY) · Mayfair</option>
+                        <option>Gatwick (LGW) · Mayfair</option>
+                      </optgroup>
+                      <optgroup label="Knightsbridge Airports">
+                        <option>Heathrow (LHR) · Knightsbridge</option>
+                        <option>London City (LCY) · Knightsbridge</option>
+                        <option>Gatwick (LGW) · Knightsbridge</option>
+                      </optgroup>
+                      <optgroup label="Belgravia Airports">
+                        <option>Heathrow (LHR) · Belgravia</option>
+                        <option>London City (LCY) · Belgravia</option>
+                        <option>Gatwick (LGW) · Belgravia</option>
                       </optgroup>
                       <optgroup label="London Areas">
                         <option>Mayfair</option>
@@ -662,6 +670,9 @@ function HowItWorks({ selectedService, onClearService }) {
                       <optgroup label="Belgravia Hotels">
                         <option>The Lanesborough</option>
                         <option>The Goring</option>
+                      </optgroup>
+                      <optgroup label="Other">
+                        <option>Custom address</option>
                       </optgroup>
                     </select>
                     <select
@@ -678,12 +689,20 @@ function HowItWorks({ selectedService, onClearService }) {
                       <option value="" disabled>
                         Destination
                       </option>
-                      <optgroup label="London Airports">
-                        <option>Heathrow (LHR)</option>
-                        <option>Gatwick (LGW)</option>
-                        <option>Stansted (STN)</option>
-                        <option>Luton (LTN)</option>
-                        <option>London City (LCY)</option>
+                      <optgroup label="Mayfair Airports">
+                        <option>Heathrow (LHR) · Mayfair</option>
+                        <option>London City (LCY) · Mayfair</option>
+                        <option>Gatwick (LGW) · Mayfair</option>
+                      </optgroup>
+                      <optgroup label="Knightsbridge Airports">
+                        <option>Heathrow (LHR) · Knightsbridge</option>
+                        <option>London City (LCY) · Knightsbridge</option>
+                        <option>Gatwick (LGW) · Knightsbridge</option>
+                      </optgroup>
+                      <optgroup label="Belgravia Airports">
+                        <option>Heathrow (LHR) · Belgravia</option>
+                        <option>London City (LCY) · Belgravia</option>
+                        <option>Gatwick (LGW) · Belgravia</option>
                       </optgroup>
                       <optgroup label="London Areas">
                         <option>Mayfair</option>
@@ -704,6 +723,9 @@ function HowItWorks({ selectedService, onClearService }) {
                       <optgroup label="Belgravia Hotels">
                         <option>The Lanesborough</option>
                         <option>The Goring</option>
+                      </optgroup>
+                      <optgroup label="Other">
+                        <option>Custom address</option>
                       </optgroup>
                     </select>
                   </div>
