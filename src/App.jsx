@@ -351,7 +351,7 @@ function Hero() {
             style={{ transitionDelay: "450ms" }}
           >
             <span className="mt-3 h-px w-8 bg-gold-400 shrink-0" />
-            <p className="text-[20px] text-white leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
+            <p className="text-[22px] text-white leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
               A private chauffeur house, fluent in the small things: the
               chilled water, the unspoken route, the door already open.
             </p>
@@ -386,7 +386,7 @@ function Hero() {
                 <div className="font-display italic font-light text-2xl text-gold-400 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
                   {k}
                 </div>
-                <div className="mt-2 text-[10px] uppercase tracking-[0.28em] text-white font-bold leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
+                <div className="mt-2 text-[12px] uppercase tracking-[0.28em] text-white font-bold leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
                   {v}
                 </div>
               </div>
