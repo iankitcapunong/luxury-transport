@@ -330,7 +330,7 @@ function Hero() {
       <div className="container-x relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center font-cormorant">
         <div className="lg:col-span-6">
           <div
-            className="reveal eyebrow flex items-center gap-3 !text-white font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]"
+            className="reveal eyebrow !text-[13px] flex items-center gap-3 !text-white font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]"
             style={{ transitionDelay: "100ms" }}
           >
             <span className="h-px w-14 bg-white" /> Est. London · Serving the
@@ -351,7 +351,7 @@ function Hero() {
             style={{ transitionDelay: "450ms" }}
           >
             <span className="mt-3 h-px w-8 bg-gold-400 shrink-0" />
-            <p className="text-base sm:text-lg text-white leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
+            <p className="text-[20px] text-white leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
               A private chauffeur house, fluent in the small things: the
               chilled water, the unspoken route, the door already open.
             </p>
