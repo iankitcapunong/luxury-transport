@@ -306,7 +306,7 @@ function Hero() {
       ref={ref}
       className="relative overflow-hidden pt-36 pb-28 lg:pt-44 lg:pb-36"
     >
-      {/* Background video */}
+      {/* Background video — clear, no overlay */}
       <div className="pointer-events-none absolute inset-0 z-0 bg-ink-900">
         <video
           src="/merc.mp4"
@@ -318,12 +318,6 @@ function Hero() {
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        {/* Cream / beige veil — 20% opacity over the whole image */}
-        <div className="absolute inset-0 bg-cream-50 opacity-[0.20]" />
-        {/* Stronger cream/beige fade on the sides for readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-cream-50/85 via-cream-50/15 to-cream-50/85" />
-        {/* Soft top/bottom fade so the marquee + nav blend */}
-        <div className="absolute inset-0 bg-gradient-to-b from-cream-50/40 via-transparent to-cream-50/60" />
       </div>
 
       {/* atmospheric light wash */}
@@ -338,17 +332,19 @@ function Hero() {
       <div className="container-x relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         <div className="lg:col-span-6">
           <div className="reveal eyebrow flex items-center gap-3 !text-black font-bold drop-shadow-[0_1px_2px_rgba(245,236,214,0.7)]">
-            <span className="h-px w-14 bg-black" /> Est. London · Serving the United Kingdom
+            <span className="h-px w-14 bg-black" /> Est. London · Serving the
+            United Kingdom
           </div>
           <h1 className="reveal h-display mt-8 text-[60px] leading-[1.05]">
-            Arrive<br />
+            Arrive
+            <br />
             <span className="italic font-light text-gold-500">composed.</span>
           </h1>
           <div className="reveal mt-8 flex items-start gap-4 max-w-xl">
             <span className="mt-3 h-px w-8 bg-gold-500 shrink-0" />
             <p className="text-base sm:text-lg text-black leading-relaxed font-bold drop-shadow-[0_1px_2px_rgba(245,236,214,0.7)]">
-              A private chauffeur house, fluent in the small things —
-              the chilled water, the unspoken route, the door already open.
+              A private chauffeur house, fluent in the small things — the
+              chilled water, the unspoken route, the door already open.
             </p>
           </div>
 
@@ -880,7 +876,9 @@ function Services() {
               <h3 className="font-display font-normal text-2xl mt-5 text-ink-900 leading-tight">
                 {t}
               </h3>
-              <p className="mt-3 text-[13px] text-ink-700 leading-[1.75]">{d}</p>
+              <p className="mt-3 text-[13px] text-ink-700 leading-[1.75]">
+                {d}
+              </p>
               <div className="mt-7 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-gold-600">
                 <span className="border-b border-transparent group-hover:border-gold-500 transition-colors duration-700">
                   Reserve this journey
