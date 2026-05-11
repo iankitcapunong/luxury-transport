@@ -228,7 +228,7 @@ function Nav() {
       }`}
     >
       <div
-        className={`container-x flex items-center justify-between transition-all duration-300 ${
+        className={`container-x flex items-center justify-between font-cormorant transition-all duration-300 ${
           scrolled ? "py-3" : "py-6"
         }`}
       >
@@ -327,7 +327,7 @@ function Hero() {
         Edition MMXXVI · Vol. I
       </div>
 
-      <div className="container-x relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center font-playfair">
+      <div className="container-x relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center font-cormorant">
         <div className="lg:col-span-6">
           <div
             className="reveal eyebrow flex items-center gap-3 !text-white font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]"
@@ -337,12 +337,12 @@ function Hero() {
             United Kingdom
           </div>
           <h1
-            className="reveal h-display !font-playfair mt-8 text-[60px] leading-[1.05] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
+            className="reveal h-display !font-cormorant mt-8 text-[60px] leading-[1.05] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
             style={{ transitionDelay: "250ms" }}
           >
             Arrive
             <br />
-            <span className="italic font-light text-gold-400 font-playfair">
+            <span className="italic font-light text-gold-400 font-cormorant">
               composed.
             </span>
           </h1>

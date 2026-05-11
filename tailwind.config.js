@@ -8,6 +8,7 @@ export default {
         display: ['Poppins', 'system-ui', 'sans-serif'],
         sans: ['Poppins', 'system-ui', 'sans-serif'],
         playfair: ['"DM Serif Display"', 'Georgia', 'serif'],
+        cormorant: ['"Cormorant Garamond"', 'Georgia', 'serif'],
       },
       colors: {
         cream: {
