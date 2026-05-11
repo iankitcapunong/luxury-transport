@@ -329,16 +329,25 @@ function Hero() {
 
       <div className="container-x relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         <div className="lg:col-span-6">
-          <div className="reveal eyebrow flex items-center gap-3 !text-white font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
+          <div
+            className="reveal eyebrow flex items-center gap-3 !text-white font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]"
+            style={{ transitionDelay: "100ms" }}
+          >
             <span className="h-px w-14 bg-white" /> Est. London · Serving the
             United Kingdom
           </div>
-          <h1 className="reveal h-display mt-8 text-[60px] leading-[1.05] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
+          <h1
+            className="reveal h-display mt-8 text-[60px] leading-[1.05] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
+            style={{ transitionDelay: "250ms" }}
+          >
             Arrive
             <br />
             <span className="italic font-light text-gold-400">composed.</span>
           </h1>
-          <div className="reveal mt-8 flex items-start gap-4 max-w-xl">
+          <div
+            className="reveal mt-8 flex items-start gap-4 max-w-xl"
+            style={{ transitionDelay: "450ms" }}
+          >
             <span className="mt-3 h-px w-8 bg-gold-400 shrink-0" />
             <p className="text-base sm:text-lg text-white leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
               A private chauffeur house, fluent in the small things: the
@@ -346,22 +355,32 @@ function Hero() {
             </p>
           </div>
 
-          <div className="reveal mt-8 ml-12">
+          <div
+            className="reveal mt-8 ml-12 inline-block animate-gentle-bounce"
+            style={{ transitionDelay: "650ms" }}
+          >
             <a
               href="#contact"
-              className="btn-primary !rounded-[15px] !bg-gold-400 !text-ink-900 hover:!bg-cream-50"
+              className="btn-primary !rounded-[15px] !bg-gold-400 !text-ink-900 hover:!bg-cream-50 shadow-[0_15px_35px_-10px_rgba(158,126,54,0.65)]"
             >
               Send Inquiry <Icon.ArrowRight className="h-4 w-4" />
             </a>
           </div>
 
-          <div className="reveal mt-12 grid grid-cols-3 max-w-md gap-y-4 gap-x-8 border-t border-white/40 pt-8">
+          <div
+            className="reveal mt-12 grid grid-cols-3 max-w-md gap-y-4 gap-x-8 border-t border-white/40 pt-8"
+            style={{ transitionDelay: "850ms" }}
+          >
             {[
               ["i.", "Twenty-four hour dispatch"],
               ["ii.", "All United Kingdom airports"],
               ["iii.", "Discretion as standard"],
-            ].map(([k, v]) => (
-              <div key={k} className="flex flex-col">
+            ].map(([k, v], i) => (
+              <div
+                key={k}
+                className="reveal flex flex-col"
+                style={{ transitionDelay: `${1000 + i * 120}ms` }}
+              >
                 <div className="font-display italic font-light text-2xl text-gold-400 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
                   {k}
                 </div>
