@@ -561,7 +561,7 @@ function HowItWorks() {
                   e.preventDefault();
                   alert("Thank you. The team will be in touch shortly.");
                 }}
-                className="relative bg-cream-50 text-ink-900 p-7 lg:p-9 border border-gold-500/40 rounded-[20px] shadow-[0_30px_70px_-15px_rgba(158,126,54,0.55),0_8px_24px_-10px_rgba(158,126,54,0.45)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-[0_50px_100px_-20px_rgba(158,126,54,0.7),0_10px_30px_-10px_rgba(158,126,54,0.55)]"
+                className="relative bg-beige-50 text-ink-900 p-7 lg:p-9 border border-gold-500/40 rounded-[20px] shadow-[0_30px_70px_-15px_rgba(158,126,54,0.55),0_8px_24px_-10px_rgba(158,126,54,0.45)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-[0_50px_100px_-20px_rgba(158,126,54,0.7),0_10px_30px_-10px_rgba(158,126,54,0.55)]"
               >
                 <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.3em] text-gold-600">
                   <span>Quick Inquiry</span>
