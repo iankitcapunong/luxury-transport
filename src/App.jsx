@@ -1121,13 +1121,13 @@ function CTA() {
         <div className="reveal mt-12 flex flex-wrap items-center justify-center gap-4">
           <a
             href="mailto:bookings@luxurytransport.co.uk"
-            className="btn-primary !bg-gold-400 !text-ink-900 hover:!bg-cream-50"
+            className="btn-primary !rounded-[15px] !bg-gold-400 !text-ink-900 hover:!bg-cream-50"
           >
             Email the Team <Icon.ArrowRight className="h-4 w-4" />
           </a>
           <a
             href="tel:+440000000000"
-            className="btn-ghost !text-cream-50 !border-cream-50/30 hover:!border-gold-300 hover:!text-gold-300"
+            className="btn-ghost !rounded-[15px] !text-cream-50 !border-cream-50/30 hover:!border-gold-300 hover:!text-gold-300"
           >
             <Icon.Phone className="h-4 w-4" /> Speak to the team
           </a>
