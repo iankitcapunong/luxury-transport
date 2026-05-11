@@ -495,30 +495,32 @@ function HowItWorks() {
           </p>
         </div>
 
-        <div className="mt-20 grid grid-cols-1 lg:grid-cols-12 gap-y-10 lg:gap-x-16 items-start">
-          {/* Left — numbered steps stacked, one per implicit row */}
-          {steps.map((s, i) => (
-            <div
-              key={s.n}
-              className="reveal group flex gap-6 lg:col-span-6 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
-              style={{ transitionDelay: `${i * 100}ms` }}
-            >
-              <div className="font-display italic font-light text-6xl leading-none text-gold-500/80 group-hover:text-gold-500 transition-colors duration-700 w-20 shrink-0">
-                {s.n}
+        <div className="mt-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left — numbered steps stacked */}
+          <div className="lg:col-span-6 space-y-10">
+            {steps.map((s, i) => (
+              <div
+                key={s.n}
+                className="reveal group flex gap-6 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                style={{ transitionDelay: `${i * 100}ms` }}
+              >
+                <div className="font-display italic font-light text-6xl leading-none text-gold-500/80 group-hover:text-gold-500 transition-colors duration-700 w-20 shrink-0">
+                  {s.n}
+                </div>
+                <div className="flex-1 border-l border-gold-500/30 pl-6 group-hover:border-gold-500 transition-colors duration-700">
+                  <h3 className="font-display font-normal text-2xl text-ink-900">
+                    {s.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-[1.85] text-ink-700">
+                    {s.body}
+                  </p>
+                </div>
               </div>
-              <div className="flex-1 border-l border-gold-500/30 pl-6 group-hover:border-gold-500 transition-colors duration-700">
-                <h3 className="font-display font-normal text-2xl text-ink-900">
-                  {s.title}
-                </h3>
-                <p className="mt-3 text-sm leading-[1.85] text-ink-700">
-                  {s.body}
-                </p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
 
-          {/* Right — Quick inquiry form, aligned to row 3 (step 03) */}
-          <div id="contact" className="lg:col-span-6 lg:col-start-7 lg:row-start-3 lg:row-span-1 reveal">
+          {/* Right — Quick inquiry form, vertically centered */}
+          <div id="contact" className="lg:col-span-6 reveal">
             <div className="relative">
               <div className="absolute -inset-6 rounded-2xl bg-gradient-to-tr from-gold-300/20 via-transparent to-gold-300/10 blur-3xl" />
               <div className="absolute -top-2 -left-2 h-5 w-5 border-l border-t border-gold-500/60" />
