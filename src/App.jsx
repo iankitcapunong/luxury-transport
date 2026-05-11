@@ -938,7 +938,7 @@ function Services() {
                           </p>
                           <div className="mt-7 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-gold-600">
                             <span className="border-b border-transparent group-hover:border-gold-500 transition-colors duration-700">
-                              Reserve this journey
+                              Book Now
                             </span>
                             <Icon.ArrowRight className="h-3.5 w-3.5 transition-transform duration-700 group-hover:translate-x-1.5" />
                           </div>
