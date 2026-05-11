@@ -486,11 +486,151 @@ function HowItWorks({ selectedService, onSelectService }) {
   const ref = useReveal();
   const [pickup, setPickup] = useState("");
   const [destination, setDestination] = useState("");
+  useEffect(() => {
+    setPickup("");
+    setDestination("");
+  }, [selectedService]);
   const serviceTabs = [
     "Airport & Long-Distance",
     "Corporate & VIP",
     "Weddings & Group Travel",
   ];
+
+  const locationGroupsByService = {
+    "Airport & Long-Distance": [
+      {
+        label: "London Airports",
+        options: [
+          "Heathrow (LHR)",
+          "Gatwick (LGW)",
+          "Stansted (STN)",
+          "Luton (LTN)",
+          "London City (LCY)",
+        ],
+      },
+      {
+        label: "Long-Distance Cities",
+        options: [
+          "Manchester",
+          "Birmingham",
+          "Liverpool",
+          "Leeds",
+          "Edinburgh",
+          "Glasgow",
+        ],
+      },
+    ],
+    "Corporate & VIP": [
+      {
+        label: "London Areas",
+        options: ["Mayfair", "Knightsbridge", "Belgravia"],
+      },
+      {
+        label: "Business Districts",
+        options: ["The City", "Canary Wharf"],
+      },
+      {
+        label: "Mayfair Hotels",
+        options: [
+          "Claridge's",
+          "The Connaught",
+          "The Dorchester",
+          "Brown's Hotel",
+        ],
+      },
+      {
+        label: "Knightsbridge Hotels",
+        options: [
+          "Mandarin Oriental Hyde Park",
+          "The Berkeley",
+          "Bulgari Hotel London",
+        ],
+      },
+      {
+        label: "Belgravia Hotels",
+        options: ["The Lanesborough", "The Goring"],
+      },
+    ],
+    "Weddings & Group Travel": [
+      {
+        label: "London Areas",
+        options: ["Mayfair", "Knightsbridge", "Belgravia"],
+      },
+      {
+        label: "Wedding Hotels",
+        options: [
+          "Claridge's",
+          "The Dorchester",
+          "The Lanesborough",
+          "The Goring",
+          "The Berkeley",
+        ],
+      },
+      {
+        label: "Venue Types",
+        options: [
+          "Church / Ceremony venue",
+          "Reception venue",
+          "Country estate",
+        ],
+      },
+    ],
+  };
+
+  const defaultLocationGroups = [
+    {
+      label: "Mayfair Airports",
+      options: [
+        "Heathrow (LHR) · Mayfair",
+        "London City (LCY) · Mayfair",
+        "Gatwick (LGW) · Mayfair",
+      ],
+    },
+    {
+      label: "Knightsbridge Airports",
+      options: [
+        "Heathrow (LHR) · Knightsbridge",
+        "London City (LCY) · Knightsbridge",
+        "Gatwick (LGW) · Knightsbridge",
+      ],
+    },
+    {
+      label: "Belgravia Airports",
+      options: [
+        "Heathrow (LHR) · Belgravia",
+        "London City (LCY) · Belgravia",
+        "Gatwick (LGW) · Belgravia",
+      ],
+    },
+    {
+      label: "London Areas",
+      options: ["Mayfair", "Knightsbridge", "Belgravia"],
+    },
+    {
+      label: "Mayfair Hotels",
+      options: [
+        "Claridge's",
+        "The Connaught",
+        "The Dorchester",
+        "Brown's Hotel",
+      ],
+    },
+    {
+      label: "Knightsbridge Hotels",
+      options: [
+        "Mandarin Oriental Hyde Park",
+        "The Berkeley",
+        "Bulgari Hotel London",
+      ],
+    },
+    {
+      label: "Belgravia Hotels",
+      options: ["The Lanesborough", "The Goring"],
+    },
+  ];
+
+  const locationGroups =
+    locationGroupsByService[selectedService] || defaultLocationGroups;
   const steps = [
     {
       n: "1",
@@ -620,41 +760,13 @@ function HowItWorks({ selectedService, onSelectService }) {
                       <option value="" disabled>
                         Pickup
                       </option>
-                      <optgroup label="Mayfair Airports">
-                        <option>Heathrow (LHR) · Mayfair</option>
-                        <option>London City (LCY) · Mayfair</option>
-                        <option>Gatwick (LGW) · Mayfair</option>
-                      </optgroup>
-                      <optgroup label="Knightsbridge Airports">
-                        <option>Heathrow (LHR) · Knightsbridge</option>
-                        <option>London City (LCY) · Knightsbridge</option>
-                        <option>Gatwick (LGW) · Knightsbridge</option>
-                      </optgroup>
-                      <optgroup label="Belgravia Airports">
-                        <option>Heathrow (LHR) · Belgravia</option>
-                        <option>London City (LCY) · Belgravia</option>
-                        <option>Gatwick (LGW) · Belgravia</option>
-                      </optgroup>
-                      <optgroup label="London Areas">
-                        <option>Mayfair</option>
-                        <option>Knightsbridge</option>
-                        <option>Belgravia</option>
-                      </optgroup>
-                      <optgroup label="Mayfair Hotels">
-                        <option>Claridge's</option>
-                        <option>The Connaught</option>
-                        <option>The Dorchester</option>
-                        <option>Brown's Hotel</option>
-                      </optgroup>
-                      <optgroup label="Knightsbridge Hotels">
-                        <option>Mandarin Oriental Hyde Park</option>
-                        <option>The Berkeley</option>
-                        <option>Bulgari Hotel London</option>
-                      </optgroup>
-                      <optgroup label="Belgravia Hotels">
-                        <option>The Lanesborough</option>
-                        <option>The Goring</option>
-                      </optgroup>
+                      {locationGroups.map((g) => (
+                        <optgroup key={g.label} label={g.label}>
+                          {g.options.map((o) => (
+                            <option key={o}>{o}</option>
+                          ))}
+                        </optgroup>
+                      ))}
                       <optgroup label="Other">
                         <option>Custom address</option>
                       </optgroup>
@@ -673,41 +785,13 @@ function HowItWorks({ selectedService, onSelectService }) {
                       <option value="" disabled>
                         Destination
                       </option>
-                      <optgroup label="Mayfair Airports">
-                        <option>Heathrow (LHR) · Mayfair</option>
-                        <option>London City (LCY) · Mayfair</option>
-                        <option>Gatwick (LGW) · Mayfair</option>
-                      </optgroup>
-                      <optgroup label="Knightsbridge Airports">
-                        <option>Heathrow (LHR) · Knightsbridge</option>
-                        <option>London City (LCY) · Knightsbridge</option>
-                        <option>Gatwick (LGW) · Knightsbridge</option>
-                      </optgroup>
-                      <optgroup label="Belgravia Airports">
-                        <option>Heathrow (LHR) · Belgravia</option>
-                        <option>London City (LCY) · Belgravia</option>
-                        <option>Gatwick (LGW) · Belgravia</option>
-                      </optgroup>
-                      <optgroup label="London Areas">
-                        <option>Mayfair</option>
-                        <option>Knightsbridge</option>
-                        <option>Belgravia</option>
-                      </optgroup>
-                      <optgroup label="Mayfair Hotels">
-                        <option>Claridge's</option>
-                        <option>The Connaught</option>
-                        <option>The Dorchester</option>
-                        <option>Brown's Hotel</option>
-                      </optgroup>
-                      <optgroup label="Knightsbridge Hotels">
-                        <option>Mandarin Oriental Hyde Park</option>
-                        <option>The Berkeley</option>
-                        <option>Bulgari Hotel London</option>
-                      </optgroup>
-                      <optgroup label="Belgravia Hotels">
-                        <option>The Lanesborough</option>
-                        <option>The Goring</option>
-                      </optgroup>
+                      {locationGroups.map((g) => (
+                        <optgroup key={g.label} label={g.label}>
+                          {g.options.map((o) => (
+                            <option key={o}>{o}</option>
+                          ))}
+                        </optgroup>
+                      ))}
                       <optgroup label="Other">
                         <option>Custom address</option>
                       </optgroup>
