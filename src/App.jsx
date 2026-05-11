@@ -496,6 +496,15 @@ function HowItWorks({ selectedService, onSelectService }) {
     "Weddings & Group Travel",
   ];
 
+  const serviceDescriptions = {
+    "Airport & Long-Distance":
+      "All UK airports with met-and-greet, flight tracking and a calm boot for your luggage; plus city-to-city long-distance hires with champagne bar, refrigerator and reclining leather for the miles ahead.",
+    "Corporate & VIP":
+      "Day rates, board pickups and multi-stop schedules handled with the discretion your business needs. Tinted glass, NDAs as standard, paparazzi-aware route planning for festivals, labels and talent transfers.",
+    "Weddings & Group Travel":
+      "Ribbons optional, immaculate interiors essential. Bride, groom and party coordinated to the minute. Mercedes V-Class with panoramic roof, massage seats and Wi-Fi for up to eight passengers, zero compromise.",
+  };
+
   const locationGroupsByService = {
     "Airport & Long-Distance": [
       {
@@ -689,8 +698,35 @@ function HowItWorks({ selectedService, onSelectService }) {
           </p>
         </div>
 
-        {/* Quick inquiry form — centered above the steps */}
-        <div className="mt-16 max-w-lg mx-auto">
+        {/* Quick inquiry form — with service description on the left when one is selected */}
+        <div
+          className={`mt-16 ${
+            selectedService
+              ? "grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start max-w-5xl mx-auto"
+              : "max-w-lg mx-auto"
+          }`}
+        >
+          {selectedService && (
+            <div className="reveal lg:pt-6">
+              <div className="eyebrow flex items-center gap-3">
+                <span className="hairline" /> Selected Service
+              </div>
+              <h3 className="font-display text-3xl mt-4 text-mask-gold">
+                {selectedService}
+              </h3>
+              <div className="mt-4 h-px w-12 bg-gold-500/60" />
+              <p className="mt-5 text-ink-700 leading-relaxed italic font-light">
+                {serviceDescriptions[selectedService]}
+              </p>
+              <button
+                type="button"
+                onClick={() => onSelectService && onSelectService(null)}
+                className="mt-6 text-[10px] uppercase tracking-[0.28em] text-gold-600 hover:text-gold-700 underline underline-offset-4 decoration-gold-500/60 transition-colors"
+              >
+                Clear selection
+              </button>
+            </div>
+          )}
           <div id="contact" className="reveal">
             <div className="relative">
               <div className="absolute -inset-6 rounded-2xl bg-gradient-to-tr from-gold-300/20 via-transparent to-gold-300/10 blur-3xl" />
