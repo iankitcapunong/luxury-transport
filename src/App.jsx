@@ -343,7 +343,7 @@ function Hero() {
           <div className="reveal mt-8 flex items-start gap-4 max-w-xl">
             <span className="mt-3 h-px w-8 bg-gold-400 shrink-0" />
             <p className="text-base sm:text-lg text-white leading-relaxed font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
-              A private chauffeur house, fluent in the small things — the
+              A private chauffeur house, fluent in the small things: the
               chilled water, the unspoken route, the door already open.
             </p>
           </div>
@@ -679,17 +679,17 @@ function HowItWorks() {
     {
       n: "01",
       title: "Begin Inquiry",
-      body: "Share a single line — date, pickup, destination. That is all we need from you. Quietly, by phone or form.",
+      body: "Share a single line: date, pickup, destination. That is all we need from you. Quietly, by phone or form.",
     },
     {
       n: "02",
       title: "Wait to Hear",
-      body: "We confirm vehicle, driver and route. A discreet itinerary lands in your inbox — no chasing, no back-and-forth.",
+      body: "We confirm vehicle, driver and route. A discreet itinerary lands in your inbox. No chasing, no back-and-forth.",
     },
     {
       n: "03",
       title: "Step Inside",
-      body: "Your driver arrives ahead of time. Door open, water chilled, climate set. You arrive composed — every time.",
+      body: "Your driver arrives ahead of time. Door open, water chilled, climate set. You arrive composed, every time.",
     },
   ];
 
@@ -706,33 +706,29 @@ function HowItWorks() {
           </div>
           <h2 className="reveal h-display mt-7 text-5xl sm:text-6xl">
             Three steps.
-            <br />
-            <span className="italic font-light text-gold-500">
-              None of them yours.
-            </span>
           </h2>
           <p className="reveal mt-7 text-ink-700 leading-relaxed italic font-light max-w-xl">
             Booking ought not feel like work. We have reduced it to a single
-            message — the rest, we attend to.
+            message. The rest, we attend to.
           </p>
         </div>
 
-        <div className="reveal mt-20 grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12 relative">
-          <div className="hidden md:block absolute top-16 left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent" />
+        <div className="reveal mt-20 grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12 items-stretch relative">
+          <div className="hidden md:block absolute top-[3.5rem] left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent" />
           {steps.map((s, i) => (
             <div
               key={s.n}
-              className="reveal relative group transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5"
+              className="reveal relative group flex flex-col h-full transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <div className="font-display italic font-light text-7xl text-gold-500/80 group-hover:text-gold-500 transition-colors duration-700">
+              <div className="font-display italic font-light text-7xl leading-none text-gold-500/80 group-hover:text-gold-500 transition-colors duration-700">
                 {s.n}
               </div>
-              <div className="mt-3 h-px w-12 bg-gold-500/60 transition-all duration-700 group-hover:w-20" />
-              <h3 className="font-display font-normal text-3xl mt-7 text-ink-900">
+              <div className="mt-4 h-px w-12 bg-gold-500/60 transition-all duration-700 group-hover:w-20" />
+              <h3 className="font-display font-normal text-3xl mt-7 text-ink-900 min-h-[2.5rem]">
                 {s.title}
               </h3>
-              <p className="mt-4 text-sm leading-[1.85] text-ink-700">
+              <p className="mt-4 text-sm leading-[1.85] text-ink-700 flex-1">
                 {s.body}
               </p>
             </div>
@@ -803,7 +799,7 @@ function Services() {
     {
       icon: Icon.Briefcase,
       t: "Corporate Chauffeur",
-      d: "Day rates, board pickups, multi-stop schedules — handled with the discretion your business needs.",
+      d: "Day rates, board pickups, multi-stop schedules, handled with the discretion your business needs.",
     },
     {
       icon: Icon.Crown,
@@ -823,7 +819,7 @@ function Services() {
     {
       icon: Icon.Champagne,
       t: "Group Travel · Up to 8",
-      d: "Mercedes V-Class with panoramic roof, massage seats and Wi-Fi — eight passengers, zero compromise.",
+      d: "Mercedes V-Class with panoramic roof, massage seats and Wi-Fi. Eight passengers, zero compromise.",
     },
   ];
   return (
@@ -951,17 +947,17 @@ function Testimonials() {
     {
       k: "97%",
       t: "Repeat clients",
-      d: "Ninety-seven percent of private clients return within twelve months. Word travels quietly between concierge desks, tour managers and wedding planners — which is how most of our work arrives.",
+      d: "Ninety-seven percent of private clients return within twelve months. Word travels quietly between concierge desks, tour managers and wedding planners, which is how most of our work arrives.",
     },
     {
       k: "20+",
       t: "Years on the road",
-      d: "Two decades of late-night pickups, airport runs and wedding mornings. The drivers we lead today were trained by the drivers we hired in the early years — a house style passed by hand.",
+      d: "Two decades of late-night pickups, airport runs and wedding mornings. The drivers we lead today were trained by the drivers we hired in the early years. A house style passed by hand.",
     },
     {
       k: "12hr",
       t: "Quote turnaround",
-      d: "Every inquiry receives a written quote — vehicle, driver, route, price — within twelve hours, often inside the same one. No quote desk, no portals. A person reads it and a person replies.",
+      d: "Every inquiry receives a written quote (vehicle, driver, route, price) within twelve hours, often inside the same one. No quote desk, no portals. A person reads it and a person replies.",
     },
     {
       k: "24/7",
@@ -971,7 +967,7 @@ function Testimonials() {
   ];
   const quotes = [
     {
-      q: "“They moved an artist from a sold-out show to a private dinner in twenty minutes — and you wouldn't have known either was happening. Exactly what we needed.”",
+      q: "“They moved an artist from a sold-out show to a private dinner in twenty minutes, and you wouldn't have known either was happening. Exactly what we needed.”",
       n: "Adaeze Williams",
       r: "Tour Manager · Independent label",
       i: "AW",
@@ -1005,7 +1001,7 @@ function Testimonials() {
           </h2>
           <p className="mt-7 text-ink-700 leading-relaxed italic font-light max-w-xl">
             Ninety-seven percent of our private clients return within twelve
-            months — a number we mention only because they have asked us to.
+            months. A number we mention only because they have asked us to.
           </p>
         </div>
 
@@ -1118,7 +1114,7 @@ function CTA() {
           </span>
         </h2>
         <p className="reveal mt-8 text-cream-100/75 leading-relaxed italic font-light max-w-xl mx-auto">
-          Tell us when, where from, and where to. We return — inside the hour —
+          Tell us when, where from, and where to. We return inside the hour,
           with a vehicle, a driver, and a price.
         </p>
         <div className="reveal mt-12 flex flex-wrap items-center justify-center gap-4">
@@ -1172,7 +1168,7 @@ function Footer() {
       <div className="container-x py-20 lg:py-24 relative">
         {/* Editorial signature line */}
         <div className="editorial-rule justify-center mx-auto max-w-md !text-gold-300 mb-16">
-          Luxury Transport — Est. MMXXVI
+          Luxury Transport · Est. MMXXVI
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -1186,12 +1182,12 @@ function Footer() {
                   Luxury Transport
                 </div>
                 <div className="mt-1 text-[10px] uppercase tracking-[0.34em] text-cream-100/60">
-                  Private Chauffeur — United Kingdom
+                  Private Chauffeur · United Kingdom
                 </div>
               </div>
             </a>
             <p className="mt-7 max-w-sm text-sm text-cream-100/70 leading-[1.85] italic font-light">
-              Safe, stylish and quietly professional passenger transport — a
+              Safe, stylish and quietly professional passenger transport. A
               Mercedes house, available across the United Kingdom, every hour of
               every day.
             </p>
@@ -1253,7 +1249,7 @@ function Footer() {
             reserved
           </p>
           <p className="font-display italic font-light text-sm normal-case tracking-normal text-gold-300">
-            Move in silence — discretion is our policy.
+            Move in silence. Discretion is our policy.
           </p>
         </div>
       </div>

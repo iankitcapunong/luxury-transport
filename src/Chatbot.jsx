@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 const greeting = {
   from: "bot",
   text:
-    "Good day. I'm the Luxury Transport concierge — happy to help with bookings, vehicles, pricing or anything else. What can I answer for you?",
+    "Good day. I'm the Luxury Transport concierge, happy to help with bookings, vehicles, pricing or anything else. What can I answer for you?",
 };
 
 const quickPrompts = [
@@ -19,22 +19,22 @@ const intents = [
   {
     keys: ["hi", "hello", "hey", "good morning", "good afternoon", "good evening"],
     reply:
-      "Hello — welcome. Whatever you need today, I'll keep it brief and discreet. Are you looking at a one-off journey, a wedding, or a corporate arrangement?",
+      "Hello, welcome. Whatever you need today, I'll keep it brief and discreet. Are you looking at a one-off journey, a wedding, or a corporate arrangement?",
   },
   {
     keys: ["book", "booking", "reserve", "reservation", "schedule"],
     reply:
-      "Booking is a single message. Share your date, pickup and destination — either through the inquiry form below, by email at bookings@luxurytransport.co.uk, or call +44 (0)20 0000 0000. We reply inside the hour with a vehicle, driver and quote.",
+      "Booking is a single message. Share your date, pickup and destination, either through the inquiry form below, by email at bookings@luxurytransport.co.uk, or call +44 (0)20 0000 0000. We reply inside the hour with a vehicle, driver and quote.",
   },
   {
     keys: ["price", "pricing", "cost", "quote", "rate", "how much", "fare"],
     reply:
-      "Pricing is set per journey rather than per mile — based on route, hours and any additions like a champagne bar or onboard refreshments. Share your itinerary and we'll come back with a fixed quote, in writing, the same day.",
+      "Pricing is set per journey rather than per mile, based on route, hours and any additions like a champagne bar or onboard refreshments. Share your itinerary and we'll come back with a fixed quote, in writing, the same day.",
   },
   {
     keys: ["vehicle", "car", "fleet", "sprinter", "v-class", "vito", "mercedes", "mpv"],
     reply:
-      "Our primary vehicle is the Mercedes Sprinter (8-seater) — leather, panoramic roof, refrigerator, champagne bar, massage seats, 360° camera and Wi-Fi. Mercedes V-Class and Vito MPVs are also available on request.",
+      "Our primary vehicle is the Mercedes Sprinter (8-seater) with leather, panoramic roof, refrigerator, champagne bar, massage seats, 360° camera and Wi-Fi. Mercedes V-Class and Vito MPVs are also available on request.",
   },
   {
     keys: ["airport", "heathrow", "gatwick", "stansted", "luton", "city airport", "manchester airport", "edinburgh airport"],
@@ -44,7 +44,7 @@ const intents = [
   {
     keys: ["wedding", "bride", "groom", "ceremony"],
     reply:
-      "Wedding transport is one of our quietest specialties — ribbons optional, immaculate interiors essential. We coordinate bride, groom and party with timing to the minute. Tell us the date and we'll hold a vehicle for you.",
+      "Wedding transport is one of our quietest specialties. Ribbons optional, immaculate interiors essential. We coordinate bride, groom and party with timing to the minute. Tell us the date and we'll hold a vehicle for you.",
   },
   {
     keys: ["corporate", "business", "executive", "office", "company"],
@@ -54,7 +54,7 @@ const intents = [
   {
     keys: ["vip", "celebrity", "artist", "talent", "festival", "label", "tour"],
     reply:
-      "Festival, label and talent transfers — we handle these often. Tinted glass, NDAs as standard, paparazzi-aware route planning on request. Share the run sheet and we'll fit around it discreetly.",
+      "Festival, label and talent transfers, we handle these often. Tinted glass, NDAs as standard, paparazzi-aware route planning on request. Share the run sheet and we'll fit around it discreetly.",
   },
   {
     keys: ["wifi", "wi-fi", "internet", "charger", "phone", "water", "drink", "refreshment", "champagne", "bar", "fridge", "refrigerator", "massage", "seat", "child seat", "panoramic", "fire", "fireplace"],
@@ -69,17 +69,17 @@ const intents = [
   {
     keys: ["area", "where", "city", "london", "manchester", "birmingham", "edinburgh", "uk", "travel", "long distance", "long-distance"],
     reply:
-      "We're UK-wide — London, Manchester, Birmingham, Edinburgh and city-to-city long-distance hires are all routine. If you're crossing borders for a job, let us know the schedule and we'll plan around it.",
+      "We're UK-wide. London, Manchester, Birmingham, Edinburgh and city-to-city long-distance hires are all routine. If you're crossing borders for a job, let us know the schedule and we'll plan around it.",
   },
   {
     keys: ["passenger", "people", "group", "seats", "size", "many"],
     reply:
-      "Our Mercedes Sprinter seats up to 8 passengers comfortably with full luggage. For larger groups we can arrange a coordinated multi-vehicle run — just tell us the headcount.",
+      "Our Mercedes Sprinter seats up to 8 passengers comfortably with full luggage. For larger groups we can arrange a coordinated multi-vehicle run, just tell us the headcount.",
   },
   {
     keys: ["driver", "chauffeur", "uniform"],
     reply:
-      "All drivers are uniformed, DBS-checked, NDA-bound and trained in close-protection-aware driving. They're chosen for composure as much as skill — you'll find them quiet, punctual and immaculate.",
+      "All drivers are uniformed, DBS-checked, NDA-bound and trained in close-protection-aware driving. They're chosen for composure as much as skill. You'll find them quiet, punctual and immaculate.",
   },
   {
     keys: ["safe", "insurance", "license", "licensed"],
@@ -99,12 +99,12 @@ const intents = [
   {
     keys: ["contact", "phone", "call", "email", "speak", "human"],
     reply:
-      "Of course — +44 (0)20 0000 0000 (24/7 dispatch) or bookings@luxurytransport.co.uk. You can also use the inquiry form on this page and we'll be back to you within the hour.",
+      "Of course. +44 (0)20 0000 0000 (24/7 dispatch) or bookings@luxurytransport.co.uk. You can also use the inquiry form on this page and we'll be back to you within the hour.",
   },
   {
     keys: ["lost", "found", "left", "belonging"],
     reply:
-      "Anything left in a vehicle is logged immediately and returned that day where possible — call the office on +44 (0)20 0000 0000 and quote your booking reference.",
+      "Anything left in a vehicle is logged immediately and returned that day where possible. Call the office on +44 (0)20 0000 0000 and quote your booking reference.",
   },
   {
     keys: ["thanks", "thank you", "cheers", "ta"],
@@ -122,7 +122,7 @@ function findReply(input) {
 }
 
 const fallback =
-  "I don't have an answer on hand for that — let me hand you to a person. The fastest route is the inquiry form on this page, or email bookings@luxurytransport.co.uk and we'll reply inside the hour.";
+  "I don't have an answer on hand for that. Let me hand you to a person. The fastest route is the inquiry form on this page, or email bookings@luxurytransport.co.uk and we'll reply inside the hour.";
 
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
@@ -234,7 +234,7 @@ export default function Chatbot() {
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask anything — bookings, pricing, vehicles…"
+            placeholder="Ask anything: bookings, pricing, vehicles…"
             className="flex-1 rounded-full border border-ink-900/15 bg-cream-50 px-4 py-2.5 text-sm
                        focus:outline-none focus:border-gold-500 transition"
           />
