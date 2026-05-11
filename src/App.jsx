@@ -331,34 +331,34 @@ function Hero() {
 
       <div className="container-x relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         <div className="lg:col-span-6">
-          <div className="reveal eyebrow flex items-center gap-3 !text-black font-bold drop-shadow-[0_1px_2px_rgba(245,236,214,0.7)]">
-            <span className="h-px w-14 bg-black" /> Est. London · Serving the
+          <div className="reveal eyebrow flex items-center gap-3 !text-white font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
+            <span className="h-px w-14 bg-white" /> Est. London · Serving the
             United Kingdom
           </div>
-          <h1 className="reveal h-display mt-8 text-[60px] leading-[1.05]">
+          <h1 className="reveal h-display mt-8 text-[60px] leading-[1.05] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
             Arrive
             <br />
-            <span className="italic font-light text-gold-500">composed.</span>
+            <span className="italic font-light text-gold-400">composed.</span>
           </h1>
           <div className="reveal mt-8 flex items-start gap-4 max-w-xl">
-            <span className="mt-3 h-px w-8 bg-gold-500 shrink-0" />
-            <p className="text-base sm:text-lg text-black leading-relaxed font-bold drop-shadow-[0_1px_2px_rgba(245,236,214,0.7)]">
+            <span className="mt-3 h-px w-8 bg-gold-400 shrink-0" />
+            <p className="text-base sm:text-lg text-white leading-relaxed font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
               A private chauffeur house, fluent in the small things — the
               chilled water, the unspoken route, the door already open.
             </p>
           </div>
 
-          <div className="reveal mt-16 grid grid-cols-3 max-w-md gap-y-4 gap-x-8 border-t border-black/40 pt-8">
+          <div className="reveal mt-16 grid grid-cols-3 max-w-md gap-y-4 gap-x-8 border-t border-white/40 pt-8">
             {[
               ["i.", "Twenty-four hour dispatch"],
               ["ii.", "All United Kingdom airports"],
               ["iii.", "Discretion as standard"],
             ].map(([k, v]) => (
               <div key={k} className="flex flex-col">
-                <div className="font-display italic font-light text-2xl text-gold-500 drop-shadow-[0_1px_2px_rgba(245,236,214,0.6)]">
+                <div className="font-display italic font-light text-2xl text-gold-400 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
                   {k}
                 </div>
-                <div className="mt-2 text-[10px] uppercase tracking-[0.28em] text-black font-bold leading-relaxed drop-shadow-[0_1px_2px_rgba(245,236,214,0.7)]">
+                <div className="mt-2 text-[10px] uppercase tracking-[0.28em] text-white font-bold leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
                   {v}
                 </div>
               </div>
