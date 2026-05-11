@@ -561,7 +561,7 @@ function HowItWorks() {
                   e.preventDefault();
                   alert("Thank you. The team will be in touch shortly.");
                 }}
-                className="relative bg-beige-50 text-ink-900 p-7 lg:p-9 border border-gold-500/40 rounded-[20px] shadow-[0_30px_70px_-15px_rgba(158,126,54,0.55),0_8px_24px_-10px_rgba(158,126,54,0.45)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-[0_50px_100px_-20px_rgba(158,126,54,0.7),0_10px_30px_-10px_rgba(158,126,54,0.55)]"
+                className="relative bg-beige-50 text-ink-900 p-7 lg:p-9 border border-gold-500/40 rounded-[15px] shadow-[0_30px_70px_-15px_rgba(158,126,54,0.55),0_8px_24px_-10px_rgba(158,126,54,0.45)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-[0_50px_100px_-20px_rgba(158,126,54,0.7),0_10px_30px_-10px_rgba(158,126,54,0.55)]"
               >
                 <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.3em] text-gold-600">
                   <span>Quick Inquiry</span>
@@ -890,7 +890,7 @@ function Services() {
               key={t}
               href="#contact"
               className="group relative flex flex-col h-full min-h-[500px] overflow-hidden
-                         rounded-[20px] border border-gold-500/30 bg-[#3c2f1c] text-cream-50 p-9
+                         rounded-[15px] border border-gold-500/30 bg-[#3c2f1c] text-cream-50 p-9
                          shadow-[0_24px_50px_-18px_rgba(0,0,0,0.45)]
                          transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
                          hover:-translate-y-3 hover:scale-[1.02]
@@ -938,7 +938,7 @@ function Services() {
         </div>
 
         {/* In-vehicle card */}
-        <div className="reveal mt-16 rounded-[20px] border border-gold-500/50 bg-ink-900 text-cream-50 overflow-hidden shadow-[0_30px_70px_-15px_rgba(158,126,54,0.6),0_10px_30px_-12px_rgba(158,126,54,0.45)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-[0_50px_100px_-20px_rgba(158,126,54,0.75),0_15px_40px_-12px_rgba(158,126,54,0.55)]">
+        <div className="reveal mt-16 rounded-[15px] border border-gold-500/50 bg-ink-900 text-cream-50 overflow-hidden shadow-[0_30px_70px_-15px_rgba(158,126,54,0.6),0_10px_30px_-12px_rgba(158,126,54,0.45)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-[0_50px_100px_-20px_rgba(158,126,54,0.75),0_15px_40px_-12px_rgba(158,126,54,0.55)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
             {/* Left — features */}
             <div className="p-8 lg:p-12 flex flex-col">
@@ -1069,7 +1069,7 @@ function Testimonials() {
         </div>
 
         {/* Stat banner — static, non-clickable */}
-        <div className="reveal mt-24 rounded-[20px] border border-ink-900/10 bg-cream-50 overflow-hidden shadow-[0_18px_40px_-14px_rgba(0,0,0,0.25)]">
+        <div className="reveal mt-24 rounded-[15px] border border-ink-900/10 bg-cream-50 overflow-hidden shadow-[0_18px_40px_-14px_rgba(0,0,0,0.25)]">
           <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-ink-900/10">
             {stats.map((s) => (
               <div key={s.k} className="px-6 py-9 text-center">
