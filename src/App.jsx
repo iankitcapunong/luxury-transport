@@ -237,7 +237,7 @@ function Nav() {
             L
           </span>
           <div className="leading-tight">
-            <div className="font-display tracking-wide text-white text-[18px] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
+            <div className="font-cormorant tracking-wide text-white text-[18px] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
               Luxury Transport
             </div>
             <div className="uppercase tracking-[0.34em] text-white mt-1 text-[18px] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
