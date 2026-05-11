@@ -510,14 +510,14 @@ function HowItWorks() {
       className="relative py-28 lg:py-40 bg-beige-50/50"
     >
       <div className="container-x">
-        <div className="max-w-2xl">
-          <div className="reveal eyebrow flex items-center gap-3">
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="reveal eyebrow flex items-center gap-3 justify-center">
             <span className="hairline" /> The Process
           </div>
           <h2 className="reveal h-display mt-7 text-5xl sm:text-6xl text-mask-gold">
             Three steps.
           </h2>
-          <p className="reveal mt-7 text-ink-700 leading-relaxed italic font-light max-w-xl">
+          <p className="reveal mt-7 text-ink-700 leading-relaxed italic font-light max-w-xl mx-auto">
             Booking ought not feel like work. We have reduced it to a single
             message. The rest, we attend to.
           </p>
@@ -883,9 +883,9 @@ function Services() {
   return (
     <section id="services" ref={ref} className="py-28 lg:py-40 bg-beige-50/60">
       <div className="container-x">
-        <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-10">
-          <div className="max-w-2xl">
-            <div className="eyebrow flex items-center gap-3">
+        <div className="reveal flex flex-col items-center text-center gap-7 max-w-2xl mx-auto">
+          <div>
+            <div className="eyebrow flex items-center gap-3 justify-center">
               <span className="hairline" /> The Offering
             </div>
             <h2 className="h-display mt-7 text-5xl sm:text-6xl text-mask-gold">
@@ -894,7 +894,7 @@ function Services() {
               <span className="italic font-light">every occasion.</span>
             </h2>
           </div>
-          <p className="max-w-sm text-ink-700 leading-relaxed italic font-light">
+          <p className="max-w-md text-ink-700 leading-relaxed italic font-light">
             Seven ways to travel; a single standard of service. The same chilled
             water, the same composed driver, the same time on your side.
           </p>
@@ -1059,8 +1059,8 @@ function Testimonials() {
   return (
     <section id="testimonials" ref={ref} className="py-28 lg:py-40">
       <div className="container-x">
-        <div className="reveal max-w-2xl">
-          <div className="eyebrow flex items-center gap-3">
+        <div className="reveal max-w-2xl mx-auto text-center">
+          <div className="eyebrow flex items-center gap-3 justify-center">
             <span className="hairline" /> In Their Words
           </div>
           <h2 className="h-display mt-7 text-5xl sm:text-6xl text-mask-gold">
@@ -1068,7 +1068,7 @@ function Testimonials() {
             <br />
             <span className="italic font-light">recommended.</span>
           </h2>
-          <p className="mt-7 text-ink-700 leading-relaxed italic font-light max-w-xl">
+          <p className="mt-7 text-ink-700 leading-relaxed italic font-light max-w-xl mx-auto">
             Ninety-seven percent of our private clients return within twelve
             months. A number we mention only because they have asked us to.
           </p>
