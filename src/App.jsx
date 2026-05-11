@@ -558,30 +558,30 @@ function HowItWorks({ selectedService, onSelectService }) {
                 </h3>
                 <div className="mt-3 h-px w-12 bg-gold-500/60" />
 
-                <nav
-                  aria-label="Service tabs"
-                  className="mt-5 flex flex-wrap gap-2"
-                >
-                  {serviceTabs.map((tab) => {
-                    const active = selectedService === tab;
-                    return (
-                      <button
-                        key={tab}
-                        type="button"
-                        onClick={() =>
-                          onSelectService && onSelectService(active ? null : tab)
-                        }
-                        className={`text-[10px] uppercase tracking-[0.28em] rounded-full px-3 py-1.5 border transition-all duration-500 ${
-                          active
-                            ? "bg-gold-400 border-gold-500 text-ink-900 shadow-[0_8px_20px_-8px_rgba(158,126,54,0.7)]"
-                            : "bg-transparent border-ink-900/20 text-ink-700 hover:border-gold-500 hover:text-gold-700"
-                        }`}
-                      >
+                <div className="mt-5">
+                  <select
+                    aria-label="Select service"
+                    value={selectedService || ""}
+                    onChange={(e) =>
+                      onSelectService &&
+                      onSelectService(e.target.value || null)
+                    }
+                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2.5 text-sm text-ink-900 focus:outline-none focus:border-gold-500 transition appearance-none bg-no-repeat bg-right pr-9"
+                    style={{
+                      backgroundImage:
+                        "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239E7E36'><path d='M5.5 7.5l4.5 5 4.5-5z'/></svg>\")",
+                      backgroundPosition: "right 0.75rem center",
+                      backgroundSize: "1rem",
+                    }}
+                  >
+                    <option value="">Select a service</option>
+                    {serviceTabs.map((tab) => (
+                      <option key={tab} value={tab}>
                         {tab}
-                      </button>
-                    );
-                  })}
-                </nav>
+                      </option>
+                    ))}
+                  </select>
+                </div>
 
                 <div className="mt-5 space-y-3">
                   <input
