@@ -327,7 +327,7 @@ function Hero() {
         Edition MMXXVI · Vol. I
       </div>
 
-      <div className="container-x relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      <div className="container-x relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center font-playfair">
         <div className="lg:col-span-6">
           <div
             className="reveal eyebrow flex items-center gap-3 !text-white font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]"
