@@ -208,8 +208,8 @@ function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const links = [
-    ["Services", "#services"],
     ["How it works", "#how"],
+    ["Services", "#services"],
     ["The Fleet", "#features"],
     ["Clients", "#testimonials"],
   ];
