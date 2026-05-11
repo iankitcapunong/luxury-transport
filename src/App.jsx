@@ -488,17 +488,17 @@ function HowItWorks() {
   const [destination, setDestination] = useState("");
   const steps = [
     {
-      n: "1.",
+      n: "1",
       title: "Inquiry",
       body: "Submit your details through the booking form, by phone, or by email. We hold your preferred time the moment we hear from you.",
     },
     {
-      n: "2.",
+      n: "2",
       title: "Speak to Desk",
       body: "Our concierge confirms your journey, chauffeur, and route within the hour. Adjustments welcomed up to two hours before pickup.",
     },
     {
-      n: "3.",
+      n: "3",
       title: "Wait for Vehicle",
       body: "Your chauffeur arrives thirty minutes early and waits at the kerb. Step in, depart, and arrive composed.",
     },
@@ -524,32 +524,9 @@ function HowItWorks() {
           </p>
         </div>
 
-        <div className="mt-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left — numbered steps stacked */}
-          <div className="lg:col-span-6 space-y-10">
-            {steps.map((s, i) => (
-              <div
-                key={s.n}
-                className="reveal group flex gap-6 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
-                style={{ transitionDelay: `${i * 100}ms` }}
-              >
-                <div className="font-display italic font-light text-7xl leading-none w-20 shrink-0 bg-gradient-to-br from-gold-300 via-gold-500 to-gold-600 bg-clip-text text-transparent transition-all duration-700 group-hover:bg-gradient-to-tr group-hover:from-gold-400 group-hover:via-gold-600 group-hover:to-ink-900">
-                  {s.n}
-                </div>
-                <div className="flex-1 border-l border-gold-500/30 pl-6 group-hover:border-gold-500 transition-colors duration-700">
-                  <h3 className="font-display font-normal text-2xl bg-gradient-to-br from-gold-300 via-gold-500 to-gold-600 bg-clip-text text-transparent transition-all duration-700 group-hover:bg-gradient-to-tr group-hover:from-gold-400 group-hover:via-gold-600 group-hover:to-ink-900">
-                    {s.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-[1.85] bg-gradient-to-br from-ink-700 via-ink-700 to-ink-700 bg-clip-text text-transparent transition-all duration-700 group-hover:bg-gradient-to-tr group-hover:from-gold-500 group-hover:via-ink-700 group-hover:to-ink-900">
-                    {s.body}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Right — Quick inquiry form, vertically centered */}
-          <div id="contact" className="lg:col-span-6 reveal">
+        {/* Quick inquiry form — centered above the steps */}
+        <div className="mt-16 max-w-lg mx-auto">
+          <div id="contact" className="reveal">
             <div className="relative">
               <div className="absolute -inset-6 rounded-2xl bg-gradient-to-tr from-gold-300/20 via-transparent to-gold-300/10 blur-3xl" />
               <div className="absolute -top-2 -left-2 h-5 w-5 border-l border-t border-gold-500/60" />
@@ -781,6 +758,28 @@ function HowItWorks() {
               </form>
             </div>
           </div>
+        </div>
+
+        {/* Three steps — three columns below the form */}
+        <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
+          {steps.map((s, i) => (
+            <div
+              key={s.n}
+              className="reveal group text-center transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+              style={{ transitionDelay: `${i * 100}ms` }}
+            >
+              <div className="font-display italic font-light text-7xl leading-none bg-gradient-to-br from-gold-300 via-gold-500 to-gold-600 bg-clip-text text-transparent transition-all duration-700 group-hover:bg-gradient-to-tr group-hover:from-gold-400 group-hover:via-gold-600 group-hover:to-ink-900">
+                {s.n}
+              </div>
+              <div className="mt-4 mx-auto h-px w-12 bg-gold-500/40 transition-all duration-700 group-hover:bg-gold-500 group-hover:w-20" />
+              <h3 className="mt-6 font-display font-normal text-2xl bg-gradient-to-br from-gold-300 via-gold-500 to-gold-600 bg-clip-text text-transparent transition-all duration-700 group-hover:bg-gradient-to-tr group-hover:from-gold-400 group-hover:via-gold-600 group-hover:to-ink-900">
+                {s.title}
+              </h3>
+              <p className="mt-4 text-sm leading-[1.85] bg-gradient-to-br from-ink-700 via-ink-700 to-ink-700 bg-clip-text text-transparent transition-all duration-700 group-hover:bg-gradient-to-tr group-hover:from-gold-500 group-hover:via-ink-700 group-hover:to-ink-900">
+                {s.body}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
