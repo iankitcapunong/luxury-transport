@@ -346,7 +346,7 @@ function Hero() {
             </p>
           </div>
 
-          <div className="reveal mt-8">
+          <div className="reveal mt-8 ml-12">
             <a
               href="#contact"
               className="btn-primary !rounded-[15px] !bg-gold-400 !text-ink-900 hover:!bg-cream-50"
@@ -542,7 +542,7 @@ function HowItWorks() {
                   e.preventDefault();
                   alert("Thank you. The team will be in touch shortly.");
                 }}
-                className="relative bg-cream-50 text-ink-900 p-7 lg:p-9 border border-ink-900/15 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.25)]"
+                className="relative bg-cream-50 text-ink-900 p-7 lg:p-9 border border-gold-500/40 rounded-[20px] shadow-[0_30px_70px_-15px_rgba(158,126,54,0.55),0_8px_24px_-10px_rgba(158,126,54,0.45)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-[0_50px_100px_-20px_rgba(158,126,54,0.7),0_10px_30px_-10px_rgba(158,126,54,0.55)]"
               >
                 <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.3em] text-gold-600">
                   <span>Quick Inquiry</span>
@@ -751,7 +751,7 @@ function HowItWorks() {
                     type="submit"
                     className="btn-primary w-full !rounded-[15px] !px-7 !py-3 !text-xs !tracking-[0.28em]"
                   >
-                    Book Now <Icon.ArrowRight className="h-3.5 w-3.5" />
+                    Send Inquiry <Icon.ArrowRight className="h-3.5 w-3.5" />
                   </button>
                 </div>
 
@@ -816,6 +816,16 @@ function SocialProof() {
 }
 
 // --- Features ---------------------------------------------------------------
+function FleetAutoSlide({ slide, setSlide, maxIndex }) {
+  useEffect(() => {
+    const id = setInterval(() => {
+      setSlide((s) => (s >= maxIndex ? 0 : s + 1));
+    }, 4500);
+    return () => clearInterval(id);
+  }, [maxIndex, setSlide]);
+  return null;
+}
+
 function Services() {
   const ref = useReveal();
   const [slide, setSlide] = useState(0);
@@ -873,47 +883,17 @@ function Services() {
           </p>
         </div>
 
-        {/* Slideshow: 3 cards visible, advance by 1 with prev/next */}
+        {/* Slideshow: 3 cards visible, auto-advances */}
         <div id="features" className="reveal mt-20">
           {(() => {
             const maxIndex = Math.max(0, items.length - 3);
-            const atStart = slide === 0;
-            const atEnd = slide >= maxIndex;
             return (
               <>
-                <div className="flex items-center justify-between mb-8">
-                  <div className="text-[10px] uppercase tracking-[0.34em] text-gold-600">
-                    Showing <span className="text-ink-900 font-medium">{slide + 1}–{Math.min(slide + 3, items.length)}</span>{" "}
-                    of {items.length}
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <button
-                      type="button"
-                      aria-label="Previous"
-                      onClick={() => setSlide((s) => Math.max(s - 1, 0))}
-                      disabled={atStart}
-                      className="grid h-11 w-11 place-items-center rounded-full border border-ink-900/20 text-ink-900 transition-all duration-500 hover:border-gold-500 hover:text-gold-600 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-ink-900/20 disabled:hover:text-ink-900"
-                    >
-                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M19 12H5" />
-                        <path d="m11 18-6-6 6-6" />
-                      </svg>
-                    </button>
-                    <button
-                      type="button"
-                      aria-label="Next"
-                      onClick={() => setSlide((s) => Math.min(s + 1, maxIndex))}
-                      disabled={atEnd}
-                      className="grid h-11 w-11 place-items-center rounded-full border border-ink-900/20 text-ink-900 transition-all duration-500 hover:border-gold-500 hover:text-gold-600 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-ink-900/20 disabled:hover:text-ink-900"
-                    >
-                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14" />
-                        <path d="m13 6 6 6-6 6" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-
+                <FleetAutoSlide
+                  slide={slide}
+                  setSlide={setSlide}
+                  maxIndex={maxIndex}
+                />
                 <div className="overflow-hidden -mx-[12.5px]">
                   <div
                     className="flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
@@ -977,7 +957,7 @@ function Services() {
         </div>
 
         {/* In-vehicle card */}
-        <div className="reveal mt-16 rounded-[20px] border border-ink-900/10 bg-ink-900 text-cream-50 overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)]">
+        <div className="reveal mt-16 rounded-[20px] border border-gold-500/50 bg-ink-900 text-cream-50 overflow-hidden shadow-[0_30px_70px_-15px_rgba(158,126,54,0.6),0_10px_30px_-12px_rgba(158,126,54,0.45)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-[0_50px_100px_-20px_rgba(158,126,54,0.75),0_15px_40px_-12px_rgba(158,126,54,0.55)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
             {/* Left — features */}
             <div className="p-8 lg:p-12 flex flex-col">
