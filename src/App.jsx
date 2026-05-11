@@ -346,7 +346,16 @@ function Hero() {
             </p>
           </div>
 
-          <div className="reveal mt-16 grid grid-cols-3 max-w-md gap-y-4 gap-x-8 border-t border-white/40 pt-8">
+          <div className="reveal mt-8">
+            <a
+              href="#contact"
+              className="btn-primary !rounded-[15px] !bg-gold-400 !text-ink-900 hover:!bg-cream-50"
+            >
+              Book Now <Icon.ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+
+          <div className="reveal mt-12 grid grid-cols-3 max-w-md gap-y-4 gap-x-8 border-t border-white/40 pt-8">
             {[
               ["i.", "Twenty-four hour dispatch"],
               ["ii.", "All United Kingdom airports"],
@@ -742,7 +751,7 @@ function HowItWorks() {
                     type="submit"
                     className="btn-primary w-full !rounded-[15px] !px-7 !py-3 !text-xs !tracking-[0.28em]"
                   >
-                    Send inquiry <Icon.ArrowRight className="h-3.5 w-3.5" />
+                    Book Now <Icon.ArrowRight className="h-3.5 w-3.5" />
                   </button>
                 </div>
 
