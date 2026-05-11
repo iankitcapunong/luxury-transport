@@ -337,12 +337,14 @@ function Hero() {
             United Kingdom
           </div>
           <h1
-            className="reveal h-display mt-8 text-[60px] leading-[1.05] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
+            className="reveal h-display !font-playfair mt-8 text-[60px] leading-[1.05] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
             style={{ transitionDelay: "250ms" }}
           >
             Arrive
             <br />
-            <span className="italic font-light text-gold-400">composed.</span>
+            <span className="italic font-light text-gold-400 font-playfair">
+              composed.
+            </span>
           </h1>
           <div
             className="reveal mt-8 flex items-start gap-4 max-w-xl"
