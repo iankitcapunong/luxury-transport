@@ -486,9 +486,26 @@ function HowItWorks({ selectedService, onSelectService }) {
   const ref = useReveal();
   const [pickup, setPickup] = useState("");
   const [destination, setDestination] = useState("");
+  const [displayService, setDisplayService] = useState(selectedService);
+  const [isExiting, setIsExiting] = useState(false);
   useEffect(() => {
     setPickup("");
     setDestination("");
+  }, [selectedService]);
+  useEffect(() => {
+    if (selectedService) {
+      setDisplayService(selectedService);
+      setIsExiting(false);
+      return;
+    }
+    if (displayService) {
+      setIsExiting(true);
+      const id = setTimeout(() => {
+        setDisplayService(null);
+        setIsExiting(false);
+      }, 550);
+      return () => clearTimeout(id);
+    }
   }, [selectedService]);
   const serviceTabs = [
     "Airport & Long-Distance",
@@ -700,41 +717,57 @@ function HowItWorks({ selectedService, onSelectService }) {
 
         {/* Quick inquiry form — with service description on the left when one is selected */}
         <div
-          className={`mt-16 ${
-            selectedService
+          className={`mt-16 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            displayService
               ? "grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start max-w-5xl mx-auto"
               : "max-w-lg mx-auto"
           }`}
         >
-          {selectedService && (
+          {displayService && (
             <div
-              key={selectedService}
-              className="animate-fade-up lg:pt-6"
+              key={isExiting ? "exit" : displayService}
+              className={`${isExiting ? "animate-fade-down pointer-events-none" : "animate-fade-up"} lg:pt-6`}
             >
               <div className="eyebrow flex items-center gap-3">
                 <span className="hairline" /> Selected Service
               </div>
               <h3
                 className="font-display text-3xl mt-4 text-mask-gold"
-                style={{ animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "120ms" }}
+                style={
+                  isExiting
+                    ? undefined
+                    : { animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "120ms" }
+                }
               >
-                {selectedService}
+                {displayService}
               </h3>
               <div
                 className="mt-4 h-px w-12 bg-gold-500/60"
-                style={{ animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "200ms" }}
+                style={
+                  isExiting
+                    ? undefined
+                    : { animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "200ms" }
+                }
               />
               <p
                 className="mt-5 text-ink-700 leading-relaxed italic font-light"
-                style={{ animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "280ms" }}
+                style={
+                  isExiting
+                    ? undefined
+                    : { animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "280ms" }
+                }
               >
-                {serviceDescriptions[selectedService]}
+                {serviceDescriptions[displayService]}
               </p>
               <button
                 type="button"
                 onClick={() => onSelectService && onSelectService(null)}
                 className="mt-6 text-[10px] uppercase tracking-[0.28em] text-gold-600 hover:text-gold-700 underline underline-offset-4 decoration-gold-500/60 transition-colors"
-                style={{ animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "400ms" }}
+                style={
+                  isExiting
+                    ? undefined
+                    : { animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "400ms" }
+                }
               >
                 Clear selection
               </button>

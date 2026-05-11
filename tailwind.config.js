@@ -65,6 +65,10 @@ export default {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-8px)' },
         },
+        fadeDown: {
+          '0%': { opacity: '1', transform: 'translateY(0)' },
+          '100%': { opacity: '0', transform: 'translateY(20px)' },
+        },
         heroBgA: {
           '0%, 25%': { opacity: '1' },
           '50%, 75%': { opacity: '0' },
@@ -97,6 +101,7 @@ export default {
         'cross-a': 'crossA 8s ease-in-out infinite',
         'cross-b': 'crossB 8s ease-in-out infinite',
         'gentle-bounce': 'gentleBounce 2s ease-in-out infinite',
+        'fade-down': 'fadeDown 0.55s cubic-bezier(0.22,1,0.36,1) both',
         'hero-bg-a': 'heroBgA 12s ease-in-out infinite',
         'hero-bg-b': 'heroBgB 12s ease-in-out infinite',
         'hero-trip-1': 'heroTrip1 18s ease-in-out infinite',
