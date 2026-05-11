@@ -809,6 +809,7 @@ function SocialProof() {
 // --- Features ---------------------------------------------------------------
 function Services() {
   const ref = useReveal();
+  const [slide, setSlide] = useState(0);
   const items = [
     {
       icon: Icon.Plane,
@@ -863,45 +864,107 @@ function Services() {
           </p>
         </div>
 
-        <div
-          id="features"
-          className="reveal mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {items.map(({ icon: I, t, d }, i) => (
-            <a
-              key={t}
-              href="#contact"
-              className="reveal group relative block cursor-pointer
-                         rounded-[20px] border border-ink-900/15 bg-cream-50 p-7
-                         shadow-[0_18px_40px_-14px_rgba(0,0,0,0.45)]
-                         transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
-                         hover:-translate-y-3 hover:scale-[1.02] hover:z-10
-                         hover:bg-cream-100 hover:border-gold-500
-                         hover:shadow-[0_40px_80px_-18px_rgba(0,0,0,0.65)]
-                         focus:outline-none focus:ring-1 focus:ring-gold-400/50"
-              style={{ transitionDelay: `${i * 80}ms` }}
-            >
-              <div className="flex items-start justify-between">
-                <I className="h-6 w-6 text-gold-500 transition-all duration-700 group-hover:-translate-y-1" />
-                <span className="font-display italic font-light text-lg text-gold-500/70">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-              </div>
-              <div className="mt-6 h-px w-10 bg-gold-500/60 transition-all duration-700 group-hover:w-16" />
-              <h3 className="font-display font-normal text-2xl mt-5 text-ink-900 leading-tight">
-                {t}
-              </h3>
-              <p className="mt-3 text-[13px] text-ink-700 leading-[1.75]">
-                {d}
-              </p>
-              <div className="mt-7 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-gold-600">
-                <span className="border-b border-transparent group-hover:border-gold-500 transition-colors duration-700">
-                  Reserve this journey
-                </span>
-                <Icon.ArrowRight className="h-3.5 w-3.5 transition-transform duration-700 group-hover:translate-x-1.5" />
-              </div>
-            </a>
-          ))}
+        {/* Slideshow: 3 cards visible, advance by 1 with prev/next */}
+        <div id="features" className="reveal mt-20">
+          {(() => {
+            const maxIndex = Math.max(0, items.length - 3);
+            const atStart = slide === 0;
+            const atEnd = slide >= maxIndex;
+            return (
+              <>
+                <div className="flex items-center justify-between mb-8">
+                  <div className="text-[10px] uppercase tracking-[0.34em] text-gold-600">
+                    Showing <span className="text-ink-900 font-medium">{slide + 1}–{Math.min(slide + 3, items.length)}</span>{" "}
+                    of {items.length}
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <button
+                      type="button"
+                      aria-label="Previous"
+                      onClick={() => setSlide((s) => Math.max(s - 1, 0))}
+                      disabled={atStart}
+                      className="grid h-11 w-11 place-items-center rounded-full border border-ink-900/20 text-ink-900 transition-all duration-500 hover:border-gold-500 hover:text-gold-600 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-ink-900/20 disabled:hover:text-ink-900"
+                    >
+                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M19 12H5" />
+                        <path d="m11 18-6-6 6-6" />
+                      </svg>
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="Next"
+                      onClick={() => setSlide((s) => Math.min(s + 1, maxIndex))}
+                      disabled={atEnd}
+                      className="grid h-11 w-11 place-items-center rounded-full border border-ink-900/20 text-ink-900 transition-all duration-500 hover:border-gold-500 hover:text-gold-600 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-ink-900/20 disabled:hover:text-ink-900"
+                    >
+                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14" />
+                        <path d="m13 6 6 6-6 6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div className="overflow-hidden -mx-4">
+                  <div
+                    className="flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                    style={{ transform: `translateX(-${slide * (100 / 3)}%)` }}
+                  >
+                    {items.map(({ icon: I, t, d }, i) => (
+                      <div key={t} className="flex-none w-full sm:w-1/2 lg:w-1/3 px-4">
+                        <a
+                          href="#contact"
+                          className="group relative block cursor-pointer h-full
+                                     rounded-[20px] border border-ink-900/15 bg-cream-50 p-7
+                                     shadow-[0_18px_40px_-14px_rgba(0,0,0,0.45)]
+                                     transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+                                     hover:-translate-y-3 hover:scale-[1.02] hover:z-10
+                                     hover:bg-cream-100 hover:border-gold-500
+                                     hover:shadow-[0_40px_80px_-18px_rgba(0,0,0,0.65)]
+                                     focus:outline-none focus:ring-1 focus:ring-gold-400/50"
+                        >
+                          <div className="flex items-start justify-between">
+                            <I className="h-6 w-6 text-gold-500 transition-all duration-700 group-hover:-translate-y-1" />
+                            <span className="font-display italic font-light text-lg text-gold-500/70">
+                              {String(i + 1).padStart(2, "0")}
+                            </span>
+                          </div>
+                          <div className="mt-6 h-px w-10 bg-gold-500/60 transition-all duration-700 group-hover:w-16" />
+                          <h3 className="font-display font-normal text-2xl mt-5 text-ink-900 leading-tight">
+                            {t}
+                          </h3>
+                          <p className="mt-3 text-[13px] text-ink-700 leading-[1.75]">
+                            {d}
+                          </p>
+                          <div className="mt-7 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-gold-600">
+                            <span className="border-b border-transparent group-hover:border-gold-500 transition-colors duration-700">
+                              Reserve this journey
+                            </span>
+                            <Icon.ArrowRight className="h-3.5 w-3.5 transition-transform duration-700 group-hover:translate-x-1.5" />
+                          </div>
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Dot indicators */}
+                <div className="mt-8 flex items-center justify-center gap-2">
+                  {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setSlide(i)}
+                      aria-label={`Slide ${i + 1}`}
+                      className={`h-1.5 rounded-full transition-all duration-500 ${
+                        i === slide ? "w-10 bg-gold-500" : "w-2 bg-ink-900/20 hover:bg-gold-500/60"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </>
+            );
+          })()}
         </div>
 
         {/* In-vehicle card */}
