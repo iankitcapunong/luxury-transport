@@ -536,10 +536,10 @@ function HowItWorks() {
                   {s.n}
                 </div>
                 <div className="flex-1 border-l border-gold-500/30 pl-6 group-hover:border-gold-500 transition-colors duration-700">
-                  <h3 className="font-display font-normal text-2xl text-mask-gold">
+                  <h3 className="font-display font-normal text-2xl bg-gradient-to-br from-gold-300 via-gold-500 to-gold-600 bg-clip-text text-transparent transition-all duration-700 group-hover:bg-gradient-to-tr group-hover:from-gold-400 group-hover:via-gold-600 group-hover:to-ink-900">
                     {s.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-[1.85] text-ink-700">
+                  <p className="mt-3 text-sm leading-[1.85] bg-gradient-to-br from-ink-700 via-ink-700 to-ink-700 bg-clip-text text-transparent transition-all duration-700 group-hover:bg-gradient-to-tr group-hover:from-gold-500 group-hover:via-ink-700 group-hover:to-ink-900">
                     {s.body}
                   </p>
                 </div>
