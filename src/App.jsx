@@ -835,49 +835,29 @@ function SocialProof() {
 }
 
 // --- Features ---------------------------------------------------------------
-function FleetAutoSlide({ slide, setSlide, maxIndex }) {
-  useEffect(() => {
-    const id = setInterval(() => {
-      setSlide((s) => (s >= maxIndex ? 0 : s + 1));
-    }, 4500);
-    return () => clearInterval(id);
-  }, [maxIndex, setSlide]);
-  return null;
-}
-
 function Services() {
   const ref = useReveal();
-  const [slide, setSlide] = useState(0);
-  const items = [
+  const groups = [
     {
       icon: Icon.Plane,
-      t: "Airport Transfers",
-      d: "All UK airports, met-and-greet, flight tracking and a calm boot ready for your luggage.",
+      icon2: Icon.Road,
+      t: "Airport & Long-Distance",
+      d: "All UK airports with met-and-greet, flight tracking and a calm boot for your luggage; plus city-to-city long-distance hires with champagne bar, refrigerator and reclining leather for the miles ahead.",
+      tags: ["Airport Transfers", "Long-Distance Private Hire"],
     },
     {
       icon: Icon.Briefcase,
-      t: "Corporate Chauffeur",
-      d: "Day rates, board pickups, multi-stop schedules, handled with the discretion your business needs.",
-    },
-    {
-      icon: Icon.Crown,
-      t: "VIP & Celebrity",
-      d: "Festivals, labels, talent transfers. Tinted glass, NDAs as standard, paparazzi route planning on request.",
+      icon2: Icon.Crown,
+      t: "Corporate & VIP",
+      d: "Day rates, board pickups and multi-stop schedules handled with the discretion your business needs. Tinted glass, NDAs as standard, paparazzi-aware route planning for festivals, labels and talent transfers.",
+      tags: ["Corporate Chauffeur", "VIP & Celebrity"],
     },
     {
       icon: Icon.Ring,
-      t: "Weddings & Events",
-      d: "Ribbons optional, immaculate interiors essential. Bride, groom and party transport coordinated to the minute.",
-    },
-    {
-      icon: Icon.Road,
-      t: "Long-Distance Private Hire",
-      d: "City to city, door to door. Champagne bar, refrigerator and reclining leather for the miles ahead.",
-    },
-    {
-      icon: Icon.Champagne,
-      t: "Group Travel · Up to 8",
-      d: "Mercedes V-Class with panoramic roof, massage seats and Wi-Fi. Eight passengers, zero compromise.",
+      icon2: Icon.Champagne,
+      t: "Weddings & Group Travel",
+      d: "Ribbons optional, immaculate interiors essential. Bride, groom and party coordinated to the minute. Mercedes V-Class with panoramic roof, massage seats and Wi-Fi for up to eight passengers, zero compromise.",
+      tags: ["Weddings & Events", "Group Travel · Up to 8"],
     },
   ];
   return (
@@ -900,77 +880,50 @@ function Services() {
           </p>
         </div>
 
-        {/* Slideshow: 3 cards visible, auto-advances */}
-        <div id="features" className="reveal mt-20">
-          {(() => {
-            const maxIndex = Math.max(0, items.length - 3);
-            return (
-              <>
-                <FleetAutoSlide
-                  slide={slide}
-                  setSlide={setSlide}
-                  maxIndex={maxIndex}
-                />
-                <div className="overflow-hidden -mx-[12.5px]">
-                  <div
-                    className="flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
-                    style={{ transform: `translateX(-${slide * (100 / 3)}%)` }}
+        {/* Three grouped cards — static grid, white background, no hover */}
+        <div
+          id="features"
+          className="reveal mt-20 grid grid-cols-1 md:grid-cols-3 gap-7"
+        >
+          {groups.map(({ icon: I, icon2: I2, t, d, tags }, i) => (
+            <a
+              key={t}
+              href="#contact"
+              className="relative flex flex-col h-full min-h-[480px] rounded-[20px] border border-ink-900/15 bg-white p-9 shadow-[0_24px_50px_-18px_rgba(0,0,0,0.25)]"
+            >
+              <div className="flex items-start justify-between">
+                <div className="flex items-center gap-3">
+                  <I className="h-7 w-7 text-gold-500" />
+                  <span className="h-px w-3 bg-gold-500/60" />
+                  <I2 className="h-7 w-7 text-gold-500" />
+                </div>
+                <span className="font-display italic font-light text-xl text-gold-500/70">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <div className="mt-8 h-px w-12 bg-gold-500/60" />
+              <h3 className="font-display font-normal text-2xl mt-6 leading-tight text-mask-ink">
+                {t}
+              </h3>
+              <p className="mt-4 text-[13px] text-ink-700 leading-[1.85] flex-1">
+                {d}
+              </p>
+              <div className="mt-7 flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[10px] uppercase tracking-[0.28em] text-gold-600 border border-gold-500/40 rounded-full px-3 py-1"
                   >
-                    {items.map(({ icon: I, t, d }, i) => (
-                      <div key={t} className="flex-none w-full sm:w-1/2 lg:w-1/3 px-[12.5px]">
-                        <a
-                          href="#contact"
-                          className="group relative flex flex-col h-full min-h-[440px] cursor-pointer
-                                     rounded-[20px] border border-gold-500/40 bg-gold-300 p-7
-                                     shadow-[0_20px_45px_-15px_rgba(122,94,32,0.55)]
-                                     transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
-                                     hover:-translate-y-3 hover:scale-[1.02] hover:z-10
-                                     hover:bg-gold-400 hover:border-gold-600
-                                     hover:shadow-[0_40px_80px_-18px_rgba(122,94,32,0.75)]
-                                     focus:outline-none focus:ring-1 focus:ring-gold-400/50"
-                        >
-                          <div className="flex items-start justify-between">
-                            <I className="h-7 w-7 text-ink-900 transition-all duration-700 group-hover:-translate-y-1" />
-                            <span className="font-display italic font-light text-xl text-ink-900/60">
-                              {String(i + 1).padStart(2, "0")}
-                            </span>
-                          </div>
-                          <div className="mt-7 h-px w-12 bg-ink-900/40 transition-all duration-700 group-hover:w-20" />
-                          <h3 className="font-display font-normal text-2xl mt-5 leading-tight text-mask-ink">
-                            {t}
-                          </h3>
-                          <p className="mt-4 text-[13px] text-ink-800 leading-[1.8] flex-1">
-                            {d}
-                          </p>
-                          <div className="mt-7 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-ink-900">
-                            <span className="border-b border-transparent group-hover:border-ink-900 transition-colors duration-700">
-                              Book Now
-                            </span>
-                            <Icon.ArrowRight className="h-3.5 w-3.5 transition-transform duration-700 group-hover:translate-x-1.5" />
-                          </div>
-                        </a>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Dot indicators */}
-                <div className="mt-8 flex items-center justify-center gap-2">
-                  {Array.from({ length: maxIndex + 1 }).map((_, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setSlide(i)}
-                      aria-label={`Slide ${i + 1}`}
-                      className={`h-1.5 rounded-full transition-all duration-500 ${
-                        i === slide ? "w-10 bg-gold-500" : "w-2 bg-ink-900/20 hover:bg-gold-500/60"
-                      }`}
-                    />
-                  ))}
-                </div>
-              </>
-            );
-          })()}
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-8 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-ink-900">
+                <span className="border-b border-gold-500">Book Now</span>
+                <Icon.ArrowRight className="h-3.5 w-3.5" />
+              </div>
+            </a>
+          ))}
         </div>
 
         {/* In-vehicle card */}
