@@ -650,27 +650,9 @@ function HowItWorks({ selectedService, onClearService }) {
                         <option>Mayfair</option>
                         <option>Knightsbridge</option>
                         <option>Belgravia</option>
-                        <option>Chelsea</option>
-                        <option>Kensington</option>
-                        <option>The City</option>
-                        <option>Canary Wharf</option>
-                        <option>Soho</option>
                       </optgroup>
-                      <optgroup label="Cities">
-                        <option>Manchester</option>
-                        <option>Birmingham</option>
-                        <option>Liverpool</option>
-                        <option>Leeds</option>
-                        <option>Edinburgh</option>
-                        <option>Glasgow</option>
-                        <option>Bristol</option>
-                      </optgroup>
-                      <optgroup label="Other">
+                      <optgroup label="Hotels">
                         <option>Hotel / Venue</option>
-                        <option>Wedding venue</option>
-                        <option>Festival / Event</option>
-                        <option>Home address</option>
-                        <option>Custom address</option>
                       </optgroup>
                     </select>
                     <select
@@ -701,26 +683,9 @@ function HowItWorks({ selectedService, onClearService }) {
                         <option>Mayfair</option>
                         <option>Knightsbridge</option>
                         <option>Belgravia</option>
-                        <option>Chelsea</option>
-                        <option>Kensington</option>
-                        <option>The City</option>
-                        <option>Canary Wharf</option>
-                        <option>Soho</option>
                       </optgroup>
-                      <optgroup label="Cities">
-                        <option>Manchester</option>
-                        <option>Birmingham</option>
-                        <option>Liverpool</option>
-                        <option>Leeds</option>
-                        <option>Edinburgh</option>
-                        <option>Glasgow</option>
-                        <option>Bristol</option>
-                      </optgroup>
-                      <optgroup label="Other">
+                      <optgroup label="Hotels">
                         <option>Hotel / Venue</option>
-                        <option>Wedding venue</option>
-                        <option>Festival / Event</option>
-                        <option>Custom address</option>
                       </optgroup>
                     </select>
                   </div>
