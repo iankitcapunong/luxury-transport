@@ -915,12 +915,10 @@ function Services() {
                         <a
                           href="#contact"
                           className="group relative flex flex-col h-full min-h-[440px] cursor-pointer
-                                     rounded-[20px] border border-ink-900/15 bg-cream-50 p-7
-                                     shadow-[0_15px_35px_-12px_rgba(0,0,0,0.4)]
+                                     rounded-[20px] border border-ink-900/15 bg-transparent p-7
                                      transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
                                      hover:-translate-y-2 hover:scale-[1.02] hover:z-10
-                                     hover:bg-cream-100 hover:border-gold-500
-                                     hover:shadow-[0_30px_60px_-18px_rgba(0,0,0,0.55)]
+                                     hover:border-gold-500
                                      focus:outline-none focus:ring-1 focus:ring-gold-400/50"
                         >
                           <div className="flex items-start justify-between">
@@ -1024,29 +1022,6 @@ function Services() {
 // --- Testimonials -----------------------------------------------------------
 function Testimonials() {
   const ref = useReveal();
-  const [activeStat, setActiveStat] = useState(0);
-  const stats = [
-    {
-      k: "97%",
-      t: "Repeat clients",
-      d: "Ninety-seven percent of private clients return within twelve months. Word travels quietly between concierge desks, tour managers and wedding planners, which is how most of our work arrives.",
-    },
-    {
-      k: "20+",
-      t: "Years on the road",
-      d: "Two decades of late-night pickups, airport runs and wedding mornings. The drivers we lead today were trained by the drivers we hired in the early years. A house style passed by hand.",
-    },
-    {
-      k: "12hr",
-      t: "Quote turnaround",
-      d: "Every inquiry receives a written quote (vehicle, driver, route, price) within twelve hours, often inside the same one. No quote desk, no portals. A person reads it and a person replies.",
-    },
-    {
-      k: "24/7",
-      t: "Dispatch",
-      d: "Calls answered by a human, twenty-four hours a day. Whether it is a 3 a.m. arrival at Heathrow or a last-minute swap on a wedding morning, someone is already at the desk before you ring off.",
-    },
-  ];
   const quotes = [
     {
       q: "“They moved an artist from a sold-out show to a private dinner in twenty minutes, and you wouldn't have known either was happening. Exactly what we needed.”",
@@ -1117,51 +1092,6 @@ function Testimonials() {
           ))}
         </div>
 
-        {/* Stat banner — clickable tabs */}
-        <div className="reveal mt-24 rounded-[20px] border border-ink-900/10 bg-cream-50 overflow-hidden shadow-[0_18px_40px_-14px_rgba(0,0,0,0.25)]">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-ink-900/10 border-b border-ink-900/10">
-            {stats.map((s, i) => (
-              <button
-                key={s.k}
-                type="button"
-                onClick={() => setActiveStat(i)}
-                className={`relative px-6 py-7 text-left transition-all duration-500 group ${
-                  activeStat === i
-                    ? "bg-ink-900 text-cream-50"
-                    : "bg-cream-50 hover:bg-cream-100"
-                }`}
-              >
-                <div
-                  className={`font-display italic font-light text-4xl ${
-                    activeStat === i ? "text-gold-300" : "text-gold-500"
-                  }`}
-                >
-                  {s.k}
-                </div>
-                <div
-                  className={`mt-2 text-[10px] uppercase tracking-[0.28em] ${
-                    activeStat === i ? "text-cream-100/80" : "text-ink-700"
-                  }`}
-                >
-                  {s.t}
-                </div>
-                <span
-                  className={`absolute left-6 right-6 bottom-3 h-px transition-all duration-500 ${
-                    activeStat === i ? "bg-gold-400" : "bg-transparent"
-                  }`}
-                />
-              </button>
-            ))}
-          </div>
-          <div className="p-8 lg:p-10 text-center">
-            <p
-              key={activeStat}
-              className="animate-fade-up font-display italic font-light text-lg lg:text-xl text-ink-900 leading-relaxed max-w-3xl mx-auto"
-            >
-              {stats[activeStat].d}
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
