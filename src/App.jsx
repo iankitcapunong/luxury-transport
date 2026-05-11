@@ -233,14 +233,14 @@ function Nav() {
         }`}
       >
         <a href="#top" className="flex items-center gap-4">
-          <span className="grid h-10 w-10 place-items-center rounded-full border border-gold-400/70 text-gold-500 font-display italic text-xl">
+          <span className="grid h-10 w-10 place-items-center rounded-full border border-gold-400/70 text-gold-500 font-display italic text-[18px]">
             L
           </span>
           <div className="leading-tight">
-            <div className="font-display text-base tracking-wide text-ink-900">
+            <div className="font-display tracking-wide text-ink-900 text-[18px]">
               Luxury Transport
             </div>
-            <div className="text-[10px] uppercase tracking-[0.34em] text-ink-500 mt-0.5">
+            <div className="uppercase tracking-[0.34em] text-ink-500 mt-1 text-[18px]">
               Private Chauffeur · UK
             </div>
           </div>
@@ -298,55 +298,71 @@ function Nav() {
 // --- Hero -------------------------------------------------------------------
 function Hero() {
   const ref = useReveal();
+  const [pickup, setPickup] = useState("");
+  const [destination, setDestination] = useState("");
   return (
     <section
       id="top"
       ref={ref}
-      className="relative overflow-hidden pt-36 pb-28 lg:pt-44 lg:pb-36 paper"
+      className="relative overflow-hidden pt-36 pb-28 lg:pt-44 lg:pb-36"
     >
+      {/* Background video */}
+      <div className="pointer-events-none absolute inset-0 z-0 bg-ink-900">
+        <video
+          src="/merc.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        {/* Cream / beige veil — 20% opacity over the whole image */}
+        <div className="absolute inset-0 bg-cream-50 opacity-[0.20]" />
+        {/* Stronger cream/beige fade on the sides for readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-cream-50/85 via-cream-50/15 to-cream-50/85" />
+        {/* Soft top/bottom fade so the marquee + nav blend */}
+        <div className="absolute inset-0 bg-gradient-to-b from-cream-50/40 via-transparent to-cream-50/60" />
+      </div>
+
       {/* atmospheric light wash */}
-      <div className="pointer-events-none absolute -top-40 -right-40 h-[36rem] w-[36rem] rounded-full bg-gold-300/25 blur-[120px]" />
-      <div className="pointer-events-none absolute -bottom-48 -left-48 h-[36rem] w-[36rem] rounded-full bg-ink-900/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -top-40 -right-40 h-[36rem] w-[36rem] rounded-full bg-gold-300/25 blur-[120px] z-0" />
+      <div className="pointer-events-none absolute -bottom-48 -left-48 h-[36rem] w-[36rem] rounded-full bg-ink-900/10 blur-[120px] z-0" />
 
       {/* vertical edition stamp */}
-      <div className="hidden xl:block pointer-events-none absolute left-6 top-1/2 -translate-y-1/2 v-text text-[10px] uppercase tracking-[0.4em] text-ink-500/70">
+      <div className="hidden xl:block pointer-events-none absolute left-6 top-1/2 -translate-y-1/2 v-text text-[10px] uppercase tracking-[0.4em] text-ink-700/80 z-10">
         Edition MMXXVI · Vol. I
       </div>
 
-      <div className="container-x relative grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      <div className="container-x relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         <div className="lg:col-span-6">
-          <div className="reveal eyebrow flex items-center gap-3">
-            <span className="hairline" /> Est. London · Serving the United Kingdom
+          <div className="reveal eyebrow flex items-center gap-3 !text-black font-bold drop-shadow-[0_1px_2px_rgba(245,236,214,0.7)]">
+            <span className="h-px w-14 bg-black" /> Est. London · Serving the United Kingdom
           </div>
-          <h1 className="reveal h-display mt-8 text-[3.25rem] sm:text-[4.5rem] lg:text-[6.5rem] xl:text-[7rem]">
+          <h1 className="reveal h-display mt-8 text-[60px] leading-[1.05]">
             Arrive<br />
             <span className="italic font-light text-gold-500">composed.</span>
           </h1>
-          <div className="reveal mt-8 flex items-center gap-4 max-w-xl">
-            <span className="h-px w-8 bg-gold-500/60" />
-            <p className="text-sm sm:text-base text-ink-700 leading-relaxed italic font-light">
+          <div className="reveal mt-8 flex items-start gap-4 max-w-xl">
+            <span className="mt-3 h-px w-8 bg-gold-500 shrink-0" />
+            <p className="text-base sm:text-lg text-black leading-relaxed font-bold drop-shadow-[0_1px_2px_rgba(245,236,214,0.7)]">
               A private chauffeur house, fluent in the small things —
               the chilled water, the unspoken route, the door already open.
             </p>
           </div>
 
-          <div className="reveal mt-12 flex flex-wrap items-center gap-4">
-            <a href="#contact" className="btn-primary">
-              Reserve a Journey <Icon.ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
-
-          <div className="reveal mt-16 grid grid-cols-3 max-w-md gap-y-4 gap-x-8 border-t border-ink-900/15 pt-8">
+          <div className="reveal mt-16 grid grid-cols-3 max-w-md gap-y-4 gap-x-8 border-t border-black/40 pt-8">
             {[
               ["i.", "Twenty-four hour dispatch"],
               ["ii.", "All United Kingdom airports"],
               ["iii.", "Discretion as standard"],
             ].map(([k, v]) => (
               <div key={k} className="flex flex-col">
-                <div className="font-display italic font-light text-2xl text-gold-500">
+                <div className="font-display italic font-light text-2xl text-gold-500 drop-shadow-[0_1px_2px_rgba(245,236,214,0.6)]">
                   {k}
                 </div>
-                <div className="mt-2 text-[10px] uppercase tracking-[0.28em] text-ink-700 leading-relaxed">
+                <div className="mt-2 text-[10px] uppercase tracking-[0.28em] text-black font-bold leading-relaxed drop-shadow-[0_1px_2px_rgba(245,236,214,0.7)]">
                   {v}
                 </div>
               </div>
@@ -354,79 +370,222 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right column visual */}
-        <div className="lg:col-span-6 reveal">
-          <div className="relative">
-            <div className="absolute -inset-10 rounded-[2rem] bg-gradient-to-tr from-gold-300/30 via-transparent to-gold-300/10 blur-3xl" />
-            {/* corner registers */}
-            <div className="absolute -top-3 -left-3 h-6 w-6 border-l border-t border-gold-500/60" />
-            <div className="absolute -top-3 -right-3 h-6 w-6 border-r border-t border-gold-500/60" />
-            <div className="absolute -bottom-3 -left-3 h-6 w-6 border-l border-b border-gold-500/60" />
-            <div className="absolute -bottom-3 -right-3 h-6 w-6 border-r border-b border-gold-500/60" />
+        {/* Right column — Quick inquiry */}
+        <div id="contact" className="lg:col-span-6 lg:col-start-7 reveal">
+          <div className="relative max-w-md ml-auto">
+            <div className="absolute -inset-8 rounded-2xl bg-gradient-to-tr from-gold-300/20 via-transparent to-gold-300/10 blur-3xl" />
+            <div className="absolute -top-2 -left-2 h-5 w-5 border-l border-t border-gold-500/60" />
+            <div className="absolute -top-2 -right-2 h-5 w-5 border-r border-t border-gold-500/60" />
+            <div className="absolute -bottom-2 -left-2 h-5 w-5 border-l border-b border-gold-500/60" />
+            <div className="absolute -bottom-2 -right-2 h-5 w-5 border-r border-b border-gold-500/60" />
 
-            <div className="relative overflow-hidden border border-ink-900/10 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)]">
-              <div className="relative bg-ink-900 text-cream-50 p-10 grain">
-                <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.34em] text-gold-300">
-                  <span>Fleet · No. 01</span>
-                  <span>Mercedes — Sprinter</span>
-                </div>
-                <div className="mt-8 aspect-[5/3] w-full relative overflow-hidden bg-ink-800">
-                  <img
-                    src="/mercedez.jpeg"
-                    alt="Mercedes Sprinter exterior"
-                    className="absolute inset-0 h-full w-full object-cover animate-cross-a"
-                  />
-                  <img
-                    src="/mercedez_in.jpeg"
-                    alt="Mercedes Sprinter interior"
-                    className="absolute inset-0 h-full w-full object-cover animate-cross-b"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-900/40 via-transparent to-transparent" />
-                  <div className="pointer-events-none absolute bottom-4 left-4 text-[10px] uppercase tracking-[0.34em] text-cream-50/90 animate-cross-a">
-                    — Exterior
-                  </div>
-                  <div className="pointer-events-none absolute bottom-4 left-4 text-[10px] uppercase tracking-[0.34em] text-cream-50/90 animate-cross-b">
-                    — Interior
-                  </div>
-                </div>
-                <div className="mt-8 flex items-end justify-between">
-                  <div>
-                    <div className="font-display italic font-light text-4xl">
-                      The Sprinter
-                    </div>
-                    <div className="mt-3 flex items-center gap-3 text-[10px] uppercase tracking-[0.34em] text-ink-300">
-                      <span>Eight seats</span>
-                      <span className="h-px w-3 bg-gold-400/60" />
-                      <span>Panoramic roof</span>
-                      <span className="h-px w-3 bg-gold-400/60" />
-                      <span>Champagne bar</span>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-[10px] uppercase tracking-[0.34em] text-gold-300">
-                      From
-                    </div>
-                    <div className="font-display italic font-light text-3xl mt-1">
-                      £POA
-                    </div>
-                  </div>
-                </div>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                alert("Thank you. The team will be in touch shortly.");
+              }}
+              className="relative bg-cream-50/30 backdrop-blur-md text-ink-900 p-7 border border-ink-900/15 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.4)]"
+            >
+              <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.3em] text-gold-600">
+                <span>Quick Inquiry</span>
+                <span>Vol. I · 2026</span>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              <h3 className="mt-3 font-display text-2xl text-ink-900">
+                Begin your{" "}
+                <span className="italic font-light text-gold-600">
+                  journey.
+                </span>
+              </h3>
+              <div className="mt-3 h-px w-12 bg-gold-500/60" />
 
-      {/* Marquee tagline */}
-      <div className="relative mt-28 border-y border-ink-900/15 bg-cream-100/30">
-        <div className="container-x flex flex-col items-center justify-center text-center py-10">
-          <div className="text-[10px] uppercase tracking-[0.4em] text-gold-500">
-            — The House Code —
-          </div>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 sm:gap-x-16 font-display text-2xl sm:text-4xl text-ink-900">
-            <span>Discretion.</span>
-            <span className="italic font-light text-gold-500">Punctuality.</span>
-            <span>Composure.</span>
+              <div className="mt-5 space-y-3">
+                <input
+                  required
+                  placeholder="Full name"
+                  className="w-full rounded-lg border border-ink-900/15 bg-cream-50/60 px-4 py-2.5 text-sm focus:outline-none focus:border-gold-500 focus:bg-cream-50/90 transition"
+                />
+                <input
+                  required
+                  type="email"
+                  placeholder="Email address"
+                  className="w-full rounded-lg border border-ink-900/15 bg-cream-50/60 px-4 py-2.5 text-sm focus:outline-none focus:border-gold-500 focus:bg-cream-50/90 transition"
+                />
+                <div className="grid grid-cols-2 gap-3">
+                  <select
+                    value={pickup}
+                    onChange={(e) => setPickup(e.target.value)}
+                    className="rounded-lg border border-ink-900/15 bg-cream-50/60 px-4 py-2.5 text-sm text-ink-900 focus:outline-none focus:border-gold-500 focus:bg-cream-50/90 transition appearance-none bg-no-repeat bg-right pr-9"
+                    style={{
+                      backgroundImage:
+                        "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239E7E36'><path d='M5.5 7.5l4.5 5 4.5-5z'/></svg>\")",
+                      backgroundPosition: "right 0.75rem center",
+                      backgroundSize: "1rem",
+                    }}
+                  >
+                    <option value="" disabled>
+                      Pickup
+                    </option>
+                    <optgroup label="Airports">
+                      <option>Heathrow (LHR)</option>
+                      <option>Gatwick (LGW)</option>
+                      <option>Stansted (STN)</option>
+                      <option>Luton (LTN)</option>
+                      <option>London City (LCY)</option>
+                      <option>Manchester (MAN)</option>
+                      <option>Birmingham (BHX)</option>
+                      <option>Edinburgh (EDI)</option>
+                    </optgroup>
+                    <optgroup label="London">
+                      <option>Mayfair</option>
+                      <option>Knightsbridge</option>
+                      <option>Belgravia</option>
+                      <option>Chelsea</option>
+                      <option>Kensington</option>
+                      <option>The City</option>
+                      <option>Canary Wharf</option>
+                      <option>Soho</option>
+                    </optgroup>
+                    <optgroup label="Cities">
+                      <option>Manchester</option>
+                      <option>Birmingham</option>
+                      <option>Liverpool</option>
+                      <option>Leeds</option>
+                      <option>Edinburgh</option>
+                      <option>Glasgow</option>
+                      <option>Bristol</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                      <option>Hotel / Venue</option>
+                      <option>Wedding venue</option>
+                      <option>Festival / Event</option>
+                      <option>Home address</option>
+                      <option>Custom address</option>
+                    </optgroup>
+                  </select>
+                  <select
+                    value={destination}
+                    onChange={(e) => setDestination(e.target.value)}
+                    className="rounded-lg border border-ink-900/15 bg-cream-50/60 px-4 py-2.5 text-sm text-ink-900 focus:outline-none focus:border-gold-500 focus:bg-cream-50/90 transition appearance-none bg-no-repeat bg-right pr-9"
+                    style={{
+                      backgroundImage:
+                        "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239E7E36'><path d='M5.5 7.5l4.5 5 4.5-5z'/></svg>\")",
+                      backgroundPosition: "right 0.75rem center",
+                      backgroundSize: "1rem",
+                    }}
+                  >
+                    <option value="" disabled>
+                      Destination
+                    </option>
+                    <optgroup label="Airports">
+                      <option>Heathrow (LHR)</option>
+                      <option>Gatwick (LGW)</option>
+                      <option>Stansted (STN)</option>
+                      <option>Luton (LTN)</option>
+                      <option>London City (LCY)</option>
+                      <option>Manchester (MAN)</option>
+                      <option>Birmingham (BHX)</option>
+                      <option>Edinburgh (EDI)</option>
+                    </optgroup>
+                    <optgroup label="London">
+                      <option>Mayfair</option>
+                      <option>Knightsbridge</option>
+                      <option>Belgravia</option>
+                      <option>Chelsea</option>
+                      <option>Kensington</option>
+                      <option>The City</option>
+                      <option>Canary Wharf</option>
+                      <option>Soho</option>
+                    </optgroup>
+                    <optgroup label="Cities">
+                      <option>Manchester</option>
+                      <option>Birmingham</option>
+                      <option>Liverpool</option>
+                      <option>Leeds</option>
+                      <option>Edinburgh</option>
+                      <option>Glasgow</option>
+                      <option>Bristol</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                      <option>Hotel / Venue</option>
+                      <option>Wedding venue</option>
+                      <option>Festival / Event</option>
+                      <option>Custom address</option>
+                    </optgroup>
+                  </select>
+                </div>
+
+                {pickup === "Custom address" && (
+                  <div className="animate-fade-up rounded-lg border border-gold-500/40 bg-cream-100/60 p-4 space-y-3">
+                    <div className="text-[11px] uppercase tracking-[0.28em] text-gold-600">
+                      Pickup address
+                    </div>
+                    <input
+                      required
+                      placeholder="Street address"
+                      className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                    />
+                    <div className="grid grid-cols-2 gap-3">
+                      <input
+                        placeholder="City / Town"
+                        className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                      />
+                      <input
+                        placeholder="Postcode"
+                        className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                      />
+                    </div>
+                    <input
+                      placeholder="Notes for the driver (gate code, floor…)"
+                      className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                    />
+                  </div>
+                )}
+
+                {destination === "Custom address" && (
+                  <div className="animate-fade-up rounded-lg border border-gold-500/40 bg-cream-100/60 p-4 space-y-3">
+                    <div className="text-[11px] uppercase tracking-[0.28em] text-gold-600">
+                      Destination address
+                    </div>
+                    <input
+                      required
+                      placeholder="Street address"
+                      className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                    />
+                    <div className="grid grid-cols-2 gap-3">
+                      <input
+                        placeholder="City / Town"
+                        className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                      />
+                      <input
+                        placeholder="Postcode"
+                        className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                      />
+                    </div>
+                    <input
+                      placeholder="Arrival notes (entrance, contact name…)"
+                      className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
+                    />
+                  </div>
+                )}
+
+                <textarea
+                  rows="3"
+                  placeholder="A line about your journey"
+                  className="w-full rounded-lg border border-ink-900/15 bg-cream-50/60 px-4 py-3 text-sm focus:outline-none focus:border-gold-500 focus:bg-cream-50/90 transition resize-none"
+                />
+
+                <button
+                  type="submit"
+                  className="btn-primary w-full !rounded-[15px] !px-7 !py-3 !text-xs !tracking-[0.28em]"
+                >
+                  Send inquiry <Icon.ArrowRight className="h-3.5 w-3.5" />
+                </button>
+              </div>
+
+              <p className="mt-4 text-[10px] uppercase tracking-[0.28em] text-ink-500 text-center">
+                Discretion · Punctuality · Composure
+              </p>
+            </form>
           </div>
         </div>
       </div>
@@ -539,14 +698,19 @@ function HowItWorks() {
   ];
 
   return (
-    <section id="how" ref={ref} className="relative py-28 lg:py-40">
+    <section
+      id="how"
+      ref={ref}
+      className="relative py-28 lg:py-40 bg-beige-50/50"
+    >
       <div className="container-x">
         <div className="max-w-2xl">
           <div className="reveal eyebrow flex items-center gap-3">
             <span className="hairline" /> The Process
           </div>
           <h2 className="reveal h-display mt-7 text-5xl sm:text-6xl">
-            Three steps.<br />
+            Three steps.
+            <br />
             <span className="italic font-light text-gold-500">
               None of them yours.
             </span>
@@ -595,8 +759,18 @@ function SocialProof() {
     "HARLEY MEDICAL",
   ];
   return (
-    <section ref={ref} className="bg-ink-900 text-cream-50 py-24 relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "4px 4px" }} />
+    <section
+      ref={ref}
+      className="bg-ink-900 text-cream-50 py-24 relative overflow-hidden"
+    >
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px)",
+          backgroundSize: "4px 4px",
+        }}
+      />
       <div className="container-x relative">
         <div className="reveal text-center">
           <div className="editorial-rule justify-center mx-auto max-w-md !text-gold-300">
@@ -657,7 +831,7 @@ function Services() {
     },
   ];
   return (
-    <section id="services" ref={ref} className="py-28 lg:py-40 bg-cream-100/40">
+    <section id="services" ref={ref} className="py-28 lg:py-40 bg-beige-50/60">
       <div className="container-x">
         <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-10">
           <div className="max-w-2xl">
@@ -665,8 +839,11 @@ function Services() {
               <span className="hairline" /> The Offering
             </div>
             <h2 className="h-display mt-7 text-5xl sm:text-6xl">
-              A fleet for<br />
-              <span className="italic font-light text-gold-500">every occasion.</span>
+              A fleet for
+              <br />
+              <span className="italic font-light text-gold-500">
+                every occasion.
+              </span>
             </h2>
           </div>
           <p className="max-w-sm text-ink-700 leading-relaxed italic font-light">
@@ -684,26 +861,27 @@ function Services() {
               key={t}
               href="#contact"
               className="reveal group relative block cursor-pointer
-                         border border-ink-900/15 bg-cream-50 p-10
+                         rounded-[20px] border border-ink-900/15 bg-cream-50 p-7
+                         shadow-[0_18px_40px_-14px_rgba(0,0,0,0.45)]
                          transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
-                         hover:scale-[1.03] hover:-translate-y-2 hover:z-10
+                         hover:-translate-y-3 hover:scale-[1.02] hover:z-10
                          hover:bg-cream-100 hover:border-gold-500
-                         hover:shadow-[0_40px_80px_-24px_rgba(35,24,17,0.45)]
+                         hover:shadow-[0_40px_80px_-18px_rgba(0,0,0,0.65)]
                          focus:outline-none focus:ring-1 focus:ring-gold-400/50"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               <div className="flex items-start justify-between">
-                <I className="h-7 w-7 text-gold-500 transition-all duration-700 group-hover:-translate-y-1" />
-                <span className="font-display italic font-light text-xl text-gold-500/70">
+                <I className="h-6 w-6 text-gold-500 transition-all duration-700 group-hover:-translate-y-1" />
+                <span className="font-display italic font-light text-lg text-gold-500/70">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
-              <div className="mt-8 h-px w-10 bg-gold-500/60 transition-all duration-700 group-hover:w-20" />
-              <h3 className="font-display font-normal text-3xl mt-7 text-ink-900 leading-tight">
+              <div className="mt-6 h-px w-10 bg-gold-500/60 transition-all duration-700 group-hover:w-16" />
+              <h3 className="font-display font-normal text-2xl mt-5 text-ink-900 leading-tight">
                 {t}
               </h3>
-              <p className="mt-4 text-sm text-ink-700 leading-[1.85]">{d}</p>
-              <div className="mt-10 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-gold-600">
+              <p className="mt-3 text-[13px] text-ink-700 leading-[1.75]">{d}</p>
+              <div className="mt-7 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-gold-600">
                 <span className="border-b border-transparent group-hover:border-gold-500 transition-colors duration-700">
                   Reserve this journey
                 </span>
@@ -713,35 +891,52 @@ function Services() {
           ))}
         </div>
 
-        {/* In-vehicle ribbon */}
-        <div className="reveal mt-16 rounded-2xl border border-ink-900/10 bg-ink-900 text-cream-50 p-8 lg:p-10">
-          <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
-            <div className="lg:w-1/3">
+        {/* In-vehicle card */}
+        <div className="reveal mt-16 rounded-[20px] border border-ink-900/10 bg-ink-900 text-cream-50 overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+            {/* Left — features */}
+            <div className="p-8 lg:p-12 flex flex-col">
               <div className="eyebrow !text-gold-300">Inside the Sprinter</div>
-              <h3 className="font-serif text-3xl mt-3">Quietly equipped.</h3>
+              <h3 className="font-display italic font-light text-4xl lg:text-5xl mt-4">
+                Quietly equipped.
+              </h3>
+              <div className="mt-5 h-px w-12 bg-gold-500/60" />
+              <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-cream-100/85">
+                {[
+                  "Leather seats",
+                  "Climate control",
+                  "Phone chargers",
+                  "Bottled water",
+                  "Optional Wi-Fi",
+                  "Uniformed drivers",
+                  "Child seats",
+                  "Umbrellas & tissues",
+                  "Panoramic roof",
+                  "Fireplace ambience",
+                  "Refrigerator",
+                  "Champagne bar",
+                  "Massage seats",
+                  "360° camera",
+                ].map((f) => (
+                  <div key={f} className="flex items-center gap-2">
+                    <span className="h-1 w-1 rounded-full bg-gold-400" />
+                    {f}
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="lg:w-2/3 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-3 text-sm text-cream-100/80">
-              {[
-                "Leather seats",
-                "Climate control",
-                "Phone chargers",
-                "Bottled water",
-                "Optional Wi-Fi",
-                "Uniformed drivers",
-                "Child seats",
-                "Umbrellas & tissues",
-                "Panoramic roof",
-                "Fireplace ambience",
-                "Refrigerator",
-                "Champagne bar",
-                "Massage seats",
-                "360° camera",
-              ].map((f) => (
-                <div key={f} className="flex items-center gap-2">
-                  <span className="h-1 w-1 rounded-full bg-gold-400" />
-                  {f}
-                </div>
-              ))}
+
+            {/* Right — video */}
+            <div className="relative min-h-[280px] lg:min-h-[420px] bg-ink-800">
+              <video
+                src="/merc.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink-900/40 via-transparent to-transparent lg:from-ink-900/60" />
             </div>
           </div>
         </div>
@@ -753,6 +948,29 @@ function Services() {
 // --- Testimonials -----------------------------------------------------------
 function Testimonials() {
   const ref = useReveal();
+  const [activeStat, setActiveStat] = useState(0);
+  const stats = [
+    {
+      k: "97%",
+      t: "Repeat clients",
+      d: "Ninety-seven percent of private clients return within twelve months. Word travels quietly between concierge desks, tour managers and wedding planners — which is how most of our work arrives.",
+    },
+    {
+      k: "20+",
+      t: "Years on the road",
+      d: "Two decades of late-night pickups, airport runs and wedding mornings. The drivers we lead today were trained by the drivers we hired in the early years — a house style passed by hand.",
+    },
+    {
+      k: "12hr",
+      t: "Quote turnaround",
+      d: "Every inquiry receives a written quote — vehicle, driver, route, price — within twelve hours, often inside the same one. No quote desk, no portals. A person reads it and a person replies.",
+    },
+    {
+      k: "24/7",
+      t: "Dispatch",
+      d: "Calls answered by a human, twenty-four hours a day. Whether it is a 3 a.m. arrival at Heathrow or a last-minute swap on a wedding morning, someone is already at the desk before you ring off.",
+    },
+  ];
   const quotes = [
     {
       q: "“They moved an artist from a sold-out show to a private dinner in twenty minutes — and you wouldn't have known either was happening. Exactly what we needed.”",
@@ -781,8 +999,11 @@ function Testimonials() {
             <span className="hairline" /> In Their Words
           </div>
           <h2 className="h-display mt-7 text-5xl sm:text-6xl">
-            Quietly<br />
-            <span className="italic font-light text-gold-500">recommended.</span>
+            Quietly
+            <br />
+            <span className="italic font-light text-gold-500">
+              recommended.
+            </span>
           </h2>
           <p className="mt-7 text-ink-700 leading-relaxed italic font-light max-w-xl">
             Ninety-seven percent of our private clients return within twelve
@@ -790,25 +1011,27 @@ function Testimonials() {
           </p>
         </div>
 
-        <div className="mt-20 grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
+        <div className="mt-20 grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10 items-stretch">
           {quotes.map((t, i) => (
             <figure
               key={t.n}
-              className="reveal relative pl-6 border-l border-gold-500/40 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-gold-500"
+              className="reveal relative pl-6 border-l border-gold-500/40 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-gold-500 flex flex-col h-full"
               style={{ transitionDelay: `${i * 120}ms` }}
             >
               <div className="absolute -left-3 -top-2 font-display italic font-light text-7xl text-gold-500/60 leading-none">
                 “
               </div>
-              <blockquote className="font-display font-light text-2xl text-ink-900 leading-[1.45] italic">
+              <blockquote className="font-display font-light text-xl text-ink-900 leading-[1.55] italic flex-1">
                 {t.q.replace(/[“”]/g, "")}
               </blockquote>
               <figcaption className="mt-10 flex items-center gap-4 border-t border-ink-900/15 pt-6">
-                <div className="grid h-12 w-12 place-items-center rounded-full border border-gold-500/50 text-gold-500 font-display italic">
+                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-gold-500/50 text-gold-500 font-display italic">
                   {t.i}
                 </div>
                 <div>
-                  <div className="font-display text-base text-ink-900">{t.n}</div>
+                  <div className="font-display text-base text-ink-900">
+                    {t.n}
+                  </div>
                   <div className="mt-1 text-[10px] uppercase tracking-[0.28em] text-ink-500">
                     {t.r}
                   </div>
@@ -816,6 +1039,52 @@ function Testimonials() {
               </figcaption>
             </figure>
           ))}
+        </div>
+
+        {/* Stat banner — clickable tabs */}
+        <div className="reveal mt-24 rounded-[20px] border border-ink-900/10 bg-cream-50 overflow-hidden shadow-[0_18px_40px_-14px_rgba(0,0,0,0.25)]">
+          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-ink-900/10 border-b border-ink-900/10">
+            {stats.map((s, i) => (
+              <button
+                key={s.k}
+                type="button"
+                onClick={() => setActiveStat(i)}
+                className={`relative px-6 py-7 text-left transition-all duration-500 group ${
+                  activeStat === i
+                    ? "bg-ink-900 text-cream-50"
+                    : "bg-cream-50 hover:bg-cream-100"
+                }`}
+              >
+                <div
+                  className={`font-display italic font-light text-4xl ${
+                    activeStat === i ? "text-gold-300" : "text-gold-500"
+                  }`}
+                >
+                  {s.k}
+                </div>
+                <div
+                  className={`mt-2 text-[10px] uppercase tracking-[0.28em] ${
+                    activeStat === i ? "text-cream-100/80" : "text-ink-700"
+                  }`}
+                >
+                  {s.t}
+                </div>
+                <span
+                  className={`absolute left-6 right-6 bottom-3 h-px transition-all duration-500 ${
+                    activeStat === i ? "bg-gold-400" : "bg-transparent"
+                  }`}
+                />
+              </button>
+            ))}
+          </div>
+          <div className="p-8 lg:p-10 text-center">
+            <p
+              key={activeStat}
+              className="animate-fade-up font-display italic font-light text-lg lg:text-xl text-ink-900 leading-relaxed max-w-3xl mx-auto"
+            >
+              {stats[activeStat].d}
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -825,242 +1094,48 @@ function Testimonials() {
 // --- Final CTA --------------------------------------------------------------
 function CTA() {
   const ref = useReveal();
-  const [pickup, setPickup] = useState("");
-  const [destination, setDestination] = useState("");
   return (
     <section
-      id="contact"
       ref={ref}
       className="relative py-28 lg:py-40 bg-ink-900 text-cream-50 overflow-hidden"
     >
-      <div className="pointer-events-none absolute -top-40 left-1/3 h-[36rem] w-[36rem] rounded-full bg-gold-400/20 blur-[120px]" />
-      <div className="pointer-events-none absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px)", backgroundSize: "4px 4px" }} />
-      <div className="container-x relative grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
-        <div className="lg:col-span-7">
-          <div className="reveal eyebrow !text-gold-300 flex items-center gap-3">
-            <span className="h-px w-10 bg-gold-400/70" /> Begin Inquiry
-          </div>
-          <h2 className="reveal h-display mt-7 text-5xl sm:text-6xl lg:text-7xl">
-            A single message.<br />
-            <span className="italic font-light text-gold-300">
-              The rest is on us.
-            </span>
-          </h2>
-          <div className="reveal mt-8 flex items-start gap-4 max-w-xl">
-            <span className="mt-3 h-px w-10 bg-gold-400/60 shrink-0" />
-            <p className="text-cream-100/75 leading-relaxed italic font-light">
-              Tell us when, where from, and where to. We return — inside the
-              hour — with a vehicle, a driver, and a price.
-            </p>
-          </div>
-          <div className="reveal mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href="mailto:bookings@luxurytransport.co.uk"
-              className="btn-primary !bg-gold-400 !text-ink-900 hover:!bg-cream-50"
-            >
-              Get Started <Icon.ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              href="tel:+440000000000"
-              className="btn-ghost !text-cream-50 !border-cream-50/30 hover:!border-gold-300 hover:!text-gold-300"
-            >
-              <Icon.Phone className="h-4 w-4" /> Speak to the team
-            </a>
-          </div>
+      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[36rem] w-[36rem] rounded-full bg-gold-400/20 blur-[120px]" />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px)",
+          backgroundSize: "4px 4px",
+        }}
+      />
+      <div className="container-x relative text-center max-w-3xl mx-auto">
+        <div className="reveal editorial-rule justify-center mx-auto max-w-md !text-gold-300">
+          Begin Inquiry
         </div>
-
-        <div className="lg:col-span-5">
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Thank you. The team will be in touch shortly.");
-            }}
-            className="reveal rounded-2xl bg-cream-50 text-ink-900 p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)]"
+        <h2 className="reveal h-display mt-8 text-5xl sm:text-6xl lg:text-7xl">
+          A single message.
+          <br />
+          <span className="italic font-light text-gold-300">
+            The rest is on us.
+          </span>
+        </h2>
+        <p className="reveal mt-8 text-cream-100/75 leading-relaxed italic font-light max-w-xl mx-auto">
+          Tell us when, where from, and where to. We return — inside the hour —
+          with a vehicle, a driver, and a price.
+        </p>
+        <div className="reveal mt-12 flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="mailto:bookings@luxurytransport.co.uk"
+            className="btn-primary !bg-gold-400 !text-ink-900 hover:!bg-cream-50"
           >
-            <div className="eyebrow">Quick inquiry</div>
-            <div className="mt-5 space-y-4">
-              <input
-                required
-                placeholder="Full name"
-                className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-3 text-sm focus:outline-none focus:border-gold-500 transition"
-              />
-              <input
-                required
-                type="email"
-                placeholder="Email address"
-                className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-3 text-sm focus:outline-none focus:border-gold-500 transition"
-              />
-              <div className="grid grid-cols-2 gap-4">
-                <select
-                  value={pickup}
-                  onChange={(e) => setPickup(e.target.value)}
-                  className="rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-3 text-sm text-ink-900 focus:outline-none focus:border-gold-500 transition appearance-none bg-no-repeat bg-right pr-9"
-                  style={{
-                    backgroundImage:
-                      "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23AE8235'><path d='M5.5 7.5l4.5 5 4.5-5z'/></svg>\")",
-                    backgroundPosition: "right 0.75rem center",
-                    backgroundSize: "1rem",
-                  }}
-                >
-                  <option value="" disabled>
-                    Pickup
-                  </option>
-                  <optgroup label="Airports">
-                    <option>Heathrow (LHR)</option>
-                    <option>Gatwick (LGW)</option>
-                    <option>Stansted (STN)</option>
-                    <option>Luton (LTN)</option>
-                    <option>London City (LCY)</option>
-                    <option>Manchester (MAN)</option>
-                    <option>Birmingham (BHX)</option>
-                    <option>Edinburgh (EDI)</option>
-                  </optgroup>
-                  <optgroup label="London">
-                    <option>Mayfair</option>
-                    <option>Knightsbridge</option>
-                    <option>Belgravia</option>
-                    <option>Chelsea</option>
-                    <option>Kensington</option>
-                    <option>The City</option>
-                    <option>Canary Wharf</option>
-                    <option>Soho</option>
-                  </optgroup>
-                  <optgroup label="Cities">
-                    <option>Manchester</option>
-                    <option>Birmingham</option>
-                    <option>Liverpool</option>
-                    <option>Leeds</option>
-                    <option>Edinburgh</option>
-                    <option>Glasgow</option>
-                    <option>Bristol</option>
-                  </optgroup>
-                  <optgroup label="Other">
-                    <option>Hotel / Venue</option>
-                    <option>Wedding venue</option>
-                    <option>Festival / Event</option>
-                    <option>Home address</option>
-                    <option>Custom address</option>
-                  </optgroup>
-                </select>
-                <select
-                  value={destination}
-                  onChange={(e) => setDestination(e.target.value)}
-                  className="rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-3 text-sm text-ink-900 focus:outline-none focus:border-gold-500 transition appearance-none bg-no-repeat bg-right pr-9"
-                  style={{
-                    backgroundImage:
-                      "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23AE8235'><path d='M5.5 7.5l4.5 5 4.5-5z'/></svg>\")",
-                    backgroundPosition: "right 0.75rem center",
-                    backgroundSize: "1rem",
-                  }}
-                >
-                  <option value="" disabled>
-                    Destination
-                  </option>
-                  <optgroup label="Airports">
-                    <option>Heathrow (LHR)</option>
-                    <option>Gatwick (LGW)</option>
-                    <option>Stansted (STN)</option>
-                    <option>Luton (LTN)</option>
-                    <option>London City (LCY)</option>
-                    <option>Manchester (MAN)</option>
-                    <option>Birmingham (BHX)</option>
-                    <option>Edinburgh (EDI)</option>
-                  </optgroup>
-                  <optgroup label="London">
-                    <option>Mayfair</option>
-                    <option>Knightsbridge</option>
-                    <option>Belgravia</option>
-                    <option>Chelsea</option>
-                    <option>Kensington</option>
-                    <option>The City</option>
-                    <option>Canary Wharf</option>
-                    <option>Soho</option>
-                  </optgroup>
-                  <optgroup label="Cities">
-                    <option>Manchester</option>
-                    <option>Birmingham</option>
-                    <option>Liverpool</option>
-                    <option>Leeds</option>
-                    <option>Edinburgh</option>
-                    <option>Glasgow</option>
-                    <option>Bristol</option>
-                  </optgroup>
-                  <optgroup label="Other">
-                    <option>Hotel / Venue</option>
-                    <option>Wedding venue</option>
-                    <option>Festival / Event</option>
-                    <option>Custom address</option>
-                  </optgroup>
-                </select>
-              </div>
-
-              {pickup === "Custom address" && (
-                <div className="animate-fade-up rounded-lg border border-gold-500/40 bg-cream-100/60 p-4 space-y-3">
-                  <div className="text-[11px] uppercase tracking-widest-x text-gold-600">
-                    Pickup address
-                  </div>
-                  <input
-                    required
-                    placeholder="Street address"
-                    className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
-                  />
-                  <div className="grid grid-cols-2 gap-3">
-                    <input
-                      placeholder="City / Town"
-                      className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
-                    />
-                    <input
-                      placeholder="Postcode"
-                      className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
-                    />
-                  </div>
-                  <input
-                    placeholder="Notes for the driver (gate code, floor…)"
-                    className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
-                  />
-                </div>
-              )}
-
-              {destination === "Custom address" && (
-                <div className="animate-fade-up rounded-lg border border-gold-500/40 bg-cream-100/60 p-4 space-y-3">
-                  <div className="text-[11px] uppercase tracking-widest-x text-gold-600">
-                    Destination address
-                  </div>
-                  <input
-                    required
-                    placeholder="Street address"
-                    className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
-                  />
-                  <div className="grid grid-cols-2 gap-3">
-                    <input
-                      placeholder="City / Town"
-                      className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
-                    />
-                    <input
-                      placeholder="Postcode"
-                      className="rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
-                    />
-                  </div>
-                  <input
-                    placeholder="Arrival notes (entrance, contact name…)"
-                    className="w-full rounded-md border border-ink-900/15 bg-cream-50 px-3 py-2 text-sm focus:outline-none focus:border-gold-500 transition"
-                  />
-                </div>
-              )}
-
-              <textarea
-                rows="3"
-                placeholder="A line about your journey"
-                className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-3 text-sm focus:outline-none focus:border-gold-500 transition resize-none"
-              />
-              <button type="submit" className="btn-primary w-full">
-                Send inquiry <Icon.ArrowRight className="h-4 w-4" />
-              </button>
-            </div>
-            <p className="mt-4 text-[11px] uppercase tracking-widest-x text-ink-500 text-center">
-              Discretion · Punctuality · Composure
-            </p>
-          </form>
+            Email the Team <Icon.ArrowRight className="h-4 w-4" />
+          </a>
+          <a
+            href="tel:+440000000000"
+            className="btn-ghost !text-cream-50 !border-cream-50/30 hover:!border-gold-300 hover:!text-gold-300"
+          >
+            <Icon.Phone className="h-4 w-4" /> Speak to the team
+          </a>
         </div>
       </div>
     </section>
@@ -1088,7 +1163,14 @@ function Footer() {
   ];
   return (
     <footer className="bg-ink-900 text-cream-100 border-t border-gold-500/20 relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px)", backgroundSize: "4px 4px" }} />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px)",
+          backgroundSize: "4px 4px",
+        }}
+      />
       <div className="container-x py-20 lg:py-24 relative">
         {/* Editorial signature line */}
         <div className="editorial-rule justify-center mx-auto max-w-md !text-gold-300 mb-16">
@@ -1112,8 +1194,8 @@ function Footer() {
             </a>
             <p className="mt-7 max-w-sm text-sm text-cream-100/70 leading-[1.85] italic font-light">
               Safe, stylish and quietly professional passenger transport — a
-              Mercedes house, available across the United Kingdom, every hour
-              of every day.
+              Mercedes house, available across the United Kingdom, every hour of
+              every day.
             </p>
             <div className="mt-8 flex items-center gap-3">
               {[Icon.Instagram, Icon.Linkedin, Icon.X].map((I, i) => (
@@ -1159,7 +1241,9 @@ function Footer() {
                 bookings@luxurytransport.co.uk
               </li>
               <li className="mt-4 pt-4 border-t border-cream-100/10 text-cream-100/60 text-[10px] uppercase tracking-[0.28em] leading-relaxed">
-                London · Manchester<br />Birmingham · Edinburgh
+                London · Manchester
+                <br />
+                Birmingham · Edinburgh
               </li>
             </ul>
           </div>
@@ -1167,7 +1251,8 @@ function Footer() {
 
         <div className="mt-20 pt-8 border-t border-cream-100/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] uppercase tracking-[0.28em] text-cream-100/50">
           <p>
-            © {new Date().getFullYear()} Luxury Transport Ltd · All rights reserved
+            © {new Date().getFullYear()} Luxury Transport Ltd · All rights
+            reserved
           </p>
           <p className="font-display italic font-light text-sm normal-case tracking-normal text-gold-300">
             Move in silence — discretion is our policy.

@@ -4,15 +4,20 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Cormorant Garamond"', '"Playfair Display"', 'Georgia', 'serif'],
-        display: ['"Cormorant Garamond"', '"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+        serif: ['Poppins', 'system-ui', 'sans-serif'],
+        display: ['Poppins', 'system-ui', 'sans-serif'],
+        sans: ['Poppins', 'system-ui', 'sans-serif'],
       },
       colors: {
         cream: {
-          50: '#EBDEC2',
-          100: '#DECCA8',
-          200: '#CBB587',
+          50: '#F5ECD6',
+          100: '#EADBB8',
+          200: '#D9C496',
+        },
+        beige: {
+          50: '#EADBB8',
+          100: '#DEC9A0',
+          200: '#CBB180',
         },
         gold: {
           300: '#D9BD86',
@@ -54,12 +59,42 @@ export default {
           '50%, 90%': { opacity: '1' },
           '100%': { opacity: '0' },
         },
+        heroBgA: {
+          '0%, 25%': { opacity: '1' },
+          '50%, 75%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        heroBgB: {
+          '0%, 25%': { opacity: '0' },
+          '50%, 75%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
+        heroTrip1: {
+          '0%, 16.66%': { opacity: '1' },
+          '33.33%, 83.33%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        heroTrip2: {
+          '0%, 16.66%': { opacity: '0' },
+          '33.33%, 50%': { opacity: '1' },
+          '66.66%, 100%': { opacity: '0' },
+        },
+        heroTrip3: {
+          '0%, 50%': { opacity: '0' },
+          '66.66%, 83.33%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
       },
       animation: {
         'fade-up': 'fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both',
         'fade-in': 'fadeIn 1.2s ease-out both',
         'cross-a': 'crossA 8s ease-in-out infinite',
         'cross-b': 'crossB 8s ease-in-out infinite',
+        'hero-bg-a': 'heroBgA 12s ease-in-out infinite',
+        'hero-bg-b': 'heroBgB 12s ease-in-out infinite',
+        'hero-trip-1': 'heroTrip1 18s ease-in-out infinite',
+        'hero-trip-2': 'heroTrip2 18s ease-in-out infinite',
+        'hero-trip-3': 'heroTrip3 18s ease-in-out infinite',
       },
     },
   },
