@@ -302,7 +302,7 @@ function Hero() {
     <section
       id="top"
       ref={ref}
-      className="group/hero relative overflow-hidden pt-36 pb-[54px] lg:pt-44"
+      className="group/hero relative overflow-hidden flex flex-col justify-center min-h-screen pt-36 pb-20 lg:pt-44 lg:pb-24"
     >
       {/* Background video — clear, with hover dim */}
       <div className="pointer-events-none absolute inset-0 z-0 bg-ink-900">
