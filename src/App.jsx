@@ -482,7 +482,7 @@ function VClassSVG() {
 }
 
 // --- How it works -----------------------------------------------------------
-function HowItWorks() {
+function HowItWorks({ selectedService }) {
   const ref = useReveal();
   const [pickup, setPickup] = useState("");
   const [destination, setDestination] = useState("");
@@ -553,12 +553,23 @@ function HowItWorks() {
                 </h3>
                 <div className="mt-3 h-px w-12 bg-gold-500/60" />
 
+                {selectedService && (
+                  <div className="animate-fade-up mt-5 flex items-center justify-between rounded-lg border border-gold-500/40 bg-gold-300/30 px-4 py-3">
+                    <div>
+                      <div className="text-[9px] uppercase tracking-[0.3em] text-gold-700">
+                        Selected service
+                      </div>
+                      <div className="mt-1 font-display text-sm text-ink-900">
+                        {selectedService}
+                      </div>
+                    </div>
+                    <span className="text-[10px] uppercase tracking-[0.28em] text-gold-700">
+                      ✓
+                    </span>
+                  </div>
+                )}
+
                 <div className="mt-5 space-y-3">
-                  <input
-                    required
-                    placeholder="Full name"
-                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2.5 text-sm placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition"
-                  />
                   <input
                     required
                     type="email"
@@ -835,7 +846,7 @@ function SocialProof() {
 }
 
 // --- Features ---------------------------------------------------------------
-function Services() {
+function Services({ onSelect }) {
   const ref = useReveal();
   const groups = [
     {
@@ -889,6 +900,7 @@ function Services() {
             <a
               key={t}
               href="#contact"
+              onClick={() => onSelect && onSelect(t)}
               className="group relative flex flex-col h-full min-h-[500px] overflow-hidden
                          rounded-[15px] border border-gold-500/30 bg-[#3c2f1c] text-cream-50 p-9
                          shadow-[0_24px_50px_-18px_rgba(0,0,0,0.45)]
@@ -1260,14 +1272,15 @@ function Footer() {
 
 // --- App --------------------------------------------------------------------
 export default function App() {
+  const [selectedService, setSelectedService] = useState(null);
   return (
     <div className="min-h-screen font-sans text-ink-900">
       <Nav />
       <main>
         <Hero />
-        <HowItWorks />
+        <HowItWorks selectedService={selectedService} />
         <SocialProof />
-        <Services />
+        <Services onSelect={setSelectedService} />
         <Testimonials />
         <CTA />
       </main>
