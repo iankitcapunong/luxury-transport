@@ -371,29 +371,6 @@ function Hero() {
             </a>
           </div>
 
-          <div
-            className="reveal mt-12 grid grid-cols-3 max-w-md gap-y-4 gap-x-8 border-t border-white/40 pt-8"
-            style={{ transitionDelay: "850ms" }}
-          >
-            {[
-              ["i.", "Twenty-four hour dispatch"],
-              ["ii.", "All United Kingdom airports"],
-              ["iii.", "Discretion as standard"],
-            ].map(([k, v], i) => (
-              <div
-                key={k}
-                className="reveal flex flex-col"
-                style={{ transitionDelay: `${1000 + i * 120}ms` }}
-              >
-                <div className="font-display italic font-light text-2xl text-gold-400 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
-                  {k}
-                </div>
-                <div className="mt-2 text-[12px] uppercase tracking-[0.28em] text-white font-bold leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
-                  {v}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
@@ -517,11 +494,11 @@ function HowItWorks({ selectedService, onSelectService }) {
 
   const serviceDescriptions = {
     "Airport & Long-Distance":
-      "All UK airports with met-and-greet, flight tracking and a calm boot for your luggage; plus city-to-city long-distance hires with champagne bar, refrigerator and reclining leather for the miles ahead.",
+      "A private chauffeur greets you airside, tracks your flight and waits with bottled water, hot towels and a calm boot. For the miles ahead, our luxury Mercedes hires arrive with champagne, refrigerator and reclining leather — a hotel suite that happens to be moving.",
     "Corporate & VIP":
-      "Day rates, board pickups and multi-stop schedules handled with the discretion your business needs. Tinted glass, NDAs as standard, paparazzi-aware route planning for festivals, labels and talent transfers.",
+      "Our luxury chauffeurs are DBS-checked, uniformed and NDA-bound — chosen for composure as much as skill. Day rates, board pickups, festival transfers and paparazzi-aware routes, all handled with the kind of discretion that keeps your name out of the conversation.",
     "Weddings & Group Travel":
-      "Ribbons optional, immaculate interiors essential. Bride, groom and party coordinated to the minute. Mercedes V-Class with panoramic roof, massage seats and Wi-Fi for up to eight passengers, zero compromise.",
+      "A luxury chauffeur for the most photographed morning of your life. Immaculate interiors, ribbons on request, bride, groom and party coordinated to the minute. Up to eight passengers travel composed in a Mercedes V-Class with panoramic roof, massage seats and Wi-Fi.",
   };
 
   const locationGroupsByService = {
@@ -1209,12 +1186,6 @@ function Services({ onSelect }) {
 // --- Testimonials -----------------------------------------------------------
 function Testimonials() {
   const ref = useReveal();
-  const stats = [
-    { k: "97%", t: "Repeat clients" },
-    { k: "20+", t: "Years on the road" },
-    { k: "12hr", t: "Quote turnaround" },
-    { k: "24/7", t: "Dispatch" },
-  ];
   const quotes = [
     {
       q: "“They moved an artist from a sold-out show to a private dinner in twenty minutes, and you wouldn't have known either was happening. Exactly what we needed.”",
@@ -1283,21 +1254,6 @@ function Testimonials() {
           ))}
         </div>
 
-        {/* Stat banner — static, non-clickable */}
-        <div className="reveal mt-24 rounded-[15px] border border-ink-900/10 bg-cream-50 overflow-hidden shadow-[0_18px_40px_-14px_rgba(0,0,0,0.25)]">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-ink-900/10">
-            {stats.map((s) => (
-              <div key={s.k} className="px-6 py-9 text-center">
-                <div className="font-display italic font-light text-5xl text-mask-gold">
-                  {s.k}
-                </div>
-                <div className="mt-3 text-[10px] uppercase tracking-[0.28em] text-ink-700">
-                  {s.t}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
