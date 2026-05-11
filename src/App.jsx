@@ -1174,8 +1174,8 @@ function Footer() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
-            <a href="#top" className="flex items-center gap-4">
-              <span className="grid h-12 w-12 place-items-center rounded-full border border-gold-400/60 text-gold-400 font-display italic text-2xl">
+            <a href="#top" className="group flex items-center gap-4">
+              <span className="grid h-12 w-12 place-items-center rounded-full border border-gold-400/60 text-gold-400 font-display italic text-2xl transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1.5 group-hover:scale-110 group-hover:border-gold-400 group-hover:shadow-[0_15px_30px_-10px_rgba(191,156,83,0.55)]">
                 L
               </span>
               <div className="leading-tight">
@@ -1198,9 +1198,9 @@ function Footer() {
                   key={i}
                   href="#"
                   aria-label="social"
-                  className="grid h-10 w-10 place-items-center rounded-full border border-cream-100/20 text-cream-100/70 transition-all duration-500 hover:border-gold-400 hover:text-gold-400"
+                  className="group grid h-10 w-10 place-items-center rounded-full border border-cream-100/20 text-cream-100/70 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-gold-400 hover:text-gold-400 hover:-translate-y-1.5 hover:scale-110 hover:shadow-[0_15px_30px_-10px_rgba(191,156,83,0.55)]"
                 >
-                  <I className="h-4 w-4" />
+                  <I className="h-4 w-4 transition-transform duration-500 group-hover:rotate-12" />
                 </a>
               ))}
             </div>
