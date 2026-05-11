@@ -245,7 +245,7 @@ function Nav() {
             </div>
           </div>
         </a>
-        <nav className="hidden md:flex items-center gap-10 text-[11px] uppercase tracking-[0.28em] text-white font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
+        <nav className="hidden md:flex items-center gap-10 text-[15px] uppercase tracking-[0.28em] text-white font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
           {links.map(([label, href]) => (
             <a
               key={href}
