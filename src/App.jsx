@@ -532,7 +532,7 @@ function HowItWorks() {
                 className="reveal group flex gap-6 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="font-display italic font-light text-6xl leading-none text-gold-500/80 group-hover:text-gold-500 transition-colors duration-700 w-20 shrink-0">
+                <div className="font-display italic font-light text-7xl leading-none w-20 shrink-0 bg-gradient-to-br from-gold-300 via-gold-500 to-gold-600 bg-clip-text text-transparent transition-all duration-700 group-hover:bg-gradient-to-tr group-hover:from-gold-400 group-hover:via-gold-600 group-hover:to-ink-900">
                   {s.n}
                 </div>
                 <div className="flex-1 border-l border-gold-500/30 pl-6 group-hover:border-gold-500 transition-colors duration-700">
