@@ -715,18 +715,13 @@ function HowItWorks({ selectedService, onSelectService }) {
           </p>
         </div>
 
-        {/* Quick inquiry form — with service description on the left when one is selected */}
-        <div
-          className={`mt-16 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-            displayService
-              ? "grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start max-w-5xl mx-auto"
-              : "max-w-lg mx-auto"
-          }`}
-        >
+        {/* Quick inquiry form — fixed in the right column, description animates in/out on the left */}
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start max-w-5xl mx-auto">
+          <div className="lg:pt-6 min-h-[1px]">
           {displayService && (
             <div
               key={isExiting ? "exit" : displayService}
-              className={`${isExiting ? "animate-fade-down pointer-events-none" : "animate-fade-up"} lg:pt-6`}
+              className={`${isExiting ? "animate-fade-down pointer-events-none" : "animate-fade-up"}`}
             >
               <div className="eyebrow flex items-center gap-3">
                 <span className="hairline" /> Selected Service
@@ -773,7 +768,8 @@ function HowItWorks({ selectedService, onSelectService }) {
               </button>
             </div>
           )}
-          <div id="contact" className="reveal">
+          </div>
+          <div id="contact" className="reveal w-full lg:max-w-md lg:ml-auto">
             <div className="relative">
               <div className="absolute -inset-6 rounded-2xl bg-gradient-to-tr from-gold-300/20 via-transparent to-gold-300/10 blur-3xl" />
               <div className="absolute -top-2 -left-2 h-5 w-5 border-l border-t border-gold-500/60" />
