@@ -707,21 +707,34 @@ function HowItWorks({ selectedService, onSelectService }) {
           }`}
         >
           {selectedService && (
-            <div className="reveal lg:pt-6">
+            <div
+              key={selectedService}
+              className="animate-fade-up lg:pt-6"
+            >
               <div className="eyebrow flex items-center gap-3">
                 <span className="hairline" /> Selected Service
               </div>
-              <h3 className="font-display text-3xl mt-4 text-mask-gold">
+              <h3
+                className="font-display text-3xl mt-4 text-mask-gold"
+                style={{ animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "120ms" }}
+              >
                 {selectedService}
               </h3>
-              <div className="mt-4 h-px w-12 bg-gold-500/60" />
-              <p className="mt-5 text-ink-700 leading-relaxed italic font-light">
+              <div
+                className="mt-4 h-px w-12 bg-gold-500/60"
+                style={{ animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "200ms" }}
+              />
+              <p
+                className="mt-5 text-ink-700 leading-relaxed italic font-light"
+                style={{ animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "280ms" }}
+              >
                 {serviceDescriptions[selectedService]}
               </p>
               <button
                 type="button"
                 onClick={() => onSelectService && onSelectService(null)}
                 className="mt-6 text-[10px] uppercase tracking-[0.28em] text-gold-600 hover:text-gold-700 underline underline-offset-4 decoration-gold-500/60 transition-colors"
+                style={{ animation: "fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "400ms" }}
               >
                 Clear selection
               </button>
