@@ -343,7 +343,7 @@ function Hero() {
             Arrive
             <br />
             <span className="italic font-light text-gold-400 font-cormorant">
-              composed.
+              Composed.
             </span>
           </h1>
           <div
@@ -352,8 +352,8 @@ function Hero() {
           >
             <span className="mt-3 h-px w-8 bg-gold-400 shrink-0" />
             <p className="text-[22px] text-white leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]">
-              A private chauffeur house, fluent in the small things: the
-              chilled water, the unspoken route, the door already open.
+              A private chauffeur house, fluent in the small things: the chilled
+              water, the unspoken route, the door already open.
             </p>
           </div>
 
@@ -393,7 +393,6 @@ function Hero() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
