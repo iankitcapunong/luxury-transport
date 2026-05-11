@@ -499,24 +499,45 @@ function HowItWorks({ selectedService, onSelectService }) {
   const locationGroupsByService = {
     "Airport & Long-Distance": [
       {
-        label: "London Airports",
+        label: "London Areas",
+        options: ["Mayfair", "Knightsbridge", "Belgravia"],
+      },
+      {
+        label: "Mayfair Airports",
         options: [
-          "Heathrow (LHR)",
-          "Gatwick (LGW)",
-          "Stansted (STN)",
-          "Luton (LTN)",
-          "London City (LCY)",
+          "Heathrow (LHR) · Mayfair",
+          "London City (LCY) · Mayfair",
+          "Gatwick (LGW) · Mayfair",
         ],
       },
       {
-        label: "Long-Distance Cities",
+        label: "Knightsbridge Airports",
         options: [
-          "Manchester",
-          "Birmingham",
-          "Liverpool",
-          "Leeds",
-          "Edinburgh",
-          "Glasgow",
+          "Heathrow (LHR) · Knightsbridge",
+          "London City (LCY) · Knightsbridge",
+          "Gatwick (LGW) · Knightsbridge",
+        ],
+      },
+      {
+        label: "Belgravia Airports",
+        options: [
+          "Heathrow (LHR) · Belgravia",
+          "London City (LCY) · Belgravia",
+          "Gatwick (LGW) · Belgravia",
+        ],
+      },
+      {
+        label: "Long-Distance Landmarks",
+        options: [
+          "Windsor Castle",
+          "Royal Ascot",
+          "Bath",
+          "Oxford",
+          "Cambridge",
+          "The Cotswolds",
+          "Brighton",
+          "Bicester Village",
+          "Stonehenge",
         ],
       },
     ],
@@ -524,10 +545,6 @@ function HowItWorks({ selectedService, onSelectService }) {
       {
         label: "London Areas",
         options: ["Mayfair", "Knightsbridge", "Belgravia"],
-      },
-      {
-        label: "Business Districts",
-        options: ["The City", "Canary Wharf"],
       },
       {
         label: "Mayfair Hotels",
@@ -557,22 +574,25 @@ function HowItWorks({ selectedService, onSelectService }) {
         options: ["Mayfair", "Knightsbridge", "Belgravia"],
       },
       {
-        label: "Wedding Hotels",
+        label: "Mayfair Hotels",
         options: [
           "Claridge's",
+          "The Connaught",
           "The Dorchester",
-          "The Lanesborough",
-          "The Goring",
-          "The Berkeley",
+          "Brown's Hotel",
         ],
       },
       {
-        label: "Venue Types",
+        label: "Knightsbridge Hotels",
         options: [
-          "Church / Ceremony venue",
-          "Reception venue",
-          "Country estate",
+          "Mandarin Oriental Hyde Park",
+          "The Berkeley",
+          "Bulgari Hotel London",
         ],
+      },
+      {
+        label: "Belgravia Hotels",
+        options: ["The Lanesborough", "The Goring"],
       },
     ],
   };
