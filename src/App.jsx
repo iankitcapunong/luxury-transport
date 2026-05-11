@@ -636,23 +636,32 @@ function HowItWorks({ selectedService, onClearService }) {
                       <option value="" disabled>
                         Pickup
                       </option>
-                      <optgroup label="Airports">
+                      <optgroup label="London Airports">
                         <option>Heathrow (LHR)</option>
                         <option>Gatwick (LGW)</option>
                         <option>Stansted (STN)</option>
                         <option>Luton (LTN)</option>
                         <option>London City (LCY)</option>
-                        <option>Manchester (MAN)</option>
-                        <option>Birmingham (BHX)</option>
-                        <option>Edinburgh (EDI)</option>
                       </optgroup>
-                      <optgroup label="London">
+                      <optgroup label="London Areas">
                         <option>Mayfair</option>
                         <option>Knightsbridge</option>
                         <option>Belgravia</option>
                       </optgroup>
-                      <optgroup label="Hotels">
-                        <option>Hotel / Venue</option>
+                      <optgroup label="Mayfair Hotels">
+                        <option>Claridge's</option>
+                        <option>The Connaught</option>
+                        <option>The Dorchester</option>
+                        <option>Brown's Hotel</option>
+                      </optgroup>
+                      <optgroup label="Knightsbridge Hotels">
+                        <option>Mandarin Oriental Hyde Park</option>
+                        <option>The Berkeley</option>
+                        <option>Bulgari Hotel London</option>
+                      </optgroup>
+                      <optgroup label="Belgravia Hotels">
+                        <option>The Lanesborough</option>
+                        <option>The Goring</option>
                       </optgroup>
                     </select>
                     <select
@@ -669,23 +678,32 @@ function HowItWorks({ selectedService, onClearService }) {
                       <option value="" disabled>
                         Destination
                       </option>
-                      <optgroup label="Airports">
+                      <optgroup label="London Airports">
                         <option>Heathrow (LHR)</option>
                         <option>Gatwick (LGW)</option>
                         <option>Stansted (STN)</option>
                         <option>Luton (LTN)</option>
                         <option>London City (LCY)</option>
-                        <option>Manchester (MAN)</option>
-                        <option>Birmingham (BHX)</option>
-                        <option>Edinburgh (EDI)</option>
                       </optgroup>
-                      <optgroup label="London">
+                      <optgroup label="London Areas">
                         <option>Mayfair</option>
                         <option>Knightsbridge</option>
                         <option>Belgravia</option>
                       </optgroup>
-                      <optgroup label="Hotels">
-                        <option>Hotel / Venue</option>
+                      <optgroup label="Mayfair Hotels">
+                        <option>Claridge's</option>
+                        <option>The Connaught</option>
+                        <option>The Dorchester</option>
+                        <option>Brown's Hotel</option>
+                      </optgroup>
+                      <optgroup label="Knightsbridge Hotels">
+                        <option>Mandarin Oriental Hyde Park</option>
+                        <option>The Berkeley</option>
+                        <option>Bulgari Hotel London</option>
+                      </optgroup>
+                      <optgroup label="Belgravia Hotels">
+                        <option>The Lanesborough</option>
+                        <option>The Goring</option>
                       </optgroup>
                     </select>
                   </div>
