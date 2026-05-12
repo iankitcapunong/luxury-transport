@@ -396,7 +396,7 @@ function Hero() {
       {/* Background image — clear, with hover dim */}
       <div className="pointer-events-none absolute inset-0 z-0 bg-ink-900">
         <img
-          src="/background.png"
+          src="/another1.png"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
@@ -876,11 +876,7 @@ function HowItWorks({ selectedService, onSelectService }) {
                 }}
                 className="relative bg-beige-50 text-ink-900 p-4 lg:p-5 border border-gold-500/40 rounded-[15px] shadow-[0_30px_70px_-15px_rgba(158,126,54,0.55),0_8px_24px_-10px_rgba(158,126,54,0.45)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-[0_50px_100px_-20px_rgba(158,126,54,0.7),0_10px_30px_-10px_rgba(158,126,54,0.55)]"
               >
-                <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.3em] text-gold-600">
-                  <span>Quick Inquiry</span>
-                  <span>Vol. I · 2026</span>
-                </div>
-                <h3 className="mt-1.5 font-display text-lg text-ink-900">
+                <h3 className="font-display text-lg text-ink-900">
                   Begin your{" "}
                   <span className="italic font-light text-gold-600">
                     journey.
@@ -1056,9 +1052,6 @@ function HowItWorks({ selectedService, onSelectService }) {
                   </button>
                 </div>
 
-                <p className="mt-2 text-[10px] uppercase tracking-[0.28em] text-ink-500 text-center">
-                  Discretion · Punctuality · Composure
-                </p>
               </form>
             </div>
           </div>
