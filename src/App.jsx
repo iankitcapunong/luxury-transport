@@ -1297,18 +1297,21 @@ function Testimonials() {
       n: "Adaeze Williams",
       r: "Tour Manager · Independent label",
       i: "AW",
+      img: "/vip_celeb.png",
     },
     {
       q: "“Our concierge desk has used a dozen firms. Luxury Transport is the only one we hand the phone to and stop watching the clock. Drivers are immaculate.”",
       n: "Henry Caldwell",
       r: "Head Concierge · Mayfair hotel",
       i: "HC",
+      img: "/executive.png",
     },
     {
       q: "“Six pickups across three counties on the wedding morning. Not a single late minute, not a single crumpled dress. We've already booked them for next year.”",
       n: "Priya Shah",
       r: "Wedding Planner · Cotswolds",
       i: "PS",
+      img: "/wedding.png",
     },
   ];
   return (
@@ -1340,14 +1343,14 @@ function Testimonials() {
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 z-0 opacity-0 transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100"
                 style={{
-                  backgroundImage: "url('/chauff.png')",
+                  backgroundImage: `url('${t.img}')`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
               />
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 z-0 bg-beige-50/85 opacity-0 transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100"
+                className="pointer-events-none absolute inset-0 z-0 bg-beige-50/95 opacity-0 transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100"
               />
               <div className="absolute -left-3 -top-2 z-10 font-display italic font-light text-6xl text-gold-500/60 leading-none">
                 “
