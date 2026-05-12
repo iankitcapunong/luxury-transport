@@ -303,7 +303,7 @@ function Nav() {
       }`}
     >
       <div
-        className={`container-x flex items-center justify-between font-cormorant transition-all duration-300 ${
+        className={`mx-auto w-full max-w-7xl pl-3 pr-6 sm:pl-4 sm:pr-8 lg:pl-4 lg:pr-12 flex items-center justify-between font-cormorant transition-all duration-300 ${
           showSolid ? "py-3" : "py-6"
         }`}
       >
@@ -414,7 +414,7 @@ function Hero() {
       <div className="container-x relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center font-cormorant">
         <div className="lg:col-span-6">
           <h1
-            className="reveal h-display !font-cormorant text-[60px] leading-[1.05] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
+            className="reveal h-display !font-cormorant text-[72px] leading-[1.05] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
             style={{ transitionDelay: "250ms" }}
           >
             Arrive
