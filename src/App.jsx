@@ -1117,8 +1117,7 @@ function Services({ onSelect }) {
             </h2>
           </div>
           <p className="max-w-md text-ink-700 leading-relaxed italic font-light">
-            Seven ways to travel; a single standard of service. The same chilled
-            water, the same composed driver, the same time on your side.
+            Three ways to travel. One standard of service.
           </p>
         </div>
 
