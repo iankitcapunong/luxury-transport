@@ -798,7 +798,7 @@ function HowItWorks({ selectedService, onSelectService }) {
               </div>
             )}
           </div>
-          <div id="contact" className="reveal w-full lg:max-w-md lg:ml-auto">
+          <div id="contact" className="reveal w-full lg:max-w-sm lg:ml-auto">
             <div className="relative">
               <div className="absolute -inset-6 rounded-2xl bg-gradient-to-tr from-gold-300/20 via-transparent to-gold-300/10 blur-3xl" />
               <div className="absolute -top-2 -left-2 h-5 w-5 border-l border-t border-gold-500/60" />
@@ -811,21 +811,21 @@ function HowItWorks({ selectedService, onSelectService }) {
                   e.preventDefault();
                   alert("Thank you. The team will be in touch shortly.");
                 }}
-                className="relative bg-beige-50 text-ink-900 p-5 lg:p-6 border border-gold-500/40 rounded-[15px] shadow-[0_30px_70px_-15px_rgba(158,126,54,0.55),0_8px_24px_-10px_rgba(158,126,54,0.45)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-[0_50px_100px_-20px_rgba(158,126,54,0.7),0_10px_30px_-10px_rgba(158,126,54,0.55)]"
+                className="relative bg-beige-50 text-ink-900 p-4 lg:p-5 border border-gold-500/40 rounded-[15px] shadow-[0_30px_70px_-15px_rgba(158,126,54,0.55),0_8px_24px_-10px_rgba(158,126,54,0.45)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-[0_50px_100px_-20px_rgba(158,126,54,0.7),0_10px_30px_-10px_rgba(158,126,54,0.55)]"
               >
                 <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.3em] text-gold-600">
                   <span>Quick Inquiry</span>
                   <span>Vol. I · 2026</span>
                 </div>
-                <h3 className="mt-2 font-display text-xl text-ink-900">
+                <h3 className="mt-1.5 font-display text-lg text-ink-900">
                   Begin your{" "}
                   <span className="italic font-light text-gold-600">
                     journey.
                   </span>
                 </h3>
-                <div className="mt-2 h-px w-12 bg-gold-500/60" />
+                <div className="mt-1.5 h-px w-12 bg-gold-500/60" />
 
-                <div className="mt-4">
+                <div className="mt-3">
                   <select
                     aria-label="Select service"
                     value={selectedService || ""}
@@ -833,7 +833,7 @@ function HowItWorks({ selectedService, onSelectService }) {
                       onSelectService &&
                       onSelectService(e.target.value || null)
                     }
-                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2 text-sm text-ink-900 focus:outline-none focus:border-gold-500 transition appearance-none bg-no-repeat bg-right pr-9"
+                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-3 py-1.5 text-xs text-ink-900 focus:outline-none focus:border-gold-500 transition appearance-none bg-no-repeat bg-right pr-9"
                     style={{
                       backgroundImage:
                         "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239E7E36'><path d='M5.5 7.5l4.5 5 4.5-5z'/></svg>\")",
@@ -850,33 +850,33 @@ function HowItWorks({ selectedService, onSelectService }) {
                   </select>
                 </div>
 
-                <div className="mt-3 space-y-2.5">
+                <div className="mt-2.5 space-y-2">
                   <input
                     required
                     type="email"
                     placeholder="Email address"
-                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2 text-sm placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition"
+                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-3 py-1.5 text-xs placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition"
                   />
-                  <div className="grid grid-cols-2 gap-2.5">
+                  <div className="grid grid-cols-2 gap-2">
                     <input
                       required
                       type="tel"
                       placeholder="Phone number"
                       pattern="[0-9+\s()-]{7,}"
-                      className="rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2 text-sm placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition"
+                      className="rounded-lg border border-ink-900/15 bg-cream-50 px-3 py-1.5 text-xs placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition"
                     />
                     <input
                       required
                       type="date"
                       aria-label="Journey date"
-                      className="rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2 text-sm text-ink-900 focus:outline-none focus:border-gold-500 transition"
+                      className="rounded-lg border border-ink-900/15 bg-cream-50 px-3 py-1.5 text-xs text-ink-900 focus:outline-none focus:border-gold-500 transition"
                     />
                   </div>
-                  <div className="grid grid-cols-2 gap-2.5">
+                  <div className="grid grid-cols-2 gap-2">
                     <select
                       value={pickup}
                       onChange={(e) => setPickup(e.target.value)}
-                      className="rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2 text-sm text-ink-900 focus:outline-none focus:border-gold-500 transition appearance-none bg-no-repeat bg-right pr-9"
+                      className="rounded-lg border border-ink-900/15 bg-cream-50 px-3 py-1.5 text-xs text-ink-900 focus:outline-none focus:border-gold-500 transition appearance-none bg-no-repeat bg-right pr-9"
                       style={{
                         backgroundImage:
                           "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239E7E36'><path d='M5.5 7.5l4.5 5 4.5-5z'/></svg>\")",
@@ -901,7 +901,7 @@ function HowItWorks({ selectedService, onSelectService }) {
                     <select
                       value={destination}
                       onChange={(e) => setDestination(e.target.value)}
-                      className="rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2 text-sm text-ink-900 focus:outline-none focus:border-gold-500 transition appearance-none bg-no-repeat bg-right pr-9"
+                      className="rounded-lg border border-ink-900/15 bg-cream-50 px-3 py-1.5 text-xs text-ink-900 focus:outline-none focus:border-gold-500 transition appearance-none bg-no-repeat bg-right pr-9"
                       style={{
                         backgroundImage:
                           "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239E7E36'><path d='M5.5 7.5l4.5 5 4.5-5z'/></svg>\")",
@@ -982,18 +982,18 @@ function HowItWorks({ selectedService, onSelectService }) {
                   <textarea
                     rows="2"
                     placeholder="A line about your journey"
-                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-4 py-2 text-sm placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition resize-none"
+                    className="w-full rounded-lg border border-ink-900/15 bg-cream-50 px-3 py-1.5 text-xs placeholder:text-beige-200 focus:outline-none focus:border-gold-500 transition resize-none"
                   />
 
                   <button
                     type="submit"
-                    className="btn-primary w-full !rounded-[15px] !px-7 !py-2.5 !text-xs !tracking-[0.28em]"
+                    className="btn-primary w-full !rounded-[15px] !px-5 !py-2 !text-[11px] !tracking-[0.28em]"
                   >
                     Send Inquiry <Icon.ArrowRight className="h-3.5 w-3.5" />
                   </button>
                 </div>
 
-                <p className="mt-3 text-[10px] uppercase tracking-[0.28em] text-ink-500 text-center">
+                <p className="mt-2 text-[10px] uppercase tracking-[0.28em] text-ink-500 text-center">
                   Discretion · Punctuality · Composure
                 </p>
               </form>
