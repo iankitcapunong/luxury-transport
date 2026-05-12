@@ -1277,27 +1277,30 @@ function Testimonials() {
           {quotes.map((t, i) => (
             <figure
               key={t.n}
-              className="reveal group relative pl-5 border-l border-gold-500/40 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-gold-500 flex flex-col h-full"
+              className="reveal group relative overflow-hidden rounded-2xl pl-5 pr-5 py-5 border-l border-gold-500/40 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-gold-500 flex flex-col h-full"
               style={{ transitionDelay: `${i * 120}ms` }}
             >
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -top-3 right-0 z-20 h-40 w-40 lg:h-48 lg:w-48 overflow-hidden rounded-2xl border border-gold-500/50 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.4)] opacity-0 scale-90 -translate-y-1 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0"
-              >
-                <img
-                  src="/chauff.png"
-                  alt=""
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="absolute -left-3 -top-2 font-display italic font-light text-6xl text-gold-500/60 leading-none">
+                className="pointer-events-none absolute inset-0 z-0 opacity-0 transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100"
+                style={{
+                  backgroundImage: "url('/chauff.png')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 z-0 bg-beige-50/85 opacity-0 transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100"
+              />
+              <div className="absolute -left-3 -top-2 z-10 font-display italic font-light text-6xl text-gold-500/60 leading-none">
                 “
               </div>
-              <blockquote className="font-display font-light text-base text-ink-900 leading-[1.55] italic flex-1">
+              <blockquote className="relative z-10 font-display font-light text-base text-ink-900 leading-[1.55] italic flex-1">
                 {t.q.replace(/[“”]/g, "")}
               </blockquote>
-              <figcaption className="mt-6 flex items-center gap-3 border-t border-ink-900/15 pt-4">
-                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-gold-500/50 text-gold-500 font-display italic text-sm">
+              <figcaption className="relative z-10 mt-6 flex items-center gap-3 border-t border-ink-900/15 pt-4">
+                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-gold-500/50 bg-beige-50/70 text-gold-500 font-display italic text-sm">
                   {t.i}
                 </div>
                 <div>
