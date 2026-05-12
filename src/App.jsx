@@ -303,7 +303,7 @@ function Nav() {
       }`}
     >
       <div
-        className={`mx-auto w-full max-w-7xl pl-3 pr-6 sm:pl-4 sm:pr-8 lg:pl-4 lg:pr-12 flex items-center justify-between font-cormorant transition-all duration-300 ${
+        className={`mx-auto w-full max-w-7xl pl-2 pr-6 sm:pl-2 sm:pr-8 lg:pl-2 lg:pr-12 flex items-center justify-between font-cormorant transition-all duration-300 ${
           showSolid ? "py-3" : "py-6"
         }`}
       >
@@ -391,7 +391,7 @@ function Hero() {
     <section
       id="top"
       ref={ref}
-      className="group/hero relative overflow-hidden flex flex-col justify-end min-h-screen pt-36 pb-24 lg:pt-44 lg:pb-32"
+      className="group/hero relative overflow-hidden flex flex-col justify-end min-h-screen pt-36 pb-12 lg:pt-44 lg:pb-16"
     >
       {/* Background image — clear, with hover dim */}
       <div className="pointer-events-none absolute inset-0 z-0 bg-ink-900">
@@ -411,7 +411,7 @@ function Hero() {
       <div className="pointer-events-none absolute -top-40 -right-40 h-[36rem] w-[36rem] rounded-full bg-gold-300/25 blur-[120px] z-0" />
       <div className="pointer-events-none absolute -bottom-48 -left-48 h-[36rem] w-[36rem] rounded-full bg-ink-900/10 blur-[120px] z-0" />
 
-      <div className="container-x relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center font-cormorant">
+      <div className="mx-auto w-full max-w-7xl pl-3 pr-6 sm:pl-4 sm:pr-8 lg:pl-4 lg:pr-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center font-cormorant">
         <div className="lg:col-span-6">
           <h1
             className="reveal h-display !font-cormorant text-[72px] leading-[1.05] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
