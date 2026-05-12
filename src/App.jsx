@@ -411,7 +411,7 @@ function Hero() {
       <div className="pointer-events-none absolute -top-40 -right-40 h-[36rem] w-[36rem] rounded-full bg-gold-300/25 blur-[120px] z-0" />
       <div className="pointer-events-none absolute -bottom-48 -left-48 h-[36rem] w-[36rem] rounded-full bg-ink-900/10 blur-[120px] z-0" />
 
-      <div className="w-full pl-2 pr-6 sm:pr-8 lg:pr-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center font-cormorant">
+      <div className="w-full pl-6 pr-6 sm:pl-8 sm:pr-8 lg:pl-12 lg:pr-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center font-cormorant">
         <div className="lg:col-span-6">
           <h1
             className="reveal h-display !font-cormorant text-[72px] leading-[1.05] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
