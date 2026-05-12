@@ -1,5 +1,70 @@
 import { useEffect, useRef, useState } from "react";
+import { Routes, Route, Link, useParams, Navigate, useLocation } from "react-router-dom";
 import Chatbot from "./Chatbot";
+
+// --- Service blog data ------------------------------------------------------
+const SERVICES_DATA = [
+  {
+    slug: "airport-transfers",
+    title: "Airport Transfers",
+    eyebrow: "The Arrival",
+    summary:
+      "Met airside, tracked from the moment of takeoff, delivered with a calm boot and a still cabin.",
+    paragraphs: [
+      "Every airport hire begins long before the wheels touch the tarmac. Your chauffeur tracks the flight in real time, adjusting their kerb-arrival to the minute. Should the inbound be early, they are already waiting; should it be late, no surcharge follows.",
+      "All UK airports are served — Heathrow, Gatwick, Stansted, Luton, London City, Manchester, Edinburgh, and beyond. Met-and-greet is included as standard: a uniformed chauffeur, a personalised name board, and assistance with luggage to the vehicle.",
+      "Inside, a chilled bottle of water, a hot towel, charging cables for every common device, and a route already planned to avoid the morning's congestion. Long-haul or short, the journey from arrivals to your door should feel like the quietest part of the trip.",
+    ],
+  },
+  {
+    slug: "corporate-chauffeur",
+    title: "Corporate Chauffeur",
+    eyebrow: "The Working Day",
+    summary:
+      "Day rates, board pickups, and multi-stop schedules handled with the discretion your business requires.",
+    paragraphs: [
+      "Corporate work asks for more than a vehicle and a driver. It asks for a partner who reads the morning, anticipates the next stop, and disappears into the background of a working day. Our chauffeurs are DBS-checked, NDA-bound, and trained in the cadence of an executive's diary.",
+      "Day rates are available across the United Kingdom, with multi-stop schedules confirmed the evening before. Last-minute changes are absorbed without fanfare. Tinted glass, soundproofed cabin, and a working table for the in-vehicle hours.",
+      "For board pickups, investor visits, and quarterly review days, we provide a single point of contact at the concierge desk — one number, one name, one decision-maker — for the entirety of the engagement.",
+    ],
+  },
+  {
+    slug: "vip-celebrity",
+    title: "VIP & Celebrity",
+    eyebrow: "The Quiet Profile",
+    summary:
+      "Paparazzi-aware route planning, NDAs as standard, and a chauffeur trained to read the room before the door opens.",
+    paragraphs: [
+      "Visibility is a choice. For the clients who would rather not make it, we provide a service designed to be unseen: blacked-out vehicles, alternate-entrance protocols, and a chauffeur briefed on the day's known camera positions before the engine starts.",
+      "Tours, festivals, label visits, and award nights are handled by a dedicated VIP desk. Routes are planned with the venue's security team, drop-points are agreed in advance, and the conversation between chauffeur and client is held to whatever you choose it to be.",
+      "Every member of the VIP team is bound by a non-disclosure agreement on the day they join us. Discretion is not an additional service. It is the service.",
+    ],
+  },
+  {
+    slug: "weddings-events",
+    title: "Weddings & Events",
+    eyebrow: "The Photographed Morning",
+    summary:
+      "Ribbons on request, immaculate interiors essential, the entire party coordinated to the minute.",
+    paragraphs: [
+      "A wedding morning is, in our experience, a sequence of small windows. The bride leaves at a particular minute. The groom collects his parents at another. The bridesmaids depart from a third address. We coordinate all of it from a single desk, with a single point of contact.",
+      "Our wedding vehicles are immaculate. Ribbons in the colour of the day, fresh white linen on the rear shelf, and a chilled bottle waiting on arrival. The chauffeur is in morning dress, in a dark suit, or in livery — whichever the day calls for.",
+      "For larger parties, the Mercedes V-Class carries up to eight passengers without compromise — panoramic glass roof, massage seats, on-board refreshments, and enough space for the dress to travel uncreased.",
+    ],
+  },
+  {
+    slug: "long-distance-hire",
+    title: "Long-Distance Hire",
+    eyebrow: "The Long Road",
+    summary:
+      "City-to-city private hires with champagne bar, refrigerator, and reclining leather for the miles ahead.",
+    paragraphs: [
+      "A long drive is either a tedious necessity or one of the more agreeable hours of the week — the difference is the vehicle and the chauffeur. Our long-distance fleet is configured to make the second outcome the only one available.",
+      "Reclining leather, a small champagne bar, refrigerated drawers, ambient lighting on a dimmer, and a panoramic roof for the better stretches of the motorway. The cabin is built for conversation, work, or sleep — whichever the journey requires.",
+      "Routes are planned in advance, with rest stops, refuelling, and meal preferences confirmed the day before. From London to the Cotswolds, Edinburgh to the Highlands, or any pairing of British addresses you can name — the road is ours to manage.",
+    ],
+  },
+];
 
 // --- Tiny inline SVG icon set (no external lib) ----------------------------
 const Icon = {
@@ -207,11 +272,14 @@ function useReveal() {
 function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+  const showSolid = scrolled || !isHome;
   const links = [
-    ["How it works", "#how"],
-    ["Services", "#services"],
-    ["Clients", "#testimonials"],
-    ["Send Inquiry", "#contact"],
+    ["How it works", "/#how"],
+    ["Services", "/#services"],
+    ["Clients", "/#testimonials"],
+    ["Send Inquiry", "/#contact"],
   ];
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -222,17 +290,17 @@ function Nav() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        showSolid
           ? "bg-ink-900/80 backdrop-blur-md border-b border-white/10 shadow-[0_8px_30px_-15px_rgba(0,0,0,0.45)]"
           : "bg-transparent border-b border-transparent"
       }`}
     >
       <div
         className={`container-x flex items-center justify-between font-cormorant transition-all duration-300 ${
-          scrolled ? "py-3" : "py-6"
+          showSolid ? "py-3" : "py-6"
         }`}
       >
-        <a href="#top" className="flex items-center gap-4">
+        <Link to="/" className="flex items-center gap-4">
           <span className="grid h-10 w-10 place-items-center rounded-full border border-gold-400/70 text-gold-400 font-display italic text-[18px] font-bold">
             L
           </span>
@@ -244,10 +312,10 @@ function Nav() {
               Private Chauffeur · UK
             </div>
           </div>
-        </a>
+        </Link>
         <nav className="hidden md:flex items-center gap-10 text-[15px] uppercase tracking-[0.28em] text-white font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
           {links.map(([label, href]) => {
-            const isCta = href === "#contact";
+            const isCta = href === "/#contact";
             if (isCta) {
               return (
                 <a
@@ -296,7 +364,7 @@ function Nav() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               onClick={() => setOpen(false)}
               className="btn-primary !py-3 mt-2 text-xs"
             >
@@ -1375,13 +1443,7 @@ function Footer() {
   const cols = [
     {
       h: "Services",
-      l: [
-        "Airport Transfers",
-        "Corporate Chauffeur",
-        "VIP & Celebrity",
-        "Weddings & Events",
-        "Long-Distance Hire",
-      ],
+      l: SERVICES_DATA.map((s) => ({ label: s.title, to: `/services/${s.slug}` })),
     },
   ];
   return (
@@ -1439,13 +1501,13 @@ function Footer() {
               <div className="eyebrow !text-gold-300">{c.h}</div>
               <ul className="mt-5 space-y-3 text-sm text-cream-100/80 font-light">
                 {c.l.map((x) => (
-                  <li key={x}>
-                    <a
-                      href="#"
+                  <li key={x.label}>
+                    <Link
+                      to={x.to}
                       className="hover:text-gold-300 transition-colors duration-500"
                     >
-                      {x}
-                    </a>
+                      {x.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -1486,8 +1548,101 @@ function Footer() {
   );
 }
 
-// --- App --------------------------------------------------------------------
-export default function App() {
+// --- Service Page ----------------------------------------------------------
+function ServicePage() {
+  const { slug } = useParams();
+  const service = SERVICES_DATA.find((s) => s.slug === slug);
+  const ref = useReveal();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [slug]);
+
+  if (!service) {
+    return <Navigate to="/" replace />;
+  }
+
+  return (
+    <div className="min-h-screen font-sans text-ink-900">
+      <Nav />
+      <main>
+        <section
+          ref={ref}
+          className="relative pt-36 pb-20 lg:pt-44 lg:pb-28 bg-beige-50/40"
+        >
+          <div className="container-x">
+            <div className="reveal max-w-3xl">
+              <Link
+                to="/"
+                className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-gold-600 hover:text-gold-700 transition-colors"
+              >
+                <span>←</span> Back to Luxury Transport
+              </Link>
+              <div className="mt-8 eyebrow flex items-center gap-3">
+                <span className="hairline" /> {service.eyebrow}
+              </div>
+              <h1 className="h-display mt-6 text-5xl sm:text-6xl lg:text-7xl text-mask-gold">
+                {service.title}
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg text-ink-700 leading-relaxed italic font-light">
+                {service.summary}
+              </p>
+            </div>
+
+            <div className="reveal mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+              <div className="lg:col-span-5">
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-gold-500/40 bg-gradient-to-br from-beige-200/40 via-cream-100 to-beige-200/40 shadow-[0_30px_80px_-20px_rgba(158,126,54,0.4)]">
+                  <div className="absolute inset-0 grid place-items-center text-center px-6">
+                    <div>
+                      <div className="font-display italic font-light text-2xl text-gold-600">
+                        {service.title}
+                      </div>
+                      <div className="mt-3 text-[10px] uppercase tracking-[0.34em] text-ink-500">
+                        Image placeholder
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute -top-2 -left-2 h-6 w-6 border-l border-t border-gold-500/60" />
+                  <div className="absolute -top-2 -right-2 h-6 w-6 border-r border-t border-gold-500/60" />
+                  <div className="absolute -bottom-2 -left-2 h-6 w-6 border-l border-b border-gold-500/60" />
+                  <div className="absolute -bottom-2 -right-2 h-6 w-6 border-r border-b border-gold-500/60" />
+                </div>
+              </div>
+
+              <div className="lg:col-span-7">
+                <div className="h-px w-12 bg-gold-500/60" />
+                <div className="mt-8 space-y-7 text-[17px] text-ink-800 leading-[1.85] font-light">
+                  {service.paragraphs.map((p, idx) => (
+                    <p key={idx}>{p}</p>
+                  ))}
+                </div>
+                <div className="mt-12 flex flex-wrap items-center gap-4">
+                  <Link
+                    to="/#contact"
+                    className="btn-primary !rounded-[15px] !bg-gold-400 !text-ink-900 hover:!bg-cream-50 !px-7 !py-3 !text-xs"
+                  >
+                    Send Inquiry <Icon.ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                  <Link
+                    to="/"
+                    className="btn-ghost !rounded-[15px] !px-7 !py-3 !text-xs"
+                  >
+                    All Services
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+      <Chatbot />
+    </div>
+  );
+}
+
+// --- Home Page -------------------------------------------------------------
+function HomePage() {
   const [selectedService, setSelectedService] = useState(null);
   return (
     <div className="min-h-screen font-sans text-ink-900">
@@ -1506,5 +1661,16 @@ export default function App() {
       <Footer />
       <Chatbot />
     </div>
+  );
+}
+
+// --- App --------------------------------------------------------------------
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/services/:slug" element={<ServicePage />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
