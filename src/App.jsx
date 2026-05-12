@@ -12,7 +12,7 @@ const SERVICES_DATA = [
       "Met airside, tracked from the moment of takeoff, delivered with a calm boot and a still cabin.",
     paragraphs: [
       "Every airport hire begins long before the wheels touch the tarmac. Your chauffeur tracks the flight in real time, adjusting their kerb-arrival to the minute. Should the inbound be early, they are already waiting; should it be late, no surcharge follows.",
-      "All UK airports are served — Heathrow, Gatwick, Stansted, Luton, London City, Manchester, Edinburgh, and beyond. Met-and-greet is included as standard: a uniformed chauffeur, a personalised name board, and assistance with luggage to the vehicle.",
+      "All UK airports are served, including Heathrow, Gatwick, Stansted, Luton, London City, Manchester, Edinburgh, and beyond. Met-and-greet is included as standard: a uniformed chauffeur, a personalised name board, and assistance with luggage to the vehicle.",
       "Inside, a chilled bottle of water, a hot towel, charging cables for every common device, and a route already planned to avoid the morning's congestion. Long-haul or short, the journey from arrivals to your door should feel like the quietest part of the trip.",
     ],
   },
@@ -25,7 +25,7 @@ const SERVICES_DATA = [
     paragraphs: [
       "Corporate work asks for more than a vehicle and a driver. It asks for a partner who reads the morning, anticipates the next stop, and disappears into the background of a working day. Our chauffeurs are DBS-checked, NDA-bound, and trained in the cadence of an executive's diary.",
       "Day rates are available across the United Kingdom, with multi-stop schedules confirmed the evening before. Last-minute changes are absorbed without fanfare. Tinted glass, soundproofed cabin, and a working table for the in-vehicle hours.",
-      "For board pickups, investor visits, and quarterly review days, we provide a single point of contact at the concierge desk — one number, one name, one decision-maker — for the entirety of the engagement.",
+      "For board pickups, investor visits, and quarterly review days, we provide a single point of contact at the concierge desk for the entirety of the engagement. One number, one name, one decision-maker.",
     ],
   },
   {
@@ -48,8 +48,8 @@ const SERVICES_DATA = [
       "Ribbons on request, immaculate interiors essential, the entire party coordinated to the minute.",
     paragraphs: [
       "A wedding morning is, in our experience, a sequence of small windows. The bride leaves at a particular minute. The groom collects his parents at another. The bridesmaids depart from a third address. We coordinate all of it from a single desk, with a single point of contact.",
-      "Our wedding vehicles are immaculate. Ribbons in the colour of the day, fresh white linen on the rear shelf, and a chilled bottle waiting on arrival. The chauffeur is in morning dress, in a dark suit, or in livery — whichever the day calls for.",
-      "For larger parties, the Mercedes V-Class carries up to eight passengers without compromise — panoramic glass roof, massage seats, on-board refreshments, and enough space for the dress to travel uncreased.",
+      "Our wedding vehicles are immaculate. Ribbons in the colour of the day, fresh white linen on the rear shelf, and a chilled bottle waiting on arrival. The chauffeur is in morning dress, in a dark suit, or in livery, whichever the day calls for.",
+      "For larger parties, the Mercedes V-Class carries up to eight passengers without compromise. Panoramic glass roof, massage seats, on-board refreshments, and enough space for the dress to travel uncreased.",
     ],
   },
   {
@@ -59,9 +59,9 @@ const SERVICES_DATA = [
     summary:
       "City-to-city private hires with champagne bar, refrigerator, and reclining leather for the miles ahead.",
     paragraphs: [
-      "A long drive is either a tedious necessity or one of the more agreeable hours of the week — the difference is the vehicle and the chauffeur. Our long-distance fleet is configured to make the second outcome the only one available.",
-      "Reclining leather, a small champagne bar, refrigerated drawers, ambient lighting on a dimmer, and a panoramic roof for the better stretches of the motorway. The cabin is built for conversation, work, or sleep — whichever the journey requires.",
-      "Routes are planned in advance, with rest stops, refuelling, and meal preferences confirmed the day before. From London to the Cotswolds, Edinburgh to the Highlands, or any pairing of British addresses you can name — the road is ours to manage.",
+      "A long drive is either a tedious necessity or one of the more agreeable hours of the week. The difference is the vehicle and the chauffeur. Our long-distance fleet is configured to make the second outcome the only one available.",
+      "Reclining leather, a small champagne bar, refrigerated drawers, ambient lighting on a dimmer, and a panoramic roof for the better stretches of the motorway. The cabin is built for conversation, work, or sleep, whichever the journey requires.",
+      "Routes are planned in advance, with rest stops, refuelling, and meal preferences confirmed the day before. From London to the Cotswolds, Edinburgh to the Highlands, or any pairing of British addresses you can name. The road is ours to manage.",
     ],
   },
 ];
