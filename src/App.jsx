@@ -1350,7 +1350,7 @@ function Testimonials() {
               />
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 z-0 bg-beige-50/95 opacity-0 transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100"
+                className="pointer-events-none absolute inset-0 z-0 bg-beige-50/65 backdrop-blur-[2px] opacity-0 transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100"
               />
               <div className="absolute -left-3 -top-2 z-10 font-display italic font-light text-6xl text-gold-500/60 leading-none">
                 “
