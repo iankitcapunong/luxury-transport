@@ -1,5 +1,7 @@
-import { useEffect, useRef, useState } from "react";
-import { Routes, Route, Link, useParams, Navigate, useLocation } from "react-router-dom";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { Routes, Route, Link, useParams, Navigate, useLocation, useNavigate } from "react-router-dom";
+
+const LoadingContext = createContext({ setLoading: () => {} });
 import Chatbot from "./Chatbot";
 
 // --- Service blog data ------------------------------------------------------
@@ -1502,12 +1504,12 @@ function Footer() {
               <ul className="mt-5 space-y-3 text-sm text-cream-100/80 font-light">
                 {c.l.map((x) => (
                   <li key={x.label}>
-                    <Link
+                    <ServiceLink
                       to={x.to}
                       className="hover:text-gold-300 transition-colors duration-500"
                     >
                       {x.label}
-                    </Link>
+                    </ServiceLink>
                   </li>
                 ))}
               </ul>
@@ -1553,30 +1555,13 @@ function ServicePage() {
   const { slug } = useParams();
   const service = SERVICES_DATA.find((s) => s.slug === slug);
   const ref = useReveal();
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    setLoading(true);
-    const id = setTimeout(() => setLoading(false), 800);
-    return () => clearTimeout(id);
   }, [slug]);
 
   if (!service) {
     return <Navigate to="/" replace />;
-  }
-
-  if (loading) {
-    return (
-      <div className="fixed inset-0 z-[100] grid place-items-center bg-beige-50">
-        <div className="flex flex-col items-center gap-6">
-          <div className="h-14 w-14 rounded-full border-4 border-gold-200/60 border-t-gold-500 animate-spin" />
-          <div className="text-[10px] uppercase tracking-[0.34em] text-gold-600">
-            Loading
-          </div>
-        </div>
-      </div>
-    );
   }
 
   return (
@@ -1681,13 +1666,50 @@ function HomePage() {
   );
 }
 
+// --- Service Link with loading transition ----------------------------------
+function ServiceLink({ to, className, children }) {
+  const { setLoading } = useContext(LoadingContext);
+  const navigate = useNavigate();
+  const handleClick = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    window.setTimeout(() => {
+      navigate(to);
+      setLoading(false);
+    }, 700);
+  };
+  return (
+    <a href={to} onClick={handleClick} className={className}>
+      {children}
+    </a>
+  );
+}
+
+// --- Loading overlay --------------------------------------------------------
+function LoadingOverlay() {
+  return (
+    <div className="fixed inset-0 z-[100] grid place-items-center bg-beige-50">
+      <div className="flex flex-col items-center gap-6">
+        <div className="h-14 w-14 rounded-full border-4 border-gold-200/60 border-t-gold-500 animate-spin" />
+        <div className="text-[10px] uppercase tracking-[0.34em] text-gold-600">
+          Loading
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // --- App --------------------------------------------------------------------
 export default function App() {
+  const [loading, setLoading] = useState(false);
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/services/:slug" element={<ServicePage />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+    <LoadingContext.Provider value={{ setLoading }}>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/services/:slug" element={<ServicePage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+      {loading && <LoadingOverlay />}
+    </LoadingContext.Provider>
   );
 }
