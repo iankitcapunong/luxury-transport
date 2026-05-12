@@ -663,17 +663,17 @@ function HowItWorks({ selectedService, onSelectService }) {
     {
       n: "1",
       title: "Inquiry",
-      body: "Submit your details through the booking form, by phone, or by email. We hold your preferred time the moment we hear from you.",
+      body: "Send your details by form, phone, or email. We hold your time on receipt.",
     },
     {
       n: "2",
       title: "Speak to Desk",
-      body: "Our concierge confirms your journey, chauffeur, and route within the hour. Adjustments welcomed up to two hours before pickup.",
+      body: "We confirm your journey, chauffeur, and route within the hour. Adjustments welcomed up to two hours prior.",
     },
     {
       n: "3",
       title: "Wait for Vehicle",
-      body: "Your chauffeur arrives thirty minutes early and waits at the kerb. Step in, depart, and arrive composed.",
+      body: "Your chauffeur arrives thirty minutes early. Step in, depart, and arrive composed.",
     },
   ];
 
