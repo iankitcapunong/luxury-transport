@@ -692,8 +692,7 @@ function HowItWorks({ selectedService, onSelectService }) {
             Three steps.
           </h2>
           <p className="reveal mt-7 text-ink-700 leading-relaxed italic font-light max-w-xl mx-auto">
-            Booking ought not feel like work. We have reduced it to a single
-            message. The rest, we attend to.
+            Reduced to a single message. We attend to the rest.
           </p>
         </div>
 
