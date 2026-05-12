@@ -1103,14 +1103,14 @@ function Services({ onSelect }) {
     },
   ];
   return (
-    <section id="services" ref={ref} className="py-28 lg:py-40 bg-beige-50/60">
+    <section id="services" ref={ref} className="py-16 lg:py-24 bg-beige-50/60">
       <div className="container-x">
-        <div className="reveal flex flex-col items-center text-center gap-7 max-w-2xl mx-auto">
+        <div className="reveal flex flex-col items-center text-center gap-5 max-w-2xl mx-auto">
           <div>
             <div className="eyebrow flex items-center gap-3 justify-center">
               <span className="hairline" /> The Offering
             </div>
-            <h2 className="h-display mt-7 text-5xl sm:text-6xl text-mask-gold">
+            <h2 className="h-display mt-5 text-4xl sm:text-5xl text-mask-gold">
               A fleet for
               <br />
               <span className="italic font-light">every occasion.</span>
@@ -1125,15 +1125,15 @@ function Services({ onSelect }) {
         {/* Three grouped cards — static grid, white background, no hover */}
         <div
           id="features"
-          className="reveal mt-20 grid grid-cols-1 md:grid-cols-3 gap-7"
+          className="reveal mt-12 grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           {groups.map(({ icon: I, icon2: I2, t, d, tags }, i) => (
             <a
               key={t}
               href="#contact"
               onClick={() => onSelect && onSelect(t)}
-              className="group relative flex flex-col h-full min-h-[500px] overflow-hidden
-                         rounded-[15px] border border-gold-500/30 bg-[#3c2f1c] text-cream-50 p-9
+              className="group relative flex flex-col h-full min-h-[400px] overflow-hidden
+                         rounded-[15px] border border-gold-500/30 bg-[#3c2f1c] text-cream-50 p-6
                          shadow-[0_24px_50px_-18px_rgba(0,0,0,0.45)]
                          transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
                          hover:-translate-y-3 hover:scale-[1.02]
@@ -1145,22 +1145,22 @@ function Services({ onSelect }) {
 
               <div className="relative flex items-start justify-between">
                 <div className="flex items-center gap-3">
-                  <I className="h-7 w-7 text-gold-400 transition-transform duration-700 group-hover:-translate-y-1" />
+                  <I className="h-6 w-6 text-gold-400 transition-transform duration-700 group-hover:-translate-y-1" />
                   <span className="h-px w-3 bg-gold-400/70 transition-all duration-700 group-hover:w-6" />
-                  <I2 className="h-7 w-7 text-gold-400 transition-transform duration-700 group-hover:-translate-y-1" />
+                  <I2 className="h-6 w-6 text-gold-400 transition-transform duration-700 group-hover:-translate-y-1" />
                 </div>
-                <span className="font-display italic font-light text-xl text-mask-gold-bright">
+                <span className="font-display italic font-light text-lg text-mask-gold-bright">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
-              <div className="relative mt-8 h-px w-12 bg-gold-400/70 transition-all duration-700 group-hover:w-24" />
-              <h3 className="relative font-display font-normal text-2xl mt-6 leading-tight text-mask-gold-bright">
+              <div className="relative mt-5 h-px w-12 bg-gold-400/70 transition-all duration-700 group-hover:w-24" />
+              <h3 className="relative font-display font-normal text-xl mt-4 leading-tight text-mask-gold-bright">
                 {t}
               </h3>
-              <p className="relative mt-4 text-[15px] text-cream-100/85 leading-[1.8] flex-1">
+              <p className="relative mt-3 text-sm text-cream-100/85 leading-[1.7] flex-1">
                 {d}
               </p>
-              <div className="relative mt-7 flex flex-wrap gap-2">
+              <div className="relative mt-5 flex flex-wrap gap-2">
                 {tags.map((tag) => (
                   <span
                     key={tag}
@@ -1170,7 +1170,7 @@ function Services({ onSelect }) {
                   </span>
                 ))}
               </div>
-              <div className="relative mt-8 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-cream-50">
+              <div className="relative mt-5 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-cream-50">
                 <span className="border-b border-gold-400 group-hover:text-mask-gold-bright transition-colors duration-700">
                   Book Now
                 </span>
