@@ -1262,36 +1262,36 @@ function Testimonials() {
           <div className="eyebrow flex items-center gap-3 justify-center">
             <span className="hairline" /> In Their Words
           </div>
-          <h2 className="h-display mt-7 text-5xl sm:text-6xl text-mask-gold">
+          <h2 className="h-display mt-5 text-4xl sm:text-5xl text-mask-gold">
             Quietly
             <br />
             <span className="italic font-light">recommended.</span>
           </h2>
-          <p className="mt-7 text-ink-700 leading-relaxed italic font-light max-w-xl mx-auto">
+          <p className="mt-5 text-ink-700 leading-relaxed italic font-light max-w-xl mx-auto">
             Ninety-seven percent of our private clients return within twelve
             months. A number we mention only because they have asked us to.
           </p>
         </div>
 
-        <div className="mt-20 grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10 items-stretch">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           {quotes.map((t, i) => (
             <figure
               key={t.n}
-              className="reveal relative pl-6 border-l border-gold-500/40 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-gold-500 flex flex-col h-full"
+              className="reveal relative pl-5 border-l border-gold-500/40 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-gold-500 flex flex-col h-full"
               style={{ transitionDelay: `${i * 120}ms` }}
             >
-              <div className="absolute -left-3 -top-2 font-display italic font-light text-7xl text-gold-500/60 leading-none">
+              <div className="absolute -left-3 -top-2 font-display italic font-light text-6xl text-gold-500/60 leading-none">
                 “
               </div>
-              <blockquote className="font-display font-light text-xl text-ink-900 leading-[1.55] italic flex-1">
+              <blockquote className="font-display font-light text-base text-ink-900 leading-[1.55] italic flex-1">
                 {t.q.replace(/[“”]/g, "")}
               </blockquote>
-              <figcaption className="mt-10 flex items-center gap-4 border-t border-ink-900/15 pt-6">
-                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-gold-500/50 text-gold-500 font-display italic">
+              <figcaption className="mt-6 flex items-center gap-3 border-t border-ink-900/15 pt-4">
+                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-gold-500/50 text-gold-500 font-display italic text-sm">
                   {t.i}
                 </div>
                 <div>
-                  <div className="font-display text-base text-ink-900">
+                  <div className="font-display text-sm text-ink-900">
                     {t.n}
                   </div>
                   <div className="mt-1 text-[10px] uppercase tracking-[0.28em] text-ink-500">
