@@ -318,15 +318,11 @@ function Hero() {
       ref={ref}
       className="group/hero relative overflow-hidden flex flex-col justify-center min-h-screen pt-36 pb-20 lg:pt-44 lg:pb-24"
     >
-      {/* Background video — clear, with hover dim */}
+      {/* Background image — clear, with hover dim */}
       <div className="pointer-events-none absolute inset-0 z-0 bg-ink-900">
-        <video
-          src="/merc.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
+        <img
+          src="/mercedez23.png"
+          alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
         />
