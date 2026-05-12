@@ -9,6 +9,7 @@ const SERVICES_DATA = [
   {
     slug: "airport-transfers",
     title: "Airport Transfers",
+    image: "/airport.png",
     eyebrow: "The Arrival",
     summary:
       "Met airside, tracked from the moment of takeoff, delivered with a calm boot and a still cabin.",
@@ -21,6 +22,7 @@ const SERVICES_DATA = [
   {
     slug: "corporate-chauffeur",
     title: "Corporate Chauffeur",
+    image: "/executive.png",
     eyebrow: "The Working Day",
     summary:
       "Day rates, board pickups, and multi-stop schedules handled with the discretion your business requires.",
@@ -33,6 +35,7 @@ const SERVICES_DATA = [
   {
     slug: "vip-celebrity",
     title: "VIP & Celebrity",
+    image: "/vip_celeb.png",
     eyebrow: "The Quiet Profile",
     summary:
       "Paparazzi-aware route planning, NDAs as standard, and a chauffeur trained to read the room before the door opens.",
@@ -45,6 +48,7 @@ const SERVICES_DATA = [
   {
     slug: "weddings-events",
     title: "Weddings & Events",
+    image: "/wedding.png",
     eyebrow: "The Photographed Morning",
     summary:
       "Ribbons on request, immaculate interiors essential, the entire party coordinated to the minute.",
@@ -57,6 +61,7 @@ const SERVICES_DATA = [
   {
     slug: "long-distance-hire",
     title: "Long-Distance Hire",
+    image: "/longride.png",
     eyebrow: "The Long Road",
     summary:
       "City-to-city private hires with champagne bar, refrigerator, and reclining leather for the miles ahead.",
@@ -302,15 +307,15 @@ function Nav() {
           showSolid ? "py-3" : "py-6"
         }`}
       >
-        <Link to="/" className="flex items-center gap-4">
-          <span className="grid h-10 w-10 place-items-center rounded-full border border-gold-400/70 text-gold-400 font-display italic text-[18px] font-bold">
+        <Link to="/" className="flex items-center gap-5">
+          <span className="grid h-14 w-14 place-items-center rounded-full border border-gold-400/70 text-gold-400 font-display italic text-[26px] font-bold">
             L
           </span>
           <div className="leading-tight">
-            <div className="font-cormorant tracking-wide text-white text-[18px] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
+            <div className="font-cormorant tracking-wide text-white text-[24px] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
               Luxury Transport
             </div>
-            <div className="uppercase tracking-[0.34em] text-white mt-1 text-[18px] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
+            <div className="uppercase tracking-[0.34em] text-white mt-1.5 text-[13px] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
               Private Chauffeur · UK
             </div>
           </div>
@@ -386,7 +391,7 @@ function Hero() {
     <section
       id="top"
       ref={ref}
-      className="group/hero relative overflow-hidden flex flex-col justify-center min-h-screen pt-36 pb-20 lg:pt-44 lg:pb-24"
+      className="group/hero relative overflow-hidden flex flex-col justify-end min-h-screen pt-36 pb-24 lg:pt-44 lg:pb-32"
     >
       {/* Background image — clear, with hover dim */}
       <div className="pointer-events-none absolute inset-0 z-0 bg-ink-900">
@@ -398,28 +403,18 @@ function Hero() {
         />
         {/* Black veil — permanent dim */}
         <div className="pointer-events-none absolute inset-0 bg-black opacity-50" />
+        {/* Right-side mask gradient */}
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-black/40 to-transparent" />
       </div>
 
       {/* atmospheric light wash */}
       <div className="pointer-events-none absolute -top-40 -right-40 h-[36rem] w-[36rem] rounded-full bg-gold-300/25 blur-[120px] z-0" />
       <div className="pointer-events-none absolute -bottom-48 -left-48 h-[36rem] w-[36rem] rounded-full bg-ink-900/10 blur-[120px] z-0" />
 
-      {/* vertical edition stamp */}
-      <div className="hidden xl:block pointer-events-none absolute left-6 top-1/2 -translate-y-1/2 v-text text-[10px] uppercase tracking-[0.4em] text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)] z-10">
-        Edition MMXXVI · Vol. I
-      </div>
-
       <div className="container-x relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center font-cormorant">
         <div className="lg:col-span-6">
-          <div
-            className="reveal eyebrow !text-[13px] flex items-center gap-3 !text-white font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.55)]"
-            style={{ transitionDelay: "100ms" }}
-          >
-            <span className="h-px w-14 bg-white" /> Est. London · Serving the
-            United Kingdom
-          </div>
           <h1
-            className="reveal h-display !font-cormorant mt-8 text-[60px] leading-[1.05] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
+            className="reveal h-display !font-cormorant text-[60px] leading-[1.05] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
             style={{ transitionDelay: "250ms" }}
           >
             Arrive
@@ -438,8 +433,6 @@ function Hero() {
               water, the unspoken route, the door already open.
             </p>
           </div>
-
-
         </div>
       </div>
     </section>
@@ -1593,17 +1586,12 @@ function ServicePage() {
 
             <div className="reveal mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
               <div className="lg:col-span-5">
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-gold-500/40 bg-gradient-to-br from-beige-200/40 via-cream-100 to-beige-200/40 shadow-[0_30px_80px_-20px_rgba(158,126,54,0.4)]">
-                  <div className="absolute inset-0 grid place-items-center text-center px-6">
-                    <div>
-                      <div className="font-display italic font-light text-2xl text-gold-600">
-                        {service.title}
-                      </div>
-                      <div className="mt-3 text-[10px] uppercase tracking-[0.34em] text-ink-500">
-                        Image placeholder
-                      </div>
-                    </div>
-                  </div>
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-gold-500/40 bg-ink-900 shadow-[0_30px_80px_-20px_rgba(158,126,54,0.4)]">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
                   <div className="absolute -top-2 -left-2 h-6 w-6 border-l border-t border-gold-500/60" />
                   <div className="absolute -top-2 -right-2 h-6 w-6 border-r border-t border-gold-500/60" />
                   <div className="absolute -bottom-2 -left-2 h-6 w-6 border-l border-b border-gold-500/60" />
