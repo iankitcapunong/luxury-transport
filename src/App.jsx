@@ -1383,11 +1383,6 @@ function Footer() {
         "Long-Distance Hire",
       ],
     },
-    { h: "Company", l: ["About", "The Fleet", "Drivers", "Press", "Careers"] },
-    {
-      h: "Support",
-      l: ["Contact", "Bookings", "Lost & Found", "Account", "FAQ"],
-    },
   ];
   return (
     <footer className="bg-ink-900 text-cream-100 border-t border-gold-500/20 relative overflow-hidden">
@@ -1406,7 +1401,7 @@ function Footer() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-6">
             <a href="#top" className="group flex items-center gap-4">
               <span className="grid h-12 w-12 place-items-center rounded-[15px] border border-gold-400/60 text-gold-400 font-display italic text-2xl transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1.5 group-hover:scale-110 group-hover:border-gold-400 group-hover:shadow-[0_15px_30px_-10px_rgba(191,156,83,0.55)]">
                 L
@@ -1440,7 +1435,7 @@ function Footer() {
           </div>
 
           {cols.map((c) => (
-            <div key={c.h} className="lg:col-span-2">
+            <div key={c.h} className="lg:col-span-3">
               <div className="eyebrow !text-gold-300">{c.h}</div>
               <ul className="mt-5 space-y-3 text-sm text-cream-100/80 font-light">
                 {c.l.map((x) => (
@@ -1457,7 +1452,7 @@ function Footer() {
             </div>
           ))}
 
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3">
             <div className="eyebrow !text-gold-300">Contact</div>
             <ul className="mt-5 space-y-3 text-sm text-cream-100/80 font-light">
               <li className="flex items-center gap-3">
