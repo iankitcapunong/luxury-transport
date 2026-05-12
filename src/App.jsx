@@ -1553,13 +1553,30 @@ function ServicePage() {
   const { slug } = useParams();
   const service = SERVICES_DATA.find((s) => s.slug === slug);
   const ref = useReveal();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
+    setLoading(true);
+    const id = setTimeout(() => setLoading(false), 800);
+    return () => clearTimeout(id);
   }, [slug]);
 
   if (!service) {
     return <Navigate to="/" replace />;
+  }
+
+  if (loading) {
+    return (
+      <div className="fixed inset-0 z-[100] grid place-items-center bg-beige-50">
+        <div className="flex flex-col items-center gap-6">
+          <div className="h-14 w-14 rounded-full border-4 border-gold-200/60 border-t-gold-500 animate-spin" />
+          <div className="text-[10px] uppercase tracking-[0.34em] text-gold-600">
+            Loading
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
