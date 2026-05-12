@@ -326,8 +326,8 @@ function Hero() {
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        {/* Black hover veil */}
-        <div className="pointer-events-none absolute inset-0 bg-black opacity-0 transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/hero:opacity-50" />
+        {/* Black veil — permanent dim */}
+        <div className="pointer-events-none absolute inset-0 bg-black opacity-50" />
       </div>
 
       {/* atmospheric light wash */}
