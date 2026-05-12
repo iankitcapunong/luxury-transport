@@ -681,7 +681,7 @@ function HowItWorks({ selectedService, onSelectService }) {
     <section
       id="how"
       ref={ref}
-      className="relative py-16 lg:py-24 bg-beige-50/50"
+      className="relative pt-8 lg:pt-10 pb-16 lg:pb-24 bg-beige-50/50"
     >
       <div className="container-x">
         <div className="max-w-2xl mx-auto text-center">
@@ -1102,7 +1102,7 @@ function Services({ onSelect }) {
     },
   ];
   return (
-    <section id="services" ref={ref} className="py-16 lg:py-24 bg-beige-50/60">
+    <section id="services" ref={ref} className="pt-8 lg:pt-10 pb-16 lg:pb-24 bg-beige-50/60">
       <div className="container-x">
         <div className="reveal flex flex-col items-center text-center gap-5 max-w-2xl mx-auto">
           <div>
@@ -1256,7 +1256,7 @@ function Testimonials() {
     },
   ];
   return (
-    <section id="testimonials" ref={ref} className="py-16 lg:py-24">
+    <section id="testimonials" ref={ref} className="pt-8 lg:pt-10 pb-16 lg:pb-24">
       <div className="container-x">
         <div className="reveal max-w-2xl mx-auto text-center">
           <div className="eyebrow flex items-center gap-3 justify-center">
