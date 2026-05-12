@@ -1350,23 +1350,23 @@ function Testimonials() {
               />
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 z-0 bg-beige-50/65 backdrop-blur-[2px] opacity-0 transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100"
+                className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-t from-black/80 via-black/55 to-black/25 opacity-0 transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100"
               />
               <div className="absolute -left-3 -top-2 z-10 font-display italic font-light text-6xl text-gold-500/60 leading-none">
                 “
               </div>
-              <blockquote className="relative z-10 font-display font-light text-base text-ink-900 leading-[1.55] italic flex-1">
+              <blockquote className="relative z-10 font-display font-light text-base text-ink-900 leading-[1.55] italic flex-1 transition-colors duration-700 group-hover:text-white group-hover:[text-shadow:0_1px_4px_rgba(0,0,0,0.6)]">
                 {t.q.replace(/[“”]/g, "")}
               </blockquote>
-              <figcaption className="relative z-10 mt-6 flex items-center gap-3 border-t border-ink-900/15 pt-4">
-                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-gold-500/50 bg-beige-50/70 text-gold-500 font-display italic text-sm">
+              <figcaption className="relative z-10 mt-6 flex items-center gap-3 border-t border-ink-900/15 pt-4 transition-colors duration-700 group-hover:border-white/30">
+                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-gold-500/50 bg-beige-50/70 text-gold-500 font-display italic text-sm transition-colors duration-700 group-hover:bg-ink-900/50 group-hover:border-gold-400">
                   {t.i}
                 </div>
                 <div>
-                  <div className="font-display text-sm text-ink-900">
+                  <div className="font-display text-sm text-ink-900 transition-colors duration-700 group-hover:text-white group-hover:[text-shadow:0_1px_3px_rgba(0,0,0,0.6)]">
                     {t.n}
                   </div>
-                  <div className="mt-1 text-[10px] uppercase tracking-[0.28em] text-ink-500">
+                  <div className="mt-1 text-[10px] uppercase tracking-[0.28em] text-ink-500 transition-colors duration-700 group-hover:text-white/80">
                     {t.r}
                   </div>
                 </div>
