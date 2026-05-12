@@ -303,7 +303,7 @@ function Nav() {
       }`}
     >
       <div
-        className={`mx-auto w-full max-w-7xl pl-2 pr-6 sm:pl-2 sm:pr-8 lg:pl-2 lg:pr-12 flex items-center justify-between font-cormorant transition-all duration-300 ${
+        className={`w-full pl-2 pr-6 sm:pr-8 lg:pr-12 flex items-center justify-between font-cormorant transition-all duration-300 ${
           showSolid ? "py-3" : "py-6"
         }`}
       >
