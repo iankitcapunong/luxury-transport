@@ -1282,7 +1282,7 @@ function Testimonials() {
             >
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -top-3 right-0 z-20 h-28 w-28 lg:h-32 lg:w-32 overflow-hidden rounded-2xl border border-gold-500/50 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.4)] opacity-0 scale-90 -translate-y-1 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0"
+                className="pointer-events-none absolute -top-3 right-0 z-20 h-40 w-40 lg:h-48 lg:w-48 overflow-hidden rounded-2xl border border-gold-500/50 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.4)] opacity-0 scale-90 -translate-y-1 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0"
               >
                 <img
                   src="/chauff.png"
