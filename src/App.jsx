@@ -1277,9 +1277,19 @@ function Testimonials() {
           {quotes.map((t, i) => (
             <figure
               key={t.n}
-              className="reveal relative pl-5 border-l border-gold-500/40 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-gold-500 flex flex-col h-full"
+              className="reveal group relative pl-5 border-l border-gold-500/40 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-gold-500 flex flex-col h-full"
               style={{ transitionDelay: `${i * 120}ms` }}
             >
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -top-3 right-0 z-20 h-28 w-28 lg:h-32 lg:w-32 overflow-hidden rounded-2xl border border-gold-500/50 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.4)] opacity-0 scale-90 -translate-y-1 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0"
+              >
+                <img
+                  src="/chauff.png"
+                  alt=""
+                  className="h-full w-full object-cover"
+                />
+              </div>
               <div className="absolute -left-3 -top-2 font-display italic font-light text-6xl text-gold-500/60 leading-none">
                 “
               </div>
