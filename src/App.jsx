@@ -307,15 +307,15 @@ function Nav() {
           showSolid ? "py-3" : "py-6"
         }`}
       >
-        <Link to="/" className="flex items-center gap-5">
-          <span className="grid h-14 w-14 place-items-center rounded-full border border-gold-400/70 text-gold-400 font-display italic text-[26px] font-bold">
+        <Link to="/" className="flex items-center gap-6 mr-auto">
+          <span className="grid h-16 w-16 place-items-center rounded-full border border-gold-400/70 text-gold-400 font-display italic text-[30px] font-bold">
             L
           </span>
           <div className="leading-tight">
-            <div className="font-cormorant tracking-wide text-white text-[24px] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
+            <div className="font-cormorant tracking-wide text-white text-[28px] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
               Luxury Transport
             </div>
-            <div className="uppercase tracking-[0.34em] text-white mt-1.5 text-[13px] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
+            <div className="uppercase tracking-[0.34em] text-white mt-2 text-[14px] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
               Private Chauffeur · UK
             </div>
           </div>
@@ -396,7 +396,7 @@ function Hero() {
       {/* Background image — clear, with hover dim */}
       <div className="pointer-events-none absolute inset-0 z-0 bg-ink-900">
         <img
-          src="/mercedez23.png"
+          src="/background.png"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
