@@ -307,7 +307,16 @@ function Nav() {
           showSolid ? "py-3" : "py-6"
         }`}
       >
-        <Link to="/" className="flex items-center gap-6 mr-auto">
+        <Link
+          to="/"
+          onClick={(e) => {
+            if (location.pathname === "/") {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+          className="flex items-center gap-6 mr-auto"
+        >
           <span className="grid h-16 w-16 place-items-center rounded-full border border-gold-400/70 text-gold-400 font-display italic text-[30px] font-bold">
             L
           </span>
